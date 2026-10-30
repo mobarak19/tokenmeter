@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import ToolGrid from '../components/ToolGrid.astro';
+import Faq from '../components/Faq.astro';
+import { SITE } from '../data/site';
+import { SECTIONS, toolsIn, type Section } from '../data/tools';
+import { MODELS, UPDATED, fmtDate, flagship } from '../lib/models';
+import { perMillion } from '../lib/llm';
+import { u } from '../lib/url';
+const order: Section[] = ['cost', 'saas', 'tokens', 'hardware', 'data'];
+const featured = ['openai', 'anthropic', 'google', 'deepseek', 'mistralai', 'x-ai'].map(flagship).filter(Boolean);
+const faq: [string, string][] = [
+  ['How current are the prices?', `Refreshed automatically every day (last update: ${fmtDate(UPDATED)}) from public pricing data, cross-checked against providers’ list prices where possible. Every change is logged.`],
+  ['Is my text sent anywhere?', 'No. Calculators and the token counter run entirely in your browser.'],
+  ['Which models are covered?', `${MODELS.length} models from OpenAI, Anthropic, Google, Meta, Mistral, DeepSeek, xAI, Qwen and more, plus embedding models.`],
+];
+---
+<Base title={`${SITE.name}: AI Cost, Token & GPU VRAM Calculators`} description={`Free AI/ML calculators: LLM API costs for ${MODELS.length} models (updated daily), RAG, embeddings, AI SaaS profit, tokens, context windows, GPU VRAM, quantization and LoRA fine-tuning.`}>
+  <section class="hero container">
+    <span class="eyebrow"><Icon name="history" size={15} /> Prices updated {fmtDate(UPDATED)}</span>
+    <h1>Know what your AI costs before you ship it</h1>
+    <p class="lead">Calculators for API costs, tokens, GPU memory and AI product economics, using daily-updated prices for {MODELS.length} models.</p>
+    <div class="section-switch">
+      <a class="btn btn-primary btn-lg" href={u('/llm-cost-calculator/')}><Icon name="calculator" size={20} /> LLM cost calculator</a>
+      <a class="btn btn-lg" href={u('/ai-saas-cost-calculator/')}><Icon name="trending" size={20} /> AI SaaS profit</a>
+      <a class="btn btn-lg" href={u('/gpu-vram-calculator/')}><Icon name="cpu" size={20} /> GPU VRAM</a>
+    </div>
+  </section>
+  {order.map((s) => (
+    <section class="section container" id={s} aria-labelledby={`h-${s}`}>
+      <div class="section-head"><h2 id={`h-${s}`} style="display:flex;gap:10px;align-items:center"><Icon name={SECTIONS[s].icon} size={24} /> {SECTIONS[s].name}</h2><p>{SECTIONS[s].text}</p></div>
+      <ToolGrid tools={toolsIn(s)} />
+    </section>
+  ))}
+  <section class="section container" aria-labelledby="latest">
+    <div class="section-head"><h2 id="latest">Latest flagship prices</h2><p>Per 1M tokens · <a href={u('/llm-pricing/')}>compare all {MODELS.length} →</a></p></div>
+    <div class="tool-grid">{featured.map((m) => (<a class="tool-card" href={u(`/models/${m!.slug}/`)}><span class="ti"><Icon name="bot" size={22} /></span><span><strong>{m!.name}</strong><span>{m!.providerName} · {perMillion(m!.input)} in / {perMillion(m!.output)} out</span></span></a>))}</div>
+  </section>
+  <Faq items={faq} />
+</Base>

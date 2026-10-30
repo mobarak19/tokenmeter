@@ -1,0 +1,43 @@
+---
+import ModelPicker from '../ModelPicker.astro';
+import { defaultModels } from '../../lib/models';
+import ratios from '../../data/token-ratios.json';
+---
+<div class="calc" data-calc="ctx">
+  <form>
+    <div class="row2">
+      <div class="field"><label for="amt">Document size</label><input class="input" id="amt" name="amt" type="number" min="0" step="any" value="50000" /></div>
+      <div class="field"><label for="unit">Unit</label><select class="select" id="unit" name="unit"><option value="words" selected>words (English)</option><option value="pages">pages (500 words)</option><option value="tokens">tokens</option></select></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="sys">Instructions & history (tokens)</label><input class="input" id="sys" name="sys" type="number" min="0" step="100" value="2000" /></div>
+      <div class="field"><label for="out">Reserve for the answer (tokens)</label><input class="input" id="out" name="out" type="number" min="0" step="500" value="4000" /></div>
+    </div>
+    <ModelPicker value={defaultModels(['openai', 'anthropic', 'google', 'deepseek', 'meta-llama', 'mistralai']).join(',')} max={6} />
+    <p class="note">Words → tokens uses the measured English ratio ({ratios.languages.English.tokensPerWord} tokens/word).</p>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { mountPicker, byId } from '../../app/modelpicker';
+  import { compactTokens } from '../../lib/llm';
+  import ratios from '../../data/token-ratios.json';
+  const TPW = ratios.languages.English.tokensPerWord as number;
+  const root = document.querySelector<HTMLElement>('[data-calc="ctx"]')!;
+  mountCalc(root, (v) => {
+    const doc = v.unit === 'tokens' ? num(v.amt) : (v.unit === 'pages' ? num(v.amt) * 500 : num(v.amt)) * TPW;
+    const need = doc + num(v.sys) + num(v.out);
+    const ids = (v.m ?? '').split(',').filter((id) => byId.has(id));
+    const rows = ids.map((id) => byId.get(id)!).map((m) => ({ m, ctx: m.ctx ?? 0, used: m.ctx ? need / m.ctx : Infinity })).sort((a, b) => b.ctx - a.ctx);
+    return `<div class="big"><div class="k">Tokens needed</div><div class="v">${Math.round(need).toLocaleString()}</div><div class="s">${Math.round(doc).toLocaleString()} document + ${num(v.sys).toLocaleString()} instructions + ${num(v.out).toLocaleString()} answer</div></div>
+      <div style="display:grid;gap:10px">${rows.map((r) => {
+        const fits = r.used <= 1;
+        return `<div style="display:grid;gap:4px"><div style="display:flex;justify-content:space-between;gap:8px;font-size:.88rem"><span>${esc(r.m.name)} <span class="muted">· ${compactTokens(r.ctx)}</span></span><strong class="num" style="color:var(${fits ? '--ok' : '--high'})">${fits ? `${Math.round((r.ctx - need)).toLocaleString()} left` : `${Math.round(need - r.ctx).toLocaleString()} over`}</strong></div>
+          <div class="meter ${fits ? (r.used > 0.85 ? 'warn' : '') : 'over'}"><i style="width:${Math.min(100, r.used * 100)}%"></i></div></div>`;
+      }).join('')}</div>
+      <p class="note">If it doesn’t fit, split the document (map-reduce), retrieve only relevant parts (RAG), or pick a longer-context model.</p>`;
+  });
+  mountPicker(root.querySelector<HTMLElement>('[data-picker]')!, 6);
+</script>

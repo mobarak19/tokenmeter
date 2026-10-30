@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import { QUANTS } from '../../lib/vram';
+import { VRAM_SIZES } from '../../lib/vramsizes';
+import { u } from '../../lib/url';
+const GiB = 1024 ** 3;
+const bits = (id: string) => QUANTS.find((q) => q.id === id)!.bits;
+---
+<Base title="LLM VRAM Requirements by Model Size (1B to 405B)" description="How much GPU memory LLMs need at FP16, 8-bit and 4-bit, from 1B to 405B parameters, with links to detailed pages and the VRAM calculator.">
+  <section class="hero container" style="text-align:left">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={u('/')}>Home</a> / <span aria-current="page">VRAM by model size</span></nav>
+    <h1 style="margin-left:0">LLM VRAM requirements by model size</h1>
+    <p class="lead" style="margin-left:0">Weights only, in GB (GiB). Add KV cache for long contexts. Use the <a href={u('/gpu-vram-calculator/')}>VRAM calculator</a> for an exact model.</p>
+  </section>
+  <div class="container"><div class="card card-pad"><div class="table-wrap"><table class="data-table">
+    <thead><tr><th><button disabled>Model size</button></th><th class="r"><button disabled>FP16</button></th><th class="r"><button disabled>8-bit</button></th><th class="r"><button disabled>4-bit (Q4_K_M)</button></th></tr></thead>
+    <tbody>{VRAM_SIZES.map((n) => <tr><td><a href={u(`/vram/${n}b/`)}>{n}B</a></td>{['fp16', 'fp8', 'q4_k_m'].map((id) => <td class="r">{((n * 1e9 * bits(id)) / 8 / GiB).toFixed(1)} GB</td>)}</tr>)}</tbody>
+  </table></div></div></div>
+</Base>

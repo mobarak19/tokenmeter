@@ -1,0 +1,48 @@
+---
+import ToolPage from '../components/ToolPage.astro';
+import { TOOLS } from '../data/tools';
+import LlmCalc from '../components/tools/LlmCalc.astro';
+import PricingTable from '../components/tools/PricingTable.astro';
+import TokenCounter from '../components/tools/TokenCounter.astro';
+import VramTool from '../components/tools/VramTool.astro';
+import SelfHostTool from '../components/tools/SelfHostTool.astro';
+import ChangesList from '../components/tools/ChangesList.astro';
+import ModelCompare from '../components/tools/ModelCompare.astro';
+import TokenCostCalc from '../components/tools/TokenCostCalc.astro';
+import EmbeddingCalc from '../components/tools/EmbeddingCalc.astro';
+import RagCalc from '../components/tools/RagCalc.astro';
+import ImageTokenCalc from '../components/tools/ImageTokenCalc.astro';
+import MediaGenCalc from '../components/tools/MediaGenCalc.astro';
+import WordsTokens from '../components/tools/WordsTokens.astro';
+import ContextCalc from '../components/tools/ContextCalc.astro';
+import QuantCalc from '../components/tools/QuantCalc.astro';
+import LoraCalc from '../components/tools/LoraCalc.astro';
+import SaasCalc from '../components/tools/SaasCalc.astro';
+
+export function getStaticPaths() {
+  return TOOLS.map((tool) => ({ params: { tool: tool.slug }, props: { tool } }));
+}
+const { tool } = Astro.props;
+const s = tool.slug;
+---
+<ToolPage tool={tool}>
+  {s === 'llm-cost-calculator' && <LlmCalc />}
+  {s === 'prompt-caching-calculator' && <LlmCalc mode="cache" />}
+  {s === 'model-comparison-calculator' && <ModelCompare />}
+  {s === 'token-cost-calculator' && <TokenCostCalc />}
+  {s === 'embedding-cost-calculator' && <EmbeddingCalc />}
+  {s === 'rag-cost-calculator' && <RagCalc />}
+  {s === 'image-token-calculator' && <ImageTokenCalc />}
+  {s === 'ai-image-cost-calculator' && <MediaGenCalc kind="image" />}
+  {s === 'ai-video-cost-calculator' && <MediaGenCalc kind="video" />}
+  {s === 'token-counter' && <TokenCounter />}
+  {s === 'words-to-tokens-calculator' && <WordsTokens />}
+  {s === 'context-window-calculator' && <ContextCalc />}
+  {s === 'gpu-vram-calculator' && <VramTool />}
+  {s === 'quantization-calculator' && <QuantCalc />}
+  {s === 'lora-vram-calculator' && <LoraCalc />}
+  {s === 'self-host-vs-api-calculator' && <SelfHostTool />}
+  {s === 'ai-saas-cost-calculator' && <SaasCalc />}
+  {s === 'llm-pricing' && <PricingTable />}
+  {s === 'llm-price-changes' && <ChangesList />}
+</ToolPage>

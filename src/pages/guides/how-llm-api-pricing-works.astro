@@ -1,0 +1,34 @@
+---
+import Guide from '../../layouts/Guide.astro';
+import { u } from '../../lib/url';
+---
+<Guide title="How LLM API Pricing Works: Tokens, Caching & Batch" description="A plain-English guide to LLM API pricing: tokens, input vs output prices, prompt caching, batch discounts, long-context tiers and reasoning tokens, with worked examples."
+  h1="How LLM API pricing works" updated="2026-10-06" tools={['llm-cost-calculator', 'prompt-caching-calculator', 'token-counter']} offers="guide">
+  <p>LLM APIs bill by the <strong>token</strong>, a chunk of text of roughly 4 characters or ¾ of an English word. Every request has two meters running: <strong>input</strong> (everything you send) and <strong>output</strong> (everything the model generates).</p>
+  <h2>Input vs output</h2>
+  <p>Output tokens usually cost several times more than input tokens. A request with a long document and a short answer is cheap on output; a request that writes a long article is output-heavy. That’s why the “cheapest” model depends on your workload.</p>
+  <pre><code>cost = input tokens × input price + output tokens × output price
+(prices are quoted per 1,000,000 tokens)</code></pre>
+  <h2>What counts as input</h2>
+  <ul>
+    <li>The system prompt and instructions, <strong>on every request</strong></li>
+    <li>The whole conversation history in a chat, which grows each turn</li>
+    <li>Retrieved documents (RAG), tool definitions and tool results</li>
+    <li>Images, audio and files, converted to tokens</li>
+  </ul>
+  <h2>Ways to pay less</h2>
+  <ul>
+    <li><strong>Prompt caching</strong>: repeated prefixes (system prompt, tools, documents) are billed at a large discount when served from cache. Writing to the cache may cost a premium. See the <a href={u('/prompt-caching-calculator/')}>caching calculator</a>.</li>
+    <li><strong>Batch APIs</strong>: send requests asynchronously (results within hours) for a discount, often around half price.</li>
+    <li><strong>Smaller models</strong> for simple steps (classification, routing, extraction), with large models only where needed.</li>
+    <li><strong>Shorter outputs</strong>: ask for concise answers and set a sensible max output tokens.</li>
+  </ul>
+  <h2>Things that surprise people on the bill</h2>
+  <ul>
+    <li><strong>Reasoning tokens</strong>: “thinking” models generate hidden tokens billed as output.</li>
+    <li><strong>Long-context tiers</strong>: some models charge more per token once a prompt passes a threshold.</li>
+    <li><strong>Agents</strong>: each tool call is a new request that re-sends the growing context.</li>
+    <li><strong>Retries</strong> and failed requests can still be billed.</li>
+  </ul>
+  <p>Estimate your own workload with the <a href={u('/llm-cost-calculator/')}>LLM cost calculator</a> and measure real prompts with the <a href={u('/token-counter/')}>token counter</a>.</p>
+</Guide>

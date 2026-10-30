@@ -1,0 +1,13 @@
+---
+interface Props { name?: string; value: string; label?: string; max?: number }
+const { name = 'm', value, label = 'Models to compare', max = 4 } = Astro.props;
+---
+<div class="field" data-picker data-max={max}>
+  <span class="label" id={`${name}-label`}>{label} {max > 1 && <span class="hint">up to {max}</span>}</span>
+  <input type="hidden" name={name} value={value} />
+  <div class="model-chips" aria-live="polite"></div>
+  <div class="combo">
+    <input class="input" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls={`${name}-list`} aria-labelledby={`${name}-label`} autocomplete="off" />
+    <div class="combo-list" id={`${name}-list`} role="listbox" hidden></div>
+  </div>
+</div>

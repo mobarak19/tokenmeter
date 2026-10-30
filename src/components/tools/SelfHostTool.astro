@@ -1,0 +1,56 @@
+---
+import ModelPicker from '../ModelPicker.astro';
+import { defaultModels } from '../../lib/models';
+---
+<div class="calc" data-calc="selfhost">
+  <form>
+    <ModelPicker value={defaultModels(['deepseek']).join(',') || defaultModels()[0]} label="API model to compare against" max={1} />
+    <div class="row2">
+      <div class="field"><label for="tin">Input tokens / month <span class="hint">millions</span></label><input class="input" id="tin" name="tin" type="number" min="0" step="10" value="2000" /></div>
+      <div class="field"><label for="tout">Output tokens / month <span class="hint">millions</span></label><input class="input" id="tout" name="tout" type="number" min="0" step="10" value="400" /></div>
+    </div>
+    <div class="row3">
+      <div class="field"><label for="gph">GPU $ / hour</label><input class="input" id="gph" name="gph" type="number" min="0" step="0.05" value="2.5" /></div>
+      <div class="field"><label for="gpus">GPUs</label><input class="input" id="gpus" name="gpus" type="number" min="1" step="1" value="1" /></div>
+      <div class="field"><label for="hrs">Hours / day</label><input class="input" id="hrs" name="hrs" type="number" min="1" max="24" step="1" value="24" /></div>
+    </div>
+    <div class="field"><label for="tps">Throughput per GPU <span class="hint">output tokens / second, batched</span></label><input class="input" id="tps" name="tps" type="number" min="1" step="50" value="1500" /></div>
+    <p class="note">GPU price and throughput are example values. Use your provider’s hourly rate and benchmark your own serving stack.</p>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { mountPicker, byId } from '../../app/modelpicker';
+  import { money } from '../../lib/llm';
+  const root = document.querySelector<HTMLElement>('[data-calc="selfhost"]')!;
+  mountCalc(root, (v) => {
+    const m = byId.get((v.m ?? '').split(',')[0]);
+    if (!m) return '<p class="muted">Choose an API model.</p>';
+    const tin = num(v.tin) * 1e6, tout = num(v.tout) * 1e6;
+    const api = (tin * m.i + tout * m.o) / 1e6;
+    const hours = Math.min(24, num(v.hrs)) * 30;
+    const gpus = Math.max(1, num(v.gpus));
+    const needGpus = Math.max(1, Math.ceil(tout / (num(v.tps) * 3600 * hours || 1)));
+    const usedGpus = Math.max(gpus, needGpus); // can't serve the volume with fewer
+    const self = num(v.gph) * usedGpus * hours;
+    const capacity = num(v.tps) * gpus * 3600 * hours; // output tokens per month with the GPUs entered
+    const util = capacity ? tout / capacity : Infinity;
+    const blended = (tin + tout) ? api / (tin + tout) : 0; // $ per token at this mix
+    const breakEven = blended ? (num(v.gph) * gpus * hours) / blended / 1e6 : Infinity; // M tokens / month for the GPUs entered
+    const cheaper = self < api;
+    return `<div class="big"><div class="k">${cheaper ? 'Self-hosting saves' : 'The API is cheaper by'}</div><div class="v">${money(Math.abs(api - self))}<span style="font-size:.45em;color:var(--text-3)"> / month</span></div>
+        <div class="s">API ${money(api)} vs GPUs ${money(self)} · ${esc(m.name)}</div></div>
+      <table class="kv">
+        <tr><th>API cost / month</th><td>${money(api)}</td></tr>
+        <tr><th>GPU rental / month${usedGpus > gpus ? ` (${usedGpus} GPUs needed)` : ''}</th><td>${money(self)}</td></tr>
+        <tr><th>Output capacity / month</th><td>${(capacity / 1e6).toLocaleString(undefined, { maximumFractionDigits: 0 })}M tokens</td></tr>
+        <tr><th>Capacity used</th><td>${Number.isFinite(util) ? Math.round(util * 100) + '%' : '–'}</td></tr>
+        <tr><th>Break-even volume</th><td>${Number.isFinite(breakEven) ? Math.round(breakEven).toLocaleString() + 'M tokens / mo' : '–'}</td></tr>
+      </table>
+      ${util > 1 ? `<div class="alert alert-warn" style="margin:0"><div><p>${gpus} GPU${gpus > 1 ? 's' : ''} can't serve this volume at this throughput. The comparison uses the <strong>${needGpus} GPUs</strong> you'd need.</p></div></div>` : ''}
+      <p class="note">Excludes engineering time, monitoring, redundancy and egress. At low or spiky volume, idle GPU hours make self-hosting more expensive than it looks.</p>`;
+  });
+  mountPicker(root.querySelector<HTMLElement>('[data-picker]')!, 1);
+</script>

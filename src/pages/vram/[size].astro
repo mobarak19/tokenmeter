@@ -1,0 +1,57 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Faq from '../../components/Faq.astro';
+import { QUANTS, DEVICES, estimate } from '../../lib/vram';
+import { MODELS } from '../../lib/models';
+import { VRAM_SIZES } from '../../lib/vramsizes';
+import { offersHtml } from '../../lib/offers';
+import { u } from '../../lib/url';
+export function getStaticPaths() { return VRAM_SIZES.map((n) => ({ params: { size: `${n}b` }, props: { n } })); }
+const { n } = Astro.props as { n: number };
+const GiB = 1024 ** 3;
+const params = n * 1e9;
+const rows = QUANTS.map((q) => {
+  const w = (params * q.bits) / 8 / GiB;
+  const run = w + 0.8 + w * 0.05;
+  const dev = DEVICES.filter((d) => d.kind !== 'On-device').filter((d) => d.gb * 0.9 >= run).sort((a, b) => a.gb - b.gb)[0];
+  return { q, w, run, dev };
+});
+// Real models of about this size (±25%) with published architectures, for KV cache examples.
+const examples = MODELS.filter((m) => m.arch?.headDim && Math.abs(m.arch.params / params - 1) <= 0.25).slice(0, 4)
+  .map((m) => ({ m, kv8k: estimate({ params: m.arch!.params, layers: m.arch!.layers, kvHeads: m.arch!.kvHeads, headDim: m.arch!.headDim!, mlaDim: m.arch!.mlaDim }, 16, 16, 8192, 1).kv }));
+const fp16 = rows.find((r) => r.q.id === 'fp16')!, q4 = rows.find((r) => r.q.id === 'q4_k_m')!, q8 = rows.find((r) => r.q.id === 'fp8')!;
+const title = `How Much VRAM Does a ${n}B Model Need? (FP16, 8-bit, 4-bit)`;
+const description = `A ${n}B-parameter LLM needs about ${fp16.w.toFixed(1)} GB at FP16, ${q8.w.toFixed(1)} GB at 8-bit and ${q4.w.toFixed(1)} GB at 4-bit for weights, plus KV cache. GPUs and Macs that can run it.`;
+const faq: [string, string][] = [
+  [`How much VRAM for a ${n}B model?`, `About ${fp16.run.toFixed(0)} GB at FP16, ${q8.run.toFixed(0)} GB at 8-bit and ${q4.run.toFixed(1)} GB at 4-bit (Q4_K_M), before the KV cache, which grows with context length.`],
+  [`What is the smallest GPU for a ${n}B model?`, q4.dev ? `At 4-bit: ${q4.dev.name} (~${Math.round(q4.dev.gb)} GB usable), which fits the weights with some room for context.` : `No single GPU in our list fits it, even at 4-bit. It needs multiple GPUs or a large-memory server.`],
+];
+---
+<Base title={title} description={description} jsonLd={[{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }]}>
+  <section class="hero container" style="text-align:left">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={u('/')}>Home</a> / <a href={u('/vram/')}>VRAM by model size</a> / <span aria-current="page">{n}B</span></nav>
+    <span class="eyebrow"><Icon name="cpu" size={15} /> VRAM requirements</span>
+    <h1 style="margin-left:0">How much VRAM does a {n}B model need?</h1>
+    <p class="lead" style="margin-left:0"><strong>{fp16.w.toFixed(1)} GB</strong> at FP16 · <strong>{q8.w.toFixed(1)} GB</strong> at 8-bit · <strong>{q4.w.toFixed(1)} GB</strong> at 4-bit, for the weights alone.</p>
+  </section>
+  <div class="container"><div class="card card-pad">
+    <div class="table-wrap"><table class="data-table">
+      <thead><tr><th><button disabled>Precision</button></th><th class="r"><button disabled>Weights</button></th><th class="r"><button disabled>To run (short context)</button></th><th><button disabled>Smallest single device</button></th></tr></thead>
+      <tbody>{rows.map((r) => <tr><td>{r.q.label}</td><td class="r">{r.w.toFixed(1)} GB</td><td class="r">{r.run.toFixed(1)} GB</td><td>{r.dev ? r.dev.name : <span class="muted">Multiple GPUs</span>}</td></tr>)}</tbody>
+    </table></div>
+    <p class="note" style="margin-top:8px">GB = GiB. “To run” adds ~0.8 GB + 5% runtime overhead but no KV cache; long contexts need more (see below).</p>
+    {examples.length > 0 && (
+      <Fragment>
+        <h2 class="section-title"><Icon name="layers" size={18} /> KV cache for real {n}B-class models (8K context, FP16)</h2>
+        <table class="kv">{examples.map((e) => <tr><th><a href={u(`/gpu-vram-calculator/?preset=${encodeURIComponent(e.m.id)}`)}>{e.m.name}</a> <span class="rawkey">{(e.m.arch!.params / 1e9).toFixed(1)}B · {e.m.arch!.layers} layers · {e.m.arch!.kvHeads} KV heads{e.m.arch!.mlaDim ? ' · latent attention' : ''}</span></th><td>+{e.kv8k.toFixed(2)} GB</td></tr>)}</table>
+      </Fragment>
+    )}
+    <div class="share-row" style="margin-top:14px">
+      <a class="btn btn-primary" href={u('/gpu-vram-calculator/')}>Calculate for an exact model &amp; context</a>
+      <a class="btn" href={u('/lora-vram-calculator/')}>Fine-tuning memory</a>
+    </div>
+  </div>
+  <Fragment set:html={offersHtml('gpu', { title: 'Useful for this' })} /></div>
+  <Faq items={faq} />
+</Base>

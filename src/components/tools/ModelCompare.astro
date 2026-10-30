@@ -1,0 +1,42 @@
+---
+import ModelPicker from '../ModelPicker.astro';
+import { defaultModels } from '../../lib/models';
+---
+<div class="calc" data-calc="compare">
+  <form>
+    <ModelPicker value={defaultModels(['openai', 'anthropic', 'google', 'deepseek', 'mistralai', 'x-ai']).join(',')} max={6} />
+    <div class="row3">
+      <div class="field"><label for="tin">Input tokens / month</label><input class="input" id="tin" name="tin" type="number" min="0" step="1000" value="1000000" /></div>
+      <div class="field"><label for="tout">Output tokens / month</label><input class="input" id="tout" name="tout" type="number" min="0" step="1000" value="250000" /></div>
+      <div class="field"><label for="req">Requests / month</label><input class="input" id="req" name="req" type="number" min="1" step="100" value="10000" /></div>
+    </div>
+    <div class="field"><label for="cache">Cacheable share of input <span class="hint" data-cache-label>0%</span></label><input id="cache" name="cache" type="range" min="0" max="95" step="5" value="0" /></div>
+    <label class="switch"><input type="checkbox" name="batch" /> <span>Batch API pricing <span class="muted small">(where available)</span></span></label>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { mountPicker, byId } from '../../app/modelpicker';
+  import { requestCost, money } from '../../lib/llm';
+  import { u } from '../../lib/url';
+  const root = document.querySelector<HTMLElement>('[data-calc="compare"]')!;
+  mountCalc(root, (v) => {
+    root.querySelector<HTMLElement>('[data-cache-label]')!.textContent = `${num(v.cache)}%`;
+    const ids = (v.m ?? '').split(',').filter((id) => byId.has(id));
+    if (!ids.length) return '<p class="muted">Add at least one model.</p>';
+    const req = Math.max(1, num(v.req));
+    // Per-request size decides long-context tiers, so spread totals evenly over requests.
+    const w = { inTok: num(v.tin) / req, outTok: num(v.tout) / req, cachedPct: num(v.cache), batch: !!v.batch };
+    const rows = ids.map((id) => { const m = byId.get(id)!; const c = requestCost(m, w); return { m, c, total: c.perRequest * req }; }).sort((a, b) => a.total - b.total);
+    const max = Math.max(...rows.map((r) => r.total), 1e-12);
+    return `<div class="big"><div class="k">Cheapest for this workload</div><div class="v">${money(rows[0].total)}<span style="font-size:.45em;color:var(--text-3)"> / month</span></div><div class="s">${esc(rows[0].m.name)}${rows.length > 1 ? ` · ${(rows[rows.length - 1].total / Math.max(rows[0].total, 1e-12)).toFixed(1)}× cheaper than the most expensive choice` : ''}</div></div>
+      <div style="display:grid;gap:10px">${rows.map((r) => `<div style="display:grid;gap:4px"><div style="display:flex;justify-content:space-between;gap:8px;font-size:.88rem"><a href="${u(`/models/${r.m.slug}/`)}">${esc(r.m.name)}</a><strong class="num">${money(r.total)}</strong></div><div class="bar-split" style="margin:0"><i class="c1" style="width:${(r.total / max) * 100}%"></i></div></div>`).join('')}</div>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th><button disabled>Model</button></th><th class="r"><button disabled>Input</button></th><th class="r"><button disabled>Output</button></th><th class="r"><button disabled>Total / month</button></th><th class="r"><button disabled>Per 1K requests</button></th></tr></thead><tbody>
+      ${rows.map((r) => `<tr><td>${esc(r.m.name)}</td><td class="r">${money((r.c.input + r.c.cached) * req)}</td><td class="r">${money(r.c.output * req)}</td><td class="r">${money(r.total)}</td><td class="r">${money(r.c.perRequest * 1000)}</td></tr>`).join('')}
+      </tbody></table></div>
+      ${[...new Set(rows.flatMap((r) => r.c.notes.map((n) => `${r.m.name}: ${n}`)))].map((n) => `<p class="note">${esc(n)}</p>`).join('')}`;
+  });
+  mountPicker(root.querySelector<HTMLElement>('[data-picker]')!, 6);
+</script>

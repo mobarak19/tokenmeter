@@ -1,0 +1,107 @@
+---
+import ModelPicker from '../ModelPicker.astro';
+import { defaultModels } from '../../lib/models';
+interface Props { mode?: 'cost' | 'cache' }
+const { mode = 'cost' } = Astro.props;
+const presets = [
+  { id: 'chat', label: 'Chatbot reply', i: 1500, o: 300 },
+  { id: 'rag', label: 'RAG answer', i: 6000, o: 500 },
+  { id: 'doc', label: 'Summarise a document', i: 20000, o: 800 },
+  { id: 'agent', label: 'Agent step', i: 30000, o: 1500 },
+  { id: 'classify', label: 'Classification', i: 400, o: 10 },
+];
+---
+<div class="calc" data-calc="llm" data-mode={mode}>
+  <form>
+    <ModelPicker value={defaultModels().join(',')} max={6} />
+    <div class="field">
+      <span class="label">Workload preset</span>
+      <div class="share-row">{presets.map((p) => <button type="button" class="btn btn-sm" data-preset={`${p.i},${p.o}`}>{p.label}</button>)}</div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="in">Input tokens / request <span class="hint">prompt + context</span></label><input class="input" id="in" name="in" type="number" min="0" step="100" value={mode === 'cache' ? 12000 : 1500} /></div>
+      <div class="field"><label for="out">Output tokens / request</label><input class="input" id="out" name="out" type="number" min="0" step="50" value={mode === 'cache' ? 400 : 300} /></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="rpd">Requests per day</label><input class="input" id="rpd" name="rpd" type="number" min="0" step="100" value="1000" /></div>
+      <div class="field"><label for="users">Active users <span class="hint">for per-user cost</span></label><input class="input" id="users" name="users" type="number" min="0" step="10" value="500" /></div>
+    </div>
+    <div class="field">
+      <label for="cache">Cacheable share of input <span class="hint" data-cache-label>{mode === 'cache' ? 80 : 0}%</span></label>
+      <input id="cache" name="cache" type="range" min="0" max="95" step="5" value={mode === 'cache' ? 80 : 0} />
+    </div>
+    <div class="field">
+      <label for="we">Requests per cache write <span class="hint">reuses before the cache expires</span></label>
+      <input class="input" id="we" name="we" type="number" min="1" step="1" value="10" />
+    </div>
+    <label class="switch"><input type="checkbox" name="batch" /> <span>Use batch API pricing <span class="muted small">(async, where available)</span></span></label>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { mountPicker, byId } from '../../app/modelpicker';
+  import { requestCost, money } from '../../lib/llm';
+  import { u } from '../../lib/url';
+
+  const root = document.querySelector<HTMLElement>('[data-calc="llm"]')!;
+  const mode = root.dataset.mode;
+  const { form } = mountCalc(root, (v) => {
+    root.querySelector<HTMLElement>('[data-cache-label]')!.textContent = `${num(v.cache)}%`;
+    const ids = (v.m ?? '').split(',').filter((id) => byId.has(id));
+    if (!ids.length) return '<p class="muted">Add at least one model to compare.</p>';
+    const w = { inTok: num(v.in), outTok: num(v.out), cachedPct: num(v.cache), batch: !!v.batch, writeEvery: Math.max(1, num(v.we, 10)) };
+    const rpd = num(v.rpd);
+    const users = num(v.users);
+    const rows = ids
+      .map((id) => {
+        const m = byId.get(id)!;
+        const c = requestCost(m, w);
+        const base = requestCost(m, { ...w, cachedPct: 0 });
+        return { m, c, base, month: c.perRequest * rpd * 30, baseMonth: base.perRequest * rpd * 30 };
+      })
+      .sort((a, b) => a.month - b.month);
+    const max = Math.max(...rows.map((r) => (mode === 'cache' ? r.baseMonth : r.month)), 1e-9);
+    const cheapest = rows[0];
+    const notes = [...new Set(rows.flatMap((r) => r.c.notes.map((n) => `${r.m.name}: ${n}`)))];
+    const tooLong = rows.filter((r) => r.m.ctx && w.inTok + w.outTok > r.m.ctx);
+
+    const head = mode === 'cache'
+      ? `<div class="big"><div class="k">Best saving with ${num(v.cache)}% cached</div><div class="v">${money(Math.max(...rows.map((r) => r.baseMonth - r.month)))}<span style="font-size:.45em;color:var(--text-3)"> / month</span></div>
+         <div class="s">${esc(rows.reduce((a, b) => (b.baseMonth - b.month > a.baseMonth - a.month ? b : a)).m.name)} · ${rpd.toLocaleString()} requests/day</div></div>`
+      : `<div class="big"><div class="k">Cheapest for this workload</div><div class="v">${money(cheapest.month)}<span style="font-size:.45em;color:var(--text-3)"> / month</span></div>
+         <div class="s">${esc(cheapest.m.name)} · ${money(cheapest.c.perRequest)} per request${users ? ` · ${money(cheapest.month / users)} per user` : ''}</div></div>`;
+
+    const bars = rows
+      .map((r) => {
+        const val = mode === 'cache' ? r.baseMonth : r.month;
+        return `<div style="display:grid;gap:4px">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-size:.88rem"><a href="${u(`/models/${r.m.slug}/`)}">${esc(r.m.name)}</a><strong class="num">${money(r.month)}${mode === 'cache' ? ` <span class="muted" style="font-weight:500">vs ${money(r.baseMonth)}</span>` : ''}</strong></div>
+          <div class="bar-split" style="margin:0"><i class="c1" style="width:${(r.month / max) * 100}%"></i>${mode === 'cache' ? `<i class="c4" style="width:${((r.baseMonth - r.month) / max) * 100}%;opacity:.35"></i>` : ''}</div>
+        </div>`;
+      })
+      .join('');
+
+    const table = `<table class="data-table">
+      <thead><tr><th><button disabled>Model</button></th><th class="r"><button disabled>Per request</button></th><th class="r"><button disabled>Per day</button></th><th class="r"><button disabled>Per month</button></th>${users ? '<th class="r"><button disabled>Per user / mo</button></th>' : ''}${mode === 'cache' ? '<th class="r"><button disabled>Saved / mo</button></th>' : ''}</tr></thead>
+      <tbody>${rows.map((r) => `<tr><td>${esc(r.m.name)}</td><td class="r">${money(r.c.perRequest)}</td><td class="r">${money(r.c.perRequest * rpd)}</td><td class="r">${money(r.month)}</td>${users ? `<td class="r">${money(r.month / users)}</td>` : ''}${mode === 'cache' ? `<td class="r">${money(r.baseMonth - r.month)}</td>` : ''}</tr>`).join('')}</tbody>
+    </table>`;
+
+    return `${head}<div style="display:grid;gap:10px">${bars}</div>
+      <div class="table-wrap">${table}</div>
+      ${tooLong.length ? `<div class="alert alert-warn" style="margin:0"><div><p>${tooLong.map((r) => esc(r.m.name)).join(', ')}: request exceeds the context window.</p></div></div>` : ''}
+      ${notes.length ? `<ul class="notes">${notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>` : ''}
+      <p class="note">Estimates from published per-token prices. Excludes taxes, tool/search fees and image or audio inputs.</p>`;
+  });
+  mountPicker(root.querySelector<HTMLElement>('[data-picker]')!, 6);
+  root.querySelectorAll<HTMLElement>('[data-preset]').forEach((b) =>
+    b.addEventListener('click', () => {
+      const [i, o] = b.dataset.preset!.split(',');
+      (form.elements.namedItem('in') as HTMLInputElement).value = i;
+      (form.elements.namedItem('out') as HTMLInputElement).value = o;
+      form.dispatchEvent(new Event('input'));
+    }),
+  );
+</script>

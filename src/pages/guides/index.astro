@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { u } from '../../lib/url';
+const guides = [
+  { href: '/guides/how-llm-api-pricing-works/', title: 'How LLM API pricing works', text: 'Tokens, input vs output, caching, batch and long-context tiers, with worked examples.', icon: 'bot' },
+  { href: '/vram/', title: 'LLM VRAM requirements by model size', text: 'How much GPU memory 1B to 405B models need at FP16, 8-bit and 4-bit.', icon: 'cpu' },
+];
+---
+<Base title="AI Cost & Hardware Guides" description="Plain-English guides to LLM API pricing and GPU memory requirements.">
+  <section class="hero container" style="text-align:left">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={u('/')}>Home</a> / <span aria-current="page">Guides</span></nav>
+    <h1 style="margin-left:0">Guides</h1>
+  </section>
+  <div class="container"><div class="tool-grid">{guides.map((g) => (<a class="tool-card" href={u(g.href)}><span class="ti"><Icon name={g.icon} size={22} /></span><span><strong>{g.title}</strong><span>{g.text}</span></span></a>))}</div></div>
+</Base>

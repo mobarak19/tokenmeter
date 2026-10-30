@@ -1,0 +1,9070 @@
+{
+ "updated": "2026-10-06T10:19:47.951Z",
+ "checked": "2026-10-06T10:19:47.951Z",
+ "trackingSince": "2026-10-06",
+ "sources": {
+  "pricing": "OpenRouter models API",
+  "crossCheck": "LiteLLM price list",
+  "architecture": "Hugging Face"
+ },
+ "flagged": [
+  "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.2156/0.6468 vs LiteLLM 0.3/1.2 per 1M",
+  "openai/gpt-5.6-sol: OpenRouter 2/10 vs LiteLLM 4/20 per 1M",
+  "deepseek/deepseek-v4-pro: OpenRouter 0.2088/0.4176 vs LiteLLM 1.32/3.96 per 1M",
+  "deepseek/deepseek-v4-flash: OpenRouter 0.0002/1.28 vs LiteLLM 0.3/1.2 per 1M",
+  "google/gemma-4-26b-a4b-it: OpenRouter 0.09/0.3 vs LiteLLM 0/0 per 1M",
+  "google/gemma-4-31b-it: OpenRouter 0.09/0.34 vs LiteLLM 0/0 per 1M",
+  "deepseek/deepseek-v3.2: OpenRouter 0.28/0.42 vs LiteLLM 0.28/0.4 per 1M",
+  "mistralai/mistral-medium-3: OpenRouter 0.4/2 vs LiteLLM 1.5/7.5 per 1M",
+  "google/gemma-3-27b-it: OpenRouter 0.08/0.45 vs LiteLLM 0/0 per 1M",
+  "perplexity/sonar: OpenRouter 1/1 vs LiteLLM 0.25/2.5 per 1M",
+  "deepseek/deepseek-r1: OpenRouter 0.7/2.5 vs LiteLLM 0.55/2.19 per 1M",
+  "deepseek/deepseek-chat: OpenRouter 0.2574/1.0287 vs LiteLLM 0.28/0.42 per 1M",
+  "embedding embed-multilingual-light-v3.0: implausible 100/1M, skipped"
+ ],
+ "embeddings": [
+  {
+   "id": "cohere/embed-v5.0-fast",
+   "slug": "cohere-embed-v5-0-fast",
+   "name": "embed-v5.0-fast",
+   "provider": "Cohere",
+   "price": 0.08,
+   "dims": 2048,
+   "maxInput": 128000
+  },
+  {
+   "id": "embed-english-light-v3.0",
+   "slug": "embed-english-light-v3-0",
+   "name": "embed-english-light-v3.0",
+   "provider": "Cohere",
+   "price": 0.1,
+   "maxInput": 512
+  },
+  {
+   "id": "embed-english-v3.0",
+   "slug": "embed-english-v3-0",
+   "name": "embed-english-v3.0",
+   "provider": "Cohere",
+   "price": 0.1,
+   "maxInput": 512
+  },
+  {
+   "id": "embed-multilingual-v3.0",
+   "slug": "embed-multilingual-v3-0",
+   "name": "embed-multilingual-v3.0",
+   "provider": "Cohere",
+   "price": 0.1,
+   "maxInput": 512
+  },
+  {
+   "id": "cohere/embed-v4.0",
+   "slug": "cohere-embed-v4-0",
+   "name": "embed-v4.0",
+   "provider": "Cohere",
+   "price": 0.12,
+   "dims": 1536,
+   "maxInput": 128000
+  },
+  {
+   "id": "cohere/embed-v5.0-pro",
+   "slug": "cohere-embed-v5-0-pro",
+   "name": "embed-v5.0-pro",
+   "provider": "Cohere",
+   "price": 0.12,
+   "dims": 2048,
+   "maxInput": 128000
+  },
+  {
+   "id": "gemini/gemini-embedding-001",
+   "slug": "gemini-gemini-embedding-001",
+   "name": "gemini-embedding-001",
+   "provider": "Google",
+   "price": 0.15,
+   "dims": 3072,
+   "maxInput": 2048
+  },
+  {
+   "id": "gemini/gemini-embedding-2",
+   "slug": "gemini-gemini-embedding-2",
+   "name": "gemini-embedding-2",
+   "provider": "Google",
+   "price": 0.2,
+   "dims": 3072,
+   "maxInput": 8192
+  },
+  {
+   "id": "mistral/mistral-embed-2312",
+   "slug": "mistral-mistral-embed-2312",
+   "name": "mistral-embed-2312",
+   "provider": "Mistral",
+   "price": 0.1,
+   "maxInput": 8192
+  },
+  {
+   "id": "mistral/mistral-embed",
+   "slug": "mistral-mistral-embed",
+   "name": "mistral-embed",
+   "provider": "Mistral",
+   "price": 0.1,
+   "maxInput": 8192
+  },
+  {
+   "id": "mistral/codestral-embed",
+   "slug": "mistral-codestral-embed",
+   "name": "codestral-embed",
+   "provider": "Mistral",
+   "price": 0.15,
+   "maxInput": 8192
+  },
+  {
+   "id": "mistral/codestral-embed-2505",
+   "slug": "mistral-codestral-embed-2505",
+   "name": "codestral-embed-2505",
+   "provider": "Mistral",
+   "price": 0.15,
+   "maxInput": 8192
+  },
+  {
+   "id": "text-embedding-3-small",
+   "slug": "text-embedding-3-small",
+   "name": "text-embedding-3-small",
+   "provider": "OpenAI",
+   "price": 0.02,
+   "dims": 1536,
+   "maxInput": 8191
+  },
+  {
+   "id": "text-embedding-ada-002",
+   "slug": "text-embedding-ada-002",
+   "name": "text-embedding-ada-002",
+   "provider": "OpenAI",
+   "price": 0.1,
+   "dims": 1536,
+   "maxInput": 8191
+  },
+  {
+   "id": "text-embedding-3-large",
+   "slug": "text-embedding-3-large",
+   "name": "text-embedding-3-large",
+   "provider": "OpenAI",
+   "price": 0.13,
+   "dims": 3072,
+   "maxInput": 8191
+  },
+  {
+   "id": "voyage/voyage-3-lite",
+   "slug": "voyage-voyage-3-lite",
+   "name": "voyage-3-lite",
+   "provider": "Voyage AI",
+   "price": 0.02,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-3.5-lite",
+   "slug": "voyage-voyage-3-5-lite",
+   "name": "voyage-3.5-lite",
+   "provider": "Voyage AI",
+   "price": 0.02,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-4-lite",
+   "slug": "voyage-voyage-4-lite",
+   "name": "voyage-4-lite",
+   "provider": "Voyage AI",
+   "price": 0.02,
+   "dims": 1024,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-3",
+   "slug": "voyage-voyage-3",
+   "name": "voyage-3",
+   "provider": "Voyage AI",
+   "price": 0.06,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-3.5",
+   "slug": "voyage-voyage-3-5",
+   "name": "voyage-3.5",
+   "provider": "Voyage AI",
+   "price": 0.06,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-4",
+   "slug": "voyage-voyage-4",
+   "name": "voyage-4",
+   "provider": "Voyage AI",
+   "price": 0.06,
+   "dims": 1024,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-2",
+   "slug": "voyage-voyage-2",
+   "name": "voyage-2",
+   "provider": "Voyage AI",
+   "price": 0.1,
+   "maxInput": 4000
+  },
+  {
+   "id": "voyage/voyage-lite-01",
+   "slug": "voyage-voyage-lite-01",
+   "name": "voyage-lite-01",
+   "provider": "Voyage AI",
+   "price": 0.1,
+   "maxInput": 4096
+  },
+  {
+   "id": "voyage/voyage-lite-02-instruct",
+   "slug": "voyage-voyage-lite-02-instruct",
+   "name": "voyage-lite-02-instruct",
+   "provider": "Voyage AI",
+   "price": 0.1,
+   "maxInput": 4000
+  },
+  {
+   "id": "voyage/voyage-multilingual-2",
+   "slug": "voyage-voyage-multilingual-2",
+   "name": "voyage-multilingual-2",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "dims": 1024,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-code-2",
+   "slug": "voyage-voyage-code-2",
+   "name": "voyage-code-2",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "maxInput": 16000
+  },
+  {
+   "id": "voyage/voyage-finance-2",
+   "slug": "voyage-voyage-finance-2",
+   "name": "voyage-finance-2",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-large-2",
+   "slug": "voyage-voyage-large-2",
+   "name": "voyage-large-2",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "maxInput": 16000
+  },
+  {
+   "id": "voyage/voyage-large-2-instruct",
+   "slug": "voyage-voyage-large-2-instruct",
+   "name": "voyage-large-2-instruct",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "dims": 1024,
+   "maxInput": 16000
+  },
+  {
+   "id": "voyage/voyage-law-2",
+   "slug": "voyage-voyage-law-2",
+   "name": "voyage-law-2",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "maxInput": 16000
+  },
+  {
+   "id": "voyage/voyage-multimodal-3",
+   "slug": "voyage-voyage-multimodal-3",
+   "name": "voyage-multimodal-3",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-4-large",
+   "slug": "voyage-voyage-4-large",
+   "name": "voyage-4-large",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "dims": 1024,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-code-4",
+   "slug": "voyage-voyage-code-4",
+   "name": "voyage-code-4",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "dims": 1024,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-context-4",
+   "slug": "voyage-voyage-context-4",
+   "name": "voyage-context-4",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "dims": 1024,
+   "maxInput": 120000
+  },
+  {
+   "id": "voyage/voyage-multimodal-3.5",
+   "slug": "voyage-voyage-multimodal-3-5",
+   "name": "voyage-multimodal-3.5",
+   "provider": "Voyage AI",
+   "price": 0.12,
+   "dims": 1024,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-3-large",
+   "slug": "voyage-voyage-3-large",
+   "name": "voyage-3-large",
+   "provider": "Voyage AI",
+   "price": 0.18,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-code-3",
+   "slug": "voyage-voyage-code-3",
+   "name": "voyage-code-3",
+   "provider": "Voyage AI",
+   "price": 0.18,
+   "maxInput": 32000
+  },
+  {
+   "id": "voyage/voyage-context-3",
+   "slug": "voyage-voyage-context-3",
+   "name": "voyage-context-3",
+   "provider": "Voyage AI",
+   "price": 0.18,
+   "maxInput": 120000
+  }
+ ],
+ "models": [
+  {
+   "id": "openai/gpt-6.1-sol",
+   "slug": "openai-gpt-6-1-sol",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6.1 Sol",
+   "created": "2026-09-29",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.1,
+   "cacheWrite": 2.5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 15,
+     "cacheRead": 0.2
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-6.1-sol-pro",
+   "slug": "openai-gpt-6-1-sol-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6.1 Sol Pro",
+   "created": "2026-09-29",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.1,
+   "cacheWrite": 2.5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 15,
+     "cacheRead": 0.2
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "anthropic/claude-sonnet-5.5",
+   "slug": "anthropic-claude-sonnet-5-5",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Sonnet 5.5",
+   "created": "2026-09-28",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.2,
+   "cacheWrite": 2.5,
+   "cacheWrite1h": 4,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 10
+  },
+  {
+   "id": "qwen/qwen3.8-max-prime",
+   "slug": "qwen-qwen3-8-max-prime",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.8 Max Prime",
+   "created": "2026-09-23",
+   "context": 1000000,
+   "maxOutput": 131072,
+   "input": 4,
+   "output": 12,
+   "cacheRead": 0.5,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "z-ai/glm-5.3-prime",
+   "slug": "z-ai-glm-5-3-prime",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5.3 Prime",
+   "created": "2026-09-23",
+   "context": 1000000,
+   "maxOutput": 131072,
+   "input": 2.8,
+   "output": 8.8,
+   "cacheRead": 0.56,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "unchecked"
+  },
+  {
+   "id": "anthropic/claude-opus-5.5",
+   "slug": "anthropic-claude-opus-5-5",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Opus 5.5",
+   "created": "2026-09-22",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 4,
+   "output": 20,
+   "cacheRead": 0.2,
+   "cacheWrite": 5,
+   "cacheWrite1h": 8,
+   "batchInput": 2,
+   "batchOutput": 10,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 4,
+   "listOutput": 20
+  },
+  {
+   "id": "cohere/command-a-plus",
+   "slug": "cohere-command-a-plus",
+   "provider": "cohere",
+   "providerName": "Cohere",
+   "firstParty": true,
+   "name": "Command A+",
+   "created": "2026-09-22",
+   "context": 192000,
+   "maxOutput": 64000,
+   "input": 0.3,
+   "output": 1.5,
+   "cacheRead": 0.15,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Cohere",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-6-luna",
+   "slug": "openai-gpt-6-luna",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6 Luna",
+   "created": "2026-09-22",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 0.1,
+   "output": 0.5,
+   "cacheRead": 0.01,
+   "cacheWrite": 0.125,
+   "batchInput": 0.05,
+   "batchOutput": 0.25,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 0.2,
+     "output": 0.75,
+     "cacheRead": 0.02
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.1,
+   "listOutput": 0.5
+  },
+  {
+   "id": "openai/gpt-6-luna-pro",
+   "slug": "openai-gpt-6-luna-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6 Luna Pro",
+   "created": "2026-09-22",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 0.1,
+   "output": 0.5,
+   "cacheRead": 0.01,
+   "cacheWrite": 0.125,
+   "batchInput": 0.05,
+   "batchOutput": 0.25,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 0.2,
+     "output": 0.75,
+     "cacheRead": 0.02
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-6-sol",
+   "slug": "openai-gpt-6-sol",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6 Sol",
+   "created": "2026-09-22",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.2,
+   "cacheWrite": 2.5,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 15,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-6-sol-pro",
+   "slug": "openai-gpt-6-sol-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6 Sol Pro",
+   "created": "2026-09-22",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.2,
+   "cacheWrite": 2.5,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 15,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3.8-omni-flash",
+   "slug": "qwen-qwen3-8-omni-flash",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.8 Omni Flash",
+   "created": "2026-09-21",
+   "context": 1000000,
+   "maxOutput": 131072,
+   "input": 0.15,
+   "output": 0.47,
+   "cacheRead": 0.016,
+   "inputModalities": [
+    "text",
+    "image",
+    "audio",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "x-ai/grok-4.7",
+   "slug": "x-ai-grok-4-7",
+   "provider": "x-ai",
+   "providerName": "xAI",
+   "firstParty": true,
+   "name": "Grok 4.7",
+   "created": "2026-09-21",
+   "context": 500000,
+   "maxOutput": 450000,
+   "input": 2,
+   "output": 6,
+   "cacheRead": 0.5,
+   "webSearch": 0.005,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 4,
+     "output": 12,
+     "cacheRead": 1
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Grok",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 6
+  },
+  {
+   "id": "z-ai/glm-5.3-flashx",
+   "slug": "z-ai-glm-5-3-flashx",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5.3 FlashX",
+   "created": "2026-09-18",
+   "context": 1048576,
+   "maxOutput": 131072,
+   "input": 0.37,
+   "output": 1.25,
+   "cacheRead": 0.09,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "unchecked"
+  },
+  {
+   "id": "deepseek/deepseek-v4.1-flash",
+   "slug": "deepseek-deepseek-v4-1-flash",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V4.1 Flash",
+   "created": "2026-09-10",
+   "context": 1048576,
+   "maxOutput": 943718,
+   "input": 0.0495,
+   "output": 1.32,
+   "cacheRead": 0.0165,
+   "batchInput": 0.112,
+   "batchOutput": 0.336,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V4.1-Flash",
+   "verified": "unchecked",
+   "arch": {
+    "params": 763205315794,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 64,
+    "intermediate": 2304,
+    "vocab": 129280,
+    "kvHeads": 1,
+    "headDim": 512,
+    "maxContext": 1048576,
+    "moe": true
+   }
+  },
+  {
+   "id": "openai/gpt-6-astra",
+   "slug": "openai-gpt-6-astra",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6 Astra",
+   "created": "2026-09-04",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 10,
+   "output": 50,
+   "cacheRead": 1,
+   "cacheWrite": 12.5,
+   "batchInput": 5,
+   "batchOutput": 25,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 20,
+     "output": 75,
+     "cacheRead": 2
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 10,
+   "listOutput": 50
+  },
+  {
+   "id": "openai/gpt-6-astra-pro",
+   "slug": "openai-gpt-6-astra-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6 Astra Pro",
+   "created": "2026-09-04",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 10,
+   "output": 50,
+   "cacheRead": 1,
+   "cacheWrite": 12.5,
+   "batchInput": 5,
+   "batchOutput": 25,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 20,
+     "output": 75,
+     "cacheRead": 2
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3.8-max-0902",
+   "slug": "qwen-qwen3-8-max-0902",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.8 Max (0902)",
+   "created": "2026-09-03",
+   "context": 1000000,
+   "maxOutput": 131072,
+   "input": 2,
+   "output": 6,
+   "cacheRead": 0.25,
+   "cacheWrite": 2.5,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "google/gemini-3.8-flash",
+   "slug": "google-gemini-3-8-flash",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.8 Flash",
+   "created": "2026-09-02",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 0.75,
+   "output": 3.75,
+   "cacheRead": 0.075,
+   "cacheWrite": 0.041667,
+   "batchInput": 0.375,
+   "batchOutput": 1.875,
+   "reasoningPrice": 3.75,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video",
+    "file",
+    "audio"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.75,
+   "listOutput": 3.75
+  },
+  {
+   "id": "anthropic/claude-fable-5.1",
+   "slug": "anthropic-claude-fable-5-1",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Fable 5.1",
+   "created": "2026-09-01",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 10,
+   "output": 50,
+   "cacheRead": 0.25,
+   "cacheWrite": 12.5,
+   "cacheWrite1h": 20,
+   "batchInput": 5,
+   "batchOutput": 25,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 10,
+   "listOutput": 50
+  },
+  {
+   "id": "qwen/qwen3.8-flash",
+   "slug": "qwen-qwen3-8-flash",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.8 Flash",
+   "created": "2026-08-26",
+   "context": 1000000,
+   "maxOutput": 131072,
+   "input": 0.15,
+   "output": 0.47,
+   "cacheRead": 0.016,
+   "cacheWrite": 0.2,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen3.8-Flash-Next",
+   "verified": "unchecked",
+   "arch": {
+    "params": 179999981459,
+    "layers": 48,
+    "hidden": 2560,
+    "heads": 24,
+    "intermediate": 640,
+    "vocab": 248320,
+    "kvHeads": 2,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "z-ai/glm-5.3-flash",
+   "slug": "z-ai-glm-5-3-flash",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5.3 Flash",
+   "created": "2026-08-26",
+   "context": 1048576,
+   "maxOutput": 943717,
+   "input": 0.15,
+   "output": 0.5,
+   "cacheRead": 0.03,
+   "batchInput": 0.06,
+   "batchOutput": 0.2,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-5.3-Flash",
+   "verified": "unchecked",
+   "arch": {
+    "params": 321323031390,
+    "layers": 45,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 154880,
+    "kvHeads": 64,
+    "headDim": 0,
+    "maxContext": 1048576,
+    "moe": true,
+    "mlaDim": 512
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v4-flash-vision-exp",
+   "slug": "deepseek-deepseek-v4-flash-vision-exp",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V4 Flash Vision Exp",
+   "created": "2026-08-21",
+   "context": 1048576,
+   "maxOutput": 262144,
+   "input": 0.2156,
+   "output": 0.6468,
+   "cacheRead": 0.00686,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+   "verified": "mismatch",
+   "listInput": 0.3,
+   "listOutput": 1.2,
+   "arch": {
+    "params": 304646824126,
+    "layers": 43,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 2048,
+    "vocab": 129280,
+    "kvHeads": 1,
+    "headDim": 512,
+    "maxContext": 1048576,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "z-ai/glm-5.3",
+   "slug": "z-ai-glm-5-3",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5.3",
+   "created": "2026-08-18",
+   "context": 1048576,
+   "maxOutput": 943718,
+   "input": 0.07,
+   "output": 7,
+   "cacheRead": 0.065,
+   "batchInput": 0.45,
+   "batchOutput": 2,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-5.3",
+   "verified": "unchecked",
+   "arch": {
+    "params": 753329940480,
+    "layers": 78,
+    "hidden": 6144,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 154880,
+    "kvHeads": 64,
+    "headDim": 192,
+    "maxContext": 1048576,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "qwen/qwen3.8-27b",
+   "slug": "qwen-qwen3-8-27b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.8 27B",
+   "created": "2026-08-14",
+   "context": 1000000,
+   "maxOutput": 131072,
+   "input": 0.425,
+   "output": 2.55,
+   "cacheRead": 0.085,
+   "cacheWrite": 0.53125,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen3.8-27B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 27781427952,
+    "layers": 64,
+    "hidden": 5120,
+    "heads": 24,
+    "intermediate": 17408,
+    "vocab": 248320,
+    "kvHeads": 4,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "google/gemini-3.7-flash",
+   "slug": "google-gemini-3-7-flash",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.7 Flash",
+   "created": "2026-08-13",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 0.75,
+   "output": 3.75,
+   "cacheRead": 0.075,
+   "cacheWrite": 0.041667,
+   "batchInput": 0.375,
+   "batchOutput": 1.875,
+   "reasoningPrice": 3.75,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video",
+    "file",
+    "audio"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.75,
+   "listOutput": 3.75
+  },
+  {
+   "id": "deepseek/deepseek-v4-pro-0813",
+   "slug": "deepseek-deepseek-v4-pro-0813",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V4 Pro 0813",
+   "created": "2026-08-12",
+   "context": 1048576,
+   "maxOutput": 393216,
+   "input": 0.66,
+   "output": 1.98,
+   "cacheRead": 0.022,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V4-Pro-0813",
+   "verified": "unchecked",
+   "arch": {
+    "params": 1650497936906,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 3072,
+    "vocab": 129280,
+    "kvHeads": 1,
+    "headDim": 512,
+    "maxContext": 1048576,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3.8-2.4t-a95b",
+   "slug": "qwen-qwen3-8-2-4t-a95b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.8 2.4T A95B",
+   "created": "2026-08-12",
+   "context": 1048576,
+   "maxOutput": 131072,
+   "input": 2,
+   "output": 6,
+   "cacheRead": 0.25,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen3.8-2.4T-A95B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 2446182725504,
+    "layers": 92,
+    "hidden": 8192,
+    "heads": 64,
+    "intermediate": 2048,
+    "vocab": 248320,
+    "kvHeads": 4,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "x-ai/grok-4.6",
+   "slug": "x-ai-grok-4-6",
+   "provider": "x-ai",
+   "providerName": "xAI",
+   "firstParty": true,
+   "name": "Grok 4.6",
+   "created": "2026-08-12",
+   "context": 500000,
+   "maxOutput": 450000,
+   "input": 2,
+   "output": 6,
+   "cacheRead": 0.5,
+   "webSearch": 0.005,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 4,
+     "output": 12,
+     "cacheRead": 1
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Grok",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 6
+  },
+  {
+   "id": "nvidia/nemotron-3.5-lightning",
+   "slug": "nvidia-nemotron-3-5-lightning",
+   "provider": "nvidia",
+   "providerName": "NVIDIA",
+   "firstParty": false,
+   "name": "Nemotron 3.5 Lightning",
+   "created": "2026-08-11",
+   "context": 262144,
+   "maxOutput": 32768,
+   "input": 0.06,
+   "output": 0.16,
+   "cacheRead": 0.03,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+   "verified": "unchecked",
+   "arch": {
+    "params": 31577937344,
+    "layers": 52,
+    "hidden": 2688,
+    "heads": 32,
+    "intermediate": 1856,
+    "vocab": 131072,
+    "kvHeads": 2,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v4-flash-0731",
+   "slug": "deepseek-deepseek-v4-flash-0731",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V4 Flash 0731",
+   "created": "2026-07-31",
+   "context": 1048576,
+   "maxOutput": 943718,
+   "input": 0.0152,
+   "output": 1.28,
+   "cacheRead": 0.0152,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V4-Flash-0731",
+   "verified": "unchecked",
+   "arch": {
+    "params": 304180418494,
+    "layers": 43,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 2048,
+    "vocab": 129280,
+    "kvHeads": 1,
+    "headDim": 512,
+    "maxContext": 1048576,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3.7-flash",
+   "slug": "qwen-qwen3-7-flash",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.7 Flash",
+   "created": "2026-07-27",
+   "context": 1000000,
+   "maxOutput": 65536,
+   "input": 0.03,
+   "output": 0.13,
+   "cacheRead": 0.006,
+   "cacheWrite": 0.038,
+   "tiers": [
+    {
+     "minPromptTokens": 32000,
+     "input": 0.1,
+     "output": 0.4,
+     "cacheRead": 0.02
+    },
+    {
+     "minPromptTokens": 256000,
+     "input": 0.2,
+     "output": 0.8,
+     "cacheRead": 0.04
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "anthropic/claude-opus-5",
+   "slug": "anthropic-claude-opus-5",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Opus 5",
+   "created": "2026-07-24",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 5,
+   "output": 25,
+   "cacheRead": 0.5,
+   "cacheWrite": 6.25,
+   "cacheWrite1h": 10,
+   "batchInput": 2.5,
+   "batchOutput": 12.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 5,
+   "listOutput": 25
+  },
+  {
+   "id": "google/gemini-3.5-flash-lite",
+   "slug": "google-gemini-3-5-flash-lite",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.5 Flash Lite",
+   "created": "2026-07-21",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 0.3,
+   "output": 2.5,
+   "cacheRead": 0.03,
+   "cacheWrite": 0.083333,
+   "batchInput": 0.15,
+   "batchOutput": 1.25,
+   "reasoningPrice": 2.5,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video",
+    "file",
+    "audio"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.3,
+   "listOutput": 2.5
+  },
+  {
+   "id": "google/gemini-3.6-flash",
+   "slug": "google-gemini-3-6-flash",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.6 Flash",
+   "created": "2026-07-21",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 0.75,
+   "output": 3.75,
+   "cacheRead": 0.075,
+   "cacheWrite": 0.041667,
+   "batchInput": 0.375,
+   "batchOutput": 1.875,
+   "reasoningPrice": 3.75,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video",
+    "file",
+    "audio"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.75,
+   "listOutput": 3.75
+  },
+  {
+   "id": "moonshotai/kimi-k3",
+   "slug": "moonshotai-kimi-k3",
+   "provider": "moonshotai",
+   "providerName": "Moonshot AI",
+   "firstParty": false,
+   "name": "Kimi K3",
+   "created": "2026-07-16",
+   "context": 1048576,
+   "maxOutput": 943718,
+   "input": 0.83,
+   "output": 14,
+   "cacheRead": 0.27,
+   "batchInput": 2.28,
+   "batchOutput": 11.4,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "moonshotai/Kimi-K3",
+   "verified": "unchecked",
+   "arch": {
+    "params": 2779931837184,
+    "layers": 93,
+    "hidden": 7168,
+    "heads": 96,
+    "intermediate": 33792,
+    "vocab": 163840,
+    "kvHeads": 96,
+    "headDim": 75,
+    "maxContext": 1048576,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "openai/gpt-5.6-luna",
+   "slug": "openai-gpt-5-6-luna",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.6 Luna",
+   "created": "2026-07-09",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 0.2,
+   "output": 1.2,
+   "cacheRead": 0.02,
+   "cacheWrite": 0.25,
+   "batchInput": 0.1,
+   "batchOutput": 0.6,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 0.4,
+     "output": 1.8,
+     "cacheRead": 0.04
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.2,
+   "listOutput": 1.2
+  },
+  {
+   "id": "openai/gpt-5.6-luna-pro",
+   "slug": "openai-gpt-5-6-luna-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.6 Luna Pro",
+   "created": "2026-07-09",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 0.2,
+   "output": 1.2,
+   "cacheRead": 0.02,
+   "cacheWrite": 0.25,
+   "batchInput": 0.1,
+   "batchOutput": 0.6,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 0.4,
+     "output": 1.8,
+     "cacheRead": 0.04
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-5.6-sol",
+   "slug": "openai-gpt-5-6-sol",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.6 Sol",
+   "created": "2026-07-09",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.2,
+   "cacheWrite": 2.5,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 15,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "mismatch",
+   "listInput": 4,
+   "listOutput": 20
+  },
+  {
+   "id": "openai/gpt-5.6-sol-pro",
+   "slug": "openai-gpt-5-6-sol-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.6 Sol Pro",
+   "created": "2026-07-09",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.2,
+   "cacheWrite": 2.5,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 15,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-5.6-terra",
+   "slug": "openai-gpt-5-6-terra",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.6 Terra",
+   "created": "2026-07-09",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 12,
+   "cacheRead": 0.2,
+   "cacheWrite": 2.5,
+   "batchInput": 1,
+   "batchOutput": 6,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 18,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 12
+  },
+  {
+   "id": "openai/gpt-5.6-terra-pro",
+   "slug": "openai-gpt-5-6-terra-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.6 Terra Pro",
+   "created": "2026-07-09",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 12,
+   "cacheRead": 0.2,
+   "cacheWrite": 2.5,
+   "batchInput": 1,
+   "batchOutput": 6,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 18,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "x-ai/grok-4.5",
+   "slug": "x-ai-grok-4-5",
+   "provider": "x-ai",
+   "providerName": "xAI",
+   "firstParty": true,
+   "name": "Grok 4.5",
+   "created": "2026-07-08",
+   "context": 500000,
+   "maxOutput": 450000,
+   "input": 2,
+   "output": 6,
+   "cacheRead": 0.3,
+   "webSearch": 0.005,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 4,
+     "output": 12,
+     "cacheRead": 0.6
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Grok",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 6
+  },
+  {
+   "id": "anthropic/claude-sonnet-5",
+   "slug": "anthropic-claude-sonnet-5",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Sonnet 5",
+   "created": "2026-06-30",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.2,
+   "cacheWrite": 2.5,
+   "cacheWrite1h": 4,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 10
+  },
+  {
+   "id": "google/gemini-3.1-flash-lite-image",
+   "slug": "google-gemini-3-1-flash-lite-image",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+   "created": "2026-06-30",
+   "context": 65536,
+   "maxOutput": 58982,
+   "input": 0.25,
+   "output": 1.5,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.25,
+   "listOutput": 1.5
+  },
+  {
+   "id": "google/gemini-3-pro-image",
+   "slug": "google-gemini-3-pro-image",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Nano Banana Pro (Gemini 3 Pro Image)",
+   "created": "2026-06-18",
+   "context": 131072,
+   "maxOutput": 32768,
+   "input": 2,
+   "output": 12,
+   "cacheRead": 0.2,
+   "cacheWrite": 0.375,
+   "reasoningPrice": 12,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 12
+  },
+  {
+   "id": "google/gemini-3.1-flash-image",
+   "slug": "google-gemini-3-1-flash-image",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+   "created": "2026-06-18",
+   "context": 131072,
+   "maxOutput": 32768,
+   "input": 0.5,
+   "output": 3,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.5,
+   "listOutput": 3
+  },
+  {
+   "id": "z-ai/glm-5.2",
+   "slug": "z-ai-glm-5-2",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5.2",
+   "created": "2026-06-16",
+   "context": 1048576,
+   "maxOutput": 131072,
+   "input": 0.152,
+   "output": 12,
+   "cacheRead": 0.15,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-5.2",
+   "verified": "unchecked",
+   "arch": {
+    "params": 753329940480,
+    "layers": 78,
+    "hidden": 6144,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 154880,
+    "kvHeads": 64,
+    "headDim": 192,
+    "maxContext": 1048576,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "moonshotai/kimi-k2.7-code",
+   "slug": "moonshotai-kimi-k2-7-code",
+   "provider": "moonshotai",
+   "providerName": "Moonshot AI",
+   "firstParty": false,
+   "name": "Kimi K2.7 Code",
+   "created": "2026-06-12",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.6712,
+   "output": 3.35,
+   "cacheRead": 0.18,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "moonshotai/Kimi-K2.7-Code",
+   "verified": "unchecked",
+   "arch": {
+    "params": 1026879376368,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 64,
+    "intermediate": 18432,
+    "vocab": 163840,
+    "kvHeads": 64,
+    "headDim": 112,
+    "maxContext": 262144,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "anthropic/claude-fable-5",
+   "slug": "anthropic-claude-fable-5",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Fable 5",
+   "created": "2026-06-09",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 10,
+   "output": 50,
+   "cacheRead": 1,
+   "cacheWrite": 12.5,
+   "cacheWrite1h": 20,
+   "batchInput": 5,
+   "batchOutput": 25,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 10,
+   "listOutput": 50
+  },
+  {
+   "id": "nvidia/nemotron-3-ultra-550b-a55b",
+   "slug": "nvidia-nemotron-3-ultra-550b-a55b",
+   "provider": "nvidia",
+   "providerName": "NVIDIA",
+   "firstParty": false,
+   "name": "Nemotron 3 Ultra",
+   "created": "2026-06-04",
+   "context": 262144,
+   "maxOutput": 16384,
+   "input": 0.5,
+   "output": 2.2,
+   "cacheRead": 0.1,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "verified": "unchecked"
+  },
+  {
+   "id": "nvidia/nemotron-3.5-content-safety",
+   "slug": "nvidia-nemotron-3-5-content-safety",
+   "provider": "nvidia",
+   "providerName": "NVIDIA",
+   "firstParty": false,
+   "name": "Nemotron 3.5 Content Safety",
+   "created": "2026-06-04",
+   "context": 131072,
+   "maxOutput": 117964,
+   "input": 0.2,
+   "output": 0.2,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "nvidia/Nemotron-3.5-Content-Safety",
+   "verified": "unchecked",
+   "arch": {
+    "params": 4300079472,
+    "layers": 34,
+    "hidden": 2560,
+    "heads": 8,
+    "intermediate": 10240,
+    "vocab": 262208,
+    "kvHeads": 4,
+    "headDim": 256,
+    "maxContext": 131072,
+    "moe": false
+   }
+  },
+  {
+   "id": "qwen/qwen3.7-plus",
+   "slug": "qwen-qwen3-7-plus",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.7 Plus",
+   "created": "2026-06-03",
+   "context": 1000000,
+   "maxOutput": 131072,
+   "input": 0.32,
+   "output": 1.28,
+   "cacheRead": 0.064,
+   "cacheWrite": 0.4,
+   "tiers": [
+    {
+     "minPromptTokens": 256000,
+     "input": 0.96,
+     "output": 3.84,
+     "cacheRead": 0.192
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "minimax/minimax-m3",
+   "slug": "minimax-minimax-m3",
+   "provider": "minimax",
+   "providerName": "MiniMax",
+   "firstParty": false,
+   "name": "MiniMax M3",
+   "created": "2026-05-31",
+   "context": 1048576,
+   "maxOutput": 512000,
+   "input": 0.3,
+   "output": 1.2,
+   "cacheRead": 0.06,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "MiniMaxAI/Minimax-M3",
+   "verified": "unchecked",
+   "arch": {
+    "params": 427040140160,
+    "layers": 60,
+    "hidden": 6144,
+    "heads": 64,
+    "intermediate": 3072,
+    "vocab": 200064,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 1048576,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "anthropic/claude-opus-4.8",
+   "slug": "anthropic-claude-opus-4-8",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Opus 4.8",
+   "created": "2026-05-27",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 5,
+   "output": 25,
+   "cacheRead": 0.5,
+   "cacheWrite": 6.25,
+   "cacheWrite1h": 10,
+   "batchInput": 2.5,
+   "batchOutput": 12.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 5,
+   "listOutput": 25
+  },
+  {
+   "id": "qwen/qwen3.7-max",
+   "slug": "qwen-qwen3-7-max",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.7 Max",
+   "created": "2026-05-21",
+   "context": 1000000,
+   "maxOutput": 131072,
+   "input": 1.475,
+   "output": 4.425,
+   "cacheRead": 0.295,
+   "cacheWrite": 1.84375,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "x-ai/grok-build-0.1",
+   "slug": "x-ai-grok-build-0-1",
+   "provider": "x-ai",
+   "providerName": "xAI",
+   "firstParty": true,
+   "name": "Grok Build 0.1",
+   "created": "2026-05-20",
+   "context": 256000,
+   "maxOutput": 230400,
+   "input": 1,
+   "output": 2,
+   "cacheRead": 0.2,
+   "webSearch": 0.005,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 2,
+     "output": 4,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Grok",
+   "verified": "match",
+   "listInput": 1,
+   "listOutput": 2
+  },
+  {
+   "id": "google/gemini-3.5-flash",
+   "slug": "google-gemini-3-5-flash",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.5 Flash",
+   "created": "2026-05-19",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 1.5,
+   "output": 9,
+   "cacheRead": 0.15,
+   "cacheWrite": 0.083333,
+   "batchInput": 0.75,
+   "batchOutput": 4.5,
+   "reasoningPrice": 9,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video",
+    "file",
+    "audio"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 1.5,
+   "listOutput": 9
+  },
+  {
+   "id": "google/gemini-3.1-flash-lite",
+   "slug": "google-gemini-3-1-flash-lite",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.1 Flash Lite",
+   "created": "2026-05-07",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 0.25,
+   "output": 1.5,
+   "cacheRead": 0.025,
+   "cacheWrite": 0.083333,
+   "batchInput": 0.125,
+   "batchOutput": 0.75,
+   "reasoningPrice": 1.5,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video",
+    "file",
+    "audio"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.25,
+   "listOutput": 1.5
+  },
+  {
+   "id": "openai/gpt-chat-latest",
+   "slug": "openai-gpt-chat-latest",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT Chat Latest",
+   "created": "2026-05-05",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 5,
+   "output": 30,
+   "cacheRead": 0.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "mistralai/mistral-medium-3-5",
+   "slug": "mistralai-mistral-medium-3-5",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Medium 3.5",
+   "created": "2026-04-30",
+   "context": 262144,
+   "maxOutput": 209715,
+   "input": 1.5,
+   "output": 7.5,
+   "batchInput": 0.75,
+   "batchOutput": 3.75,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Mistral",
+   "verified": "match",
+   "listInput": 1.5,
+   "listOutput": 7.5
+  },
+  {
+   "id": "x-ai/grok-4.3",
+   "slug": "x-ai-grok-4-3",
+   "provider": "x-ai",
+   "providerName": "xAI",
+   "firstParty": true,
+   "name": "Grok 4.3",
+   "created": "2026-04-30",
+   "context": 1000000,
+   "maxOutput": 900000,
+   "input": 1.25,
+   "output": 2.5,
+   "cacheRead": 0.2,
+   "batchInput": 1,
+   "batchOutput": 2,
+   "webSearch": 0.005,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 2.5,
+     "output": 5,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Grok",
+   "verified": "match",
+   "listInput": 1.25,
+   "listOutput": 2.5
+  },
+  {
+   "id": "qwen/qwen3.5-plus-20260420",
+   "slug": "qwen-qwen3-5-plus-20260420",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.5 Plus 2026-04-20",
+   "created": "2026-04-27",
+   "context": 1000000,
+   "maxOutput": 65536,
+   "input": 0.3,
+   "output": 1.8,
+   "cacheWrite": 0.375,
+   "tiers": [
+    {
+     "minPromptTokens": 256000,
+     "input": 0.375,
+     "output": 2.25
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3.6-27b",
+   "slug": "qwen-qwen3-6-27b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.6 27B",
+   "created": "2026-04-27",
+   "context": 262144,
+   "maxOutput": 262140,
+   "input": 0.32,
+   "output": 3.25,
+   "cacheRead": 0.03,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3.6-27B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 27781427952,
+    "layers": 64,
+    "hidden": 5120,
+    "heads": 24,
+    "intermediate": 17408,
+    "vocab": 248320,
+    "kvHeads": 4,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "qwen/qwen3.6-35b-a3b",
+   "slug": "qwen-qwen3-6-35b-a3b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.6 35B A3B",
+   "created": "2026-04-27",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.15,
+   "output": 1,
+   "cacheRead": 0.05,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen3.6-35B-A3B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 35951822704,
+    "layers": 40,
+    "hidden": 2048,
+    "heads": 16,
+    "intermediate": 512,
+    "vocab": 248320,
+    "kvHeads": 2,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "qwen/qwen3.6-flash",
+   "slug": "qwen-qwen3-6-flash",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.6 Flash",
+   "created": "2026-04-27",
+   "context": 1000000,
+   "maxOutput": 65536,
+   "input": 0.1875,
+   "output": 1.125,
+   "cacheWrite": 0.234375,
+   "tiers": [
+    {
+     "minPromptTokens": 256000,
+     "input": 0.75,
+     "output": 3
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3.6-max-preview",
+   "slug": "qwen-qwen3-6-max-preview",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.6 Max Preview",
+   "created": "2026-04-27",
+   "context": 262144,
+   "maxOutput": 65536,
+   "input": 1.027,
+   "output": 6.162,
+   "cacheWrite": 1.28375,
+   "tiers": [
+    {
+     "minPromptTokens": 128000,
+     "input": 1.58,
+     "output": 9.48
+    }
+   ],
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "deepseek/deepseek-v4-flash",
+   "slug": "deepseek-deepseek-v4-flash",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V4 Flash 0423",
+   "created": "2026-04-24",
+   "context": 1048576,
+   "maxOutput": 943718,
+   "input": 0.0002,
+   "output": 1.28,
+   "cacheRead": 0.0002,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V4-Flash",
+   "verified": "mismatch",
+   "listInput": 0.3,
+   "listOutput": 1.2,
+   "arch": {
+    "params": 290944616402,
+    "layers": 43,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 2048,
+    "vocab": 129280,
+    "kvHeads": 1,
+    "headDim": 512,
+    "maxContext": 1048576,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v4-pro",
+   "slug": "deepseek-deepseek-v4-pro",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V4 Pro 0423",
+   "created": "2026-04-24",
+   "context": 1048576,
+   "maxOutput": 384000,
+   "input": 0.2088,
+   "output": 0.4176,
+   "cacheRead": 0.0174,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V4-Pro",
+   "verified": "mismatch",
+   "listInput": 1.32,
+   "listOutput": 3.96,
+   "arch": {
+    "params": 1598839674782,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 3072,
+    "vocab": 129280,
+    "kvHeads": 1,
+    "headDim": 512,
+    "maxContext": 1048576,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "openai/gpt-5.5",
+   "slug": "openai-gpt-5-5",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.5",
+   "created": "2026-04-24",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 5,
+   "output": 30,
+   "cacheRead": 0.5,
+   "batchInput": 2.5,
+   "batchOutput": 15,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 10,
+     "output": 45,
+     "cacheRead": 1
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 5,
+   "listOutput": 30
+  },
+  {
+   "id": "openai/gpt-5.5-pro",
+   "slug": "openai-gpt-5-5-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.5 Pro",
+   "created": "2026-04-24",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 30,
+   "output": 180,
+   "batchInput": 15,
+   "batchOutput": 90,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 60,
+     "output": 270
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 30,
+   "listOutput": 180
+  },
+  {
+   "id": "openai/gpt-5.4-image-2",
+   "slug": "openai-gpt-5-4-image-2",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.4 Image 2",
+   "created": "2026-04-21",
+   "context": 272000,
+   "maxOutput": 128000,
+   "input": 8,
+   "output": 15,
+   "cacheRead": 2,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "moonshotai/kimi-k2.6",
+   "slug": "moonshotai-kimi-k2-6",
+   "provider": "moonshotai",
+   "providerName": "Moonshot AI",
+   "firstParty": false,
+   "name": "Kimi K2.6",
+   "created": "2026-04-20",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.95,
+   "output": 4,
+   "cacheRead": 0.16,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "moonshotai/Kimi-K2.6",
+   "verified": "unchecked",
+   "arch": {
+    "params": 1026879376368,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 64,
+    "intermediate": 18432,
+    "vocab": 163840,
+    "kvHeads": 64,
+    "headDim": 112,
+    "maxContext": 262144,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "anthropic/claude-opus-4.7",
+   "slug": "anthropic-claude-opus-4-7",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Opus 4.7",
+   "created": "2026-04-16",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 5,
+   "output": 25,
+   "cacheRead": 0.5,
+   "cacheWrite": 6.25,
+   "cacheWrite1h": 10,
+   "batchInput": 2.5,
+   "batchOutput": 12.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 5,
+   "listOutput": 25
+  },
+  {
+   "id": "z-ai/glm-5.1",
+   "slug": "z-ai-glm-5-1",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5.1",
+   "created": "2026-04-07",
+   "context": 204800,
+   "maxOutput": 131072,
+   "input": 1.4,
+   "output": 4.4,
+   "cacheRead": 0.26,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-5.1",
+   "verified": "unchecked",
+   "arch": {
+    "params": 753864139008,
+    "layers": 78,
+    "hidden": 6144,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 154880,
+    "kvHeads": 64,
+    "headDim": 64,
+    "maxContext": 202752,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "google/gemma-4-26b-a4b-it",
+   "slug": "google-gemma-4-26b-a4b-it",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemma 4 26B A4B",
+   "created": "2026-04-03",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.09,
+   "output": 0.3,
+   "cacheRead": 0.05,
+   "inputModalities": [
+    "image",
+    "text",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemma",
+   "hfId": "google/gemma-4-26B-A4B-it",
+   "verified": "mismatch",
+   "listInput": 0,
+   "listOutput": 0,
+   "arch": {
+    "params": 25805936206,
+    "layers": 30,
+    "hidden": 2816,
+    "heads": 16,
+    "intermediate": 2112,
+    "vocab": 262144,
+    "kvHeads": 8,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "google/gemma-4-31b-it",
+   "slug": "google-gemma-4-31b-it",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemma 4 31B",
+   "created": "2026-04-02",
+   "context": 262144,
+   "maxOutput": 16384,
+   "input": 0.09,
+   "output": 0.34,
+   "cacheRead": 0.05,
+   "inputModalities": [
+    "image",
+    "text",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemma",
+   "hfId": "google/gemma-4-31B-it",
+   "verified": "mismatch",
+   "listInput": 0,
+   "listOutput": 0,
+   "arch": {
+    "params": 31273088876,
+    "layers": 60,
+    "hidden": 5376,
+    "heads": 32,
+    "intermediate": 21504,
+    "vocab": 262144,
+    "kvHeads": 16,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "qwen/qwen3.6-plus",
+   "slug": "qwen-qwen3-6-plus",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.6 Plus",
+   "created": "2026-04-02",
+   "context": 1000000,
+   "maxOutput": 65536,
+   "input": 0.325,
+   "output": 1.95,
+   "cacheWrite": 0.40625,
+   "tiers": [
+    {
+     "minPromptTokens": 256000,
+     "input": 1.3,
+     "output": 3.9
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "z-ai/glm-5v-turbo",
+   "slug": "z-ai-glm-5v-turbo",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5V Turbo",
+   "created": "2026-04-01",
+   "context": 202752,
+   "maxOutput": 131072,
+   "input": 1.2,
+   "output": 4,
+   "cacheRead": 0.24,
+   "inputModalities": [
+    "image",
+    "text",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "unchecked"
+  },
+  {
+   "id": "x-ai/grok-4.20",
+   "slug": "x-ai-grok-4-20",
+   "provider": "x-ai",
+   "providerName": "xAI",
+   "firstParty": true,
+   "name": "Grok 4.20",
+   "created": "2026-03-31",
+   "context": 2000000,
+   "maxOutput": 1800000,
+   "input": 1.25,
+   "output": 2.5,
+   "cacheRead": 0.2,
+   "webSearch": 0.005,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 2.5,
+     "output": 5,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Grok",
+   "verified": "match",
+   "listInput": 1.25,
+   "listOutput": 2.5
+  },
+  {
+   "id": "x-ai/grok-4.20-multi-agent",
+   "slug": "x-ai-grok-4-20-multi-agent",
+   "provider": "x-ai",
+   "providerName": "xAI",
+   "firstParty": true,
+   "name": "Grok 4.20 Multi-Agent",
+   "created": "2026-03-31",
+   "context": 2000000,
+   "maxOutput": 1800000,
+   "input": 1.25,
+   "output": 2.5,
+   "cacheRead": 0.2,
+   "webSearch": 0.005,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 2.5,
+     "output": 5,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Grok",
+   "verified": "match",
+   "listInput": 1.25,
+   "listOutput": 2.5
+  },
+  {
+   "id": "minimax/minimax-m2.7",
+   "slug": "minimax-minimax-m2-7",
+   "provider": "minimax",
+   "providerName": "MiniMax",
+   "firstParty": false,
+   "name": "MiniMax M2.7",
+   "created": "2026-03-18",
+   "context": 204800,
+   "maxOutput": 176947,
+   "input": 0.21,
+   "output": 0.84,
+   "cacheRead": 0.042,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "MiniMaxAI/MiniMax-M2.7",
+   "verified": "unchecked",
+   "arch": {
+    "params": 228689764864,
+    "layers": 62,
+    "hidden": 3072,
+    "heads": 48,
+    "intermediate": 1536,
+    "vocab": 200064,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 204800,
+    "moe": true
+   }
+  },
+  {
+   "id": "openai/gpt-5.4-mini",
+   "slug": "openai-gpt-5-4-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.4 Mini",
+   "created": "2026-03-17",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 0.75,
+   "output": 4.5,
+   "cacheRead": 0.075,
+   "batchInput": 0.375,
+   "batchOutput": 2.25,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.75,
+   "listOutput": 4.5
+  },
+  {
+   "id": "openai/gpt-5.4-nano",
+   "slug": "openai-gpt-5-4-nano",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.4 Nano",
+   "created": "2026-03-17",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 0.2,
+   "output": 1.25,
+   "cacheRead": 0.02,
+   "batchInput": 0.1,
+   "batchOutput": 0.625,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.2,
+   "listOutput": 1.25
+  },
+  {
+   "id": "mistralai/mistral-small-2603",
+   "slug": "mistralai-mistral-small-2603",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Small 4",
+   "created": "2026-03-16",
+   "context": 262144,
+   "maxOutput": 209715,
+   "input": 0.15,
+   "output": 0.6,
+   "cacheRead": 0.015,
+   "batchInput": 0.075,
+   "batchOutput": 0.3,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Mistral-Small-4-119B-2603",
+   "verified": "match",
+   "listInput": 0.15,
+   "listOutput": 0.6,
+   "arch": {
+    "params": 119401317952,
+    "layers": 36,
+    "hidden": 4096,
+    "heads": 32,
+    "intermediate": 12288,
+    "vocab": 131072,
+    "kvHeads": 32,
+    "headDim": 128,
+    "maxContext": 1048576,
+    "moe": true,
+    "mlaDim": 320
+   }
+  },
+  {
+   "id": "z-ai/glm-5-turbo",
+   "slug": "z-ai-glm-5-turbo",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5 Turbo",
+   "created": "2026-03-15",
+   "context": 202752,
+   "maxOutput": 131072,
+   "input": 1.2,
+   "output": 4,
+   "cacheRead": 0.24,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "unchecked"
+  },
+  {
+   "id": "nvidia/nemotron-3-super-120b-a12b",
+   "slug": "nvidia-nemotron-3-super-120b-a12b",
+   "provider": "nvidia",
+   "providerName": "NVIDIA",
+   "firstParty": false,
+   "name": "Nemotron 3 Super",
+   "created": "2026-03-11",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.08,
+   "output": 0.45,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+   "verified": "unchecked",
+   "arch": {
+    "params": 123611012096,
+    "layers": 88,
+    "hidden": 4096,
+    "heads": 32,
+    "intermediate": 2688,
+    "vocab": 131072,
+    "kvHeads": 2,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "qwen/qwen3.5-9b",
+   "slug": "qwen-qwen3-5-9b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.5-9B",
+   "created": "2026-03-10",
+   "context": 262144,
+   "maxOutput": 32768,
+   "input": 0.1,
+   "output": 0.15,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3.5-9B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 9653104368,
+    "layers": 32,
+    "hidden": 4096,
+    "heads": 16,
+    "intermediate": 12288,
+    "vocab": 248320,
+    "kvHeads": 4,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "openai/gpt-5.4",
+   "slug": "openai-gpt-5-4",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.4",
+   "created": "2026-03-05",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2.5,
+   "output": 15,
+   "cacheRead": 0.25,
+   "batchInput": 1.25,
+   "batchOutput": 7.5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 5,
+     "output": 22.5,
+     "cacheRead": 0.5
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2.5,
+   "listOutput": 15
+  },
+  {
+   "id": "openai/gpt-5.4-pro",
+   "slug": "openai-gpt-5-4-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.4 Pro",
+   "created": "2026-03-05",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 30,
+   "output": 180,
+   "batchInput": 15,
+   "batchOutput": 90,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 60,
+     "output": 270
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 30,
+   "listOutput": 180
+  },
+  {
+   "id": "google/gemini-3.1-flash-lite-preview",
+   "slug": "google-gemini-3-1-flash-lite-preview",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.1 Flash Lite Preview",
+   "created": "2026-03-03",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 0.25,
+   "output": 1.5,
+   "cacheRead": 0.025,
+   "cacheWrite": 0.083333,
+   "reasoningPrice": 1.5,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video",
+    "file",
+    "audio"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.25,
+   "listOutput": 1.5
+  },
+  {
+   "id": "google/gemini-3.1-flash-image-preview",
+   "slug": "google-gemini-3-1-flash-image-preview",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
+   "created": "2026-02-26",
+   "context": 65536,
+   "maxOutput": 58982,
+   "input": 0.5,
+   "output": 3,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.5,
+   "listOutput": 3
+  },
+  {
+   "id": "google/gemini-3.1-pro-preview-customtools",
+   "slug": "google-gemini-3-1-pro-preview-customtools",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.1 Pro Preview Custom Tools",
+   "created": "2026-02-25",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 2,
+   "output": 12,
+   "cacheRead": 0.2,
+   "cacheWrite": 0.375,
+   "reasoningPrice": 12,
+   "webSearch": 0.014,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 4,
+     "output": 18,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "audio",
+    "image",
+    "video",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 12
+  },
+  {
+   "id": "qwen/qwen3.5-122b-a10b",
+   "slug": "qwen-qwen3-5-122b-a10b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.5-122B-A10B",
+   "created": "2026-02-25",
+   "context": 262144,
+   "maxOutput": 65536,
+   "input": 0.26,
+   "output": 2.08,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3.5-122B-A10B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 125086497008,
+    "layers": 48,
+    "hidden": 3072,
+    "heads": 32,
+    "intermediate": 1024,
+    "vocab": 248320,
+    "kvHeads": 2,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "qwen/qwen3.5-27b",
+   "slug": "qwen-qwen3-5-27b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.5-27B",
+   "created": "2026-02-25",
+   "context": 262144,
+   "maxOutput": 65536,
+   "input": 0.195,
+   "output": 1.56,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3.5-27B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 27781427952,
+    "layers": 64,
+    "hidden": 5120,
+    "heads": 24,
+    "intermediate": 17408,
+    "vocab": 248320,
+    "kvHeads": 4,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "qwen/qwen3.5-35b-a3b",
+   "slug": "qwen-qwen3-5-35b-a3b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.5-35B-A3B",
+   "created": "2026-02-25",
+   "context": 262144,
+   "maxOutput": 32768,
+   "input": 0.08,
+   "output": 0.75,
+   "cacheRead": 0.04,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3.5-35B-A3B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 35951822704,
+    "layers": 40,
+    "hidden": 2048,
+    "heads": 16,
+    "intermediate": 512,
+    "vocab": 248320,
+    "kvHeads": 2,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "qwen/qwen3.5-flash-02-23",
+   "slug": "qwen-qwen3-5-flash-02-23",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.5-Flash",
+   "created": "2026-02-25",
+   "context": 1000000,
+   "maxOutput": 65536,
+   "input": 0.065,
+   "output": 0.26,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-5.3-codex",
+   "slug": "openai-gpt-5-3-codex",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.3-Codex",
+   "created": "2026-02-24",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 1.75,
+   "output": 14,
+   "cacheRead": 0.175,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.75,
+   "listOutput": 14
+  },
+  {
+   "id": "google/gemini-3.1-pro-preview",
+   "slug": "google-gemini-3-1-pro-preview",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3.1 Pro Preview",
+   "created": "2026-02-19",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 2,
+   "output": 12,
+   "cacheRead": 0.2,
+   "cacheWrite": 0.375,
+   "batchInput": 1,
+   "batchOutput": 6,
+   "reasoningPrice": 12,
+   "webSearch": 0.014,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 4,
+     "output": 18,
+     "cacheRead": 0.4
+    }
+   ],
+   "inputModalities": [
+    "audio",
+    "file",
+    "image",
+    "text",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 12
+  },
+  {
+   "id": "anthropic/claude-sonnet-4.6",
+   "slug": "anthropic-claude-sonnet-4-6",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Sonnet 4.6",
+   "created": "2026-02-17",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 3,
+   "output": 15,
+   "cacheRead": 0.3,
+   "cacheWrite": 3.75,
+   "cacheWrite1h": 6,
+   "batchInput": 1.5,
+   "batchOutput": 7.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 3,
+   "listOutput": 15
+  },
+  {
+   "id": "qwen/qwen3.5-397b-a17b",
+   "slug": "qwen-qwen3-5-397b-a17b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.5 397B A17B",
+   "created": "2026-02-16",
+   "context": 262144,
+   "maxOutput": 81920,
+   "input": 0.45,
+   "output": 3,
+   "cacheRead": 0.22,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3.5-397B-A17B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 403397928944,
+    "layers": 60,
+    "hidden": 4096,
+    "heads": 32,
+    "intermediate": 1024,
+    "vocab": 248320,
+    "kvHeads": 2,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "qwen/qwen3.5-plus-02-15",
+   "slug": "qwen-qwen3-5-plus-02-15",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3.5 Plus 2026-02-15",
+   "created": "2026-02-16",
+   "context": 1000000,
+   "maxOutput": 65536,
+   "input": 0.26,
+   "output": 1.56,
+   "tiers": [
+    {
+     "minPromptTokens": 256000,
+     "input": 0.325,
+     "output": 1.95
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "minimax/minimax-m2.5",
+   "slug": "minimax-minimax-m2-5",
+   "provider": "minimax",
+   "providerName": "MiniMax",
+   "firstParty": false,
+   "name": "MiniMax M2.5",
+   "created": "2026-02-12",
+   "context": 204800,
+   "maxOutput": 128000,
+   "input": 0.27,
+   "output": 1.08,
+   "cacheRead": 0.027,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "MiniMaxAI/MiniMax-M2.5",
+   "verified": "unchecked",
+   "arch": {
+    "params": 228703644928,
+    "layers": 62,
+    "hidden": 3072,
+    "heads": 48,
+    "intermediate": 1536,
+    "vocab": 200064,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 196608,
+    "moe": true
+   }
+  },
+  {
+   "id": "z-ai/glm-5",
+   "slug": "z-ai-glm-5",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5",
+   "created": "2026-02-11",
+   "context": 204800,
+   "maxOutput": 128000,
+   "input": 0.6,
+   "output": 1.92,
+   "cacheRead": 0.12,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-5",
+   "verified": "unchecked",
+   "arch": {
+    "params": 753864139008,
+    "layers": 78,
+    "hidden": 6144,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 154880,
+    "kvHeads": 64,
+    "headDim": 64,
+    "maxContext": 202752,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "qwen/qwen3-max-thinking",
+   "slug": "qwen-qwen3-max-thinking",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Max Thinking",
+   "created": "2026-02-09",
+   "context": 262144,
+   "maxOutput": 65536,
+   "input": 0.78,
+   "output": 3.9,
+   "tiers": [
+    {
+     "minPromptTokens": 32000,
+     "input": 1.56,
+     "output": 7.8
+    },
+    {
+     "minPromptTokens": 128000,
+     "input": 1.95,
+     "output": 9.75
+    }
+   ],
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "anthropic/claude-opus-4.6",
+   "slug": "anthropic-claude-opus-4-6",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Opus 4.6",
+   "created": "2026-02-04",
+   "context": 1000000,
+   "maxOutput": 128000,
+   "input": 5,
+   "output": 25,
+   "cacheRead": 0.5,
+   "cacheWrite": 6.25,
+   "cacheWrite1h": 10,
+   "batchInput": 2.5,
+   "batchOutput": 12.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 5,
+   "listOutput": 25
+  },
+  {
+   "id": "qwen/qwen3-coder-next",
+   "slug": "qwen-qwen3-coder-next",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Coder Next",
+   "created": "2026-02-04",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.12,
+   "output": 0.8,
+   "cacheRead": 0.07,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen3-Coder-Next",
+   "verified": "unchecked",
+   "arch": {
+    "params": 79674391296,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 16,
+    "intermediate": 5120,
+    "vocab": 151936,
+    "kvHeads": 2,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "moonshotai/kimi-k2.5",
+   "slug": "moonshotai-kimi-k2-5",
+   "provider": "moonshotai",
+   "providerName": "Moonshot AI",
+   "firstParty": false,
+   "name": "Kimi K2.5",
+   "created": "2026-01-27",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.45,
+   "output": 2.25,
+   "cacheRead": 0.07,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "moonshotai/Kimi-K2.5",
+   "verified": "unchecked",
+   "arch": {
+    "params": 1026879376368,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 64,
+    "intermediate": 18432,
+    "vocab": 163840,
+    "kvHeads": 64,
+    "headDim": 112,
+    "maxContext": 262144,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "minimax/minimax-m2-her",
+   "slug": "minimax-minimax-m2-her",
+   "provider": "minimax",
+   "providerName": "MiniMax",
+   "firstParty": false,
+   "name": "MiniMax M2-her",
+   "created": "2026-01-23",
+   "context": 65536,
+   "maxOutput": 2048,
+   "input": 0.3,
+   "output": 1.2,
+   "cacheRead": 0.03,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-audio",
+   "slug": "openai-gpt-audio",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT Audio",
+   "created": "2026-01-19",
+   "context": 128000,
+   "maxOutput": 16384,
+   "input": 2.5,
+   "output": 10,
+   "inputModalities": [
+    "text",
+    "audio"
+   ],
+   "outputModalities": [
+    "text",
+    "audio"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2.5,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-audio-mini",
+   "slug": "openai-gpt-audio-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT Audio Mini",
+   "created": "2026-01-19",
+   "context": 128000,
+   "maxOutput": 16384,
+   "input": 0.6,
+   "output": 2.4,
+   "inputModalities": [
+    "text",
+    "audio"
+   ],
+   "outputModalities": [
+    "text",
+    "audio"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.6,
+   "listOutput": 2.4
+  },
+  {
+   "id": "z-ai/glm-4.7-flash",
+   "slug": "z-ai-glm-4-7-flash",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 4.7 Flash",
+   "created": "2026-01-19",
+   "context": 200000,
+   "maxOutput": 117964,
+   "input": 0.0605,
+   "output": 0.4,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-4.7-Flash",
+   "verified": "unchecked",
+   "arch": {
+    "params": 31221488576,
+    "layers": 47,
+    "hidden": 2048,
+    "heads": 20,
+    "intermediate": 10240,
+    "vocab": 154880,
+    "kvHeads": 20,
+    "headDim": 102,
+    "maxContext": 202752,
+    "moe": true,
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "openai/gpt-5.2-codex",
+   "slug": "openai-gpt-5-2-codex",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.2-Codex",
+   "created": "2026-01-14",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 1.75,
+   "output": 14,
+   "cacheRead": 0.175,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.75,
+   "listOutput": 14
+  },
+  {
+   "id": "minimax/minimax-m2.1",
+   "slug": "minimax-minimax-m2-1",
+   "provider": "minimax",
+   "providerName": "MiniMax",
+   "firstParty": false,
+   "name": "MiniMax M2.1",
+   "created": "2025-12-23",
+   "context": 204800,
+   "maxOutput": 131072,
+   "input": 0.3,
+   "output": 1.2,
+   "cacheRead": 0.03,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "MiniMaxAI/MiniMax-M2.1",
+   "verified": "unchecked",
+   "arch": {
+    "params": 228689764864,
+    "layers": 62,
+    "hidden": 3072,
+    "heads": 48,
+    "intermediate": 1536,
+    "vocab": 200064,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 196608,
+    "moe": true
+   }
+  },
+  {
+   "id": "z-ai/glm-4.7",
+   "slug": "z-ai-glm-4-7",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 4.7",
+   "created": "2025-12-22",
+   "context": 204800,
+   "maxOutput": 131072,
+   "input": 0.6,
+   "output": 2.2,
+   "cacheRead": 0.11,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-4.7",
+   "verified": "unchecked",
+   "arch": {
+    "params": 358337791296,
+    "layers": 92,
+    "hidden": 5120,
+    "heads": 96,
+    "intermediate": 12288,
+    "vocab": 151552,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 202752,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "google/gemini-3-flash-preview",
+   "slug": "google-gemini-3-flash-preview",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 3 Flash Preview",
+   "created": "2025-12-17",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 0.5,
+   "output": 3,
+   "cacheRead": 0.05,
+   "cacheWrite": 0.083333,
+   "batchInput": 0.25,
+   "batchOutput": 1.5,
+   "reasoningPrice": 3,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "file",
+    "audio",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.5,
+   "listOutput": 3
+  },
+  {
+   "id": "nvidia/nemotron-3-nano-30b-a3b",
+   "slug": "nvidia-nemotron-3-nano-30b-a3b",
+   "provider": "nvidia",
+   "providerName": "NVIDIA",
+   "firstParty": false,
+   "name": "Nemotron 3 Nano 30B A3B",
+   "created": "2025-12-14",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.05,
+   "output": 0.2,
+   "cacheRead": 0.03,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+   "verified": "unchecked",
+   "arch": {
+    "params": 31577937344,
+    "layers": 52,
+    "hidden": 2688,
+    "heads": 32,
+    "intermediate": 1856,
+    "vocab": 131072,
+    "kvHeads": 2,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "openai/gpt-5.2",
+   "slug": "openai-gpt-5-2",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.2",
+   "created": "2025-12-10",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 1.75,
+   "output": 14,
+   "cacheRead": 0.175,
+   "batchInput": 0.875,
+   "batchOutput": 7,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.75,
+   "listOutput": 14
+  },
+  {
+   "id": "openai/gpt-5.2-chat",
+   "slug": "openai-gpt-5-2-chat",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.2 Chat",
+   "created": "2025-12-10",
+   "context": 128000,
+   "maxOutput": 32000,
+   "input": 1.75,
+   "output": 14,
+   "cacheRead": 0.175,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-5.2-pro",
+   "slug": "openai-gpt-5-2-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.2 Pro",
+   "created": "2025-12-10",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 21,
+   "output": 168,
+   "batchInput": 10.5,
+   "batchOutput": 84,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 21,
+   "listOutput": 168
+  },
+  {
+   "id": "mistralai/devstral-2512",
+   "slug": "mistralai-devstral-2512",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Devstral 2 2512",
+   "created": "2025-12-09",
+   "context": 262144,
+   "maxOutput": 209715,
+   "input": 0.4,
+   "output": 2,
+   "cacheRead": 0.04,
+   "inputModalities": [
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Devstral-2-123B-Instruct-2512",
+   "verified": "unchecked",
+   "arch": {
+    "params": 125025989840,
+    "layers": 88,
+    "hidden": 12288,
+    "heads": 96,
+    "intermediate": 28672,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "z-ai/glm-4.6v",
+   "slug": "z-ai-glm-4-6v",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 4.6V",
+   "created": "2025-12-08",
+   "context": 131072,
+   "maxOutput": 32768,
+   "input": 0.3,
+   "output": 0.9,
+   "cacheRead": 0.05,
+   "inputModalities": [
+    "image",
+    "text",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-4.6V",
+   "verified": "unchecked",
+   "arch": {
+    "params": 107710933120,
+    "layers": 46,
+    "hidden": 4096,
+    "heads": 96,
+    "intermediate": 10944,
+    "vocab": 151552,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 131072,
+    "moe": true
+   }
+  },
+  {
+   "id": "openai/gpt-5.1-codex-max",
+   "slug": "openai-gpt-5-1-codex-max",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.1-Codex-Max",
+   "created": "2025-12-04",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 1.25,
+   "output": 10,
+   "cacheRead": 0.125,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.25,
+   "listOutput": 10
+  },
+  {
+   "id": "amazon/nova-2-lite-v1",
+   "slug": "amazon-nova-2-lite-v1",
+   "provider": "amazon",
+   "providerName": "Amazon",
+   "firstParty": true,
+   "name": "Nova 2 Lite",
+   "created": "2025-12-02",
+   "context": 1000000,
+   "maxOutput": 65535,
+   "input": 0.3,
+   "output": 2.5,
+   "inputModalities": [
+    "text",
+    "image",
+    "video",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Nova",
+   "verified": "unchecked"
+  },
+  {
+   "id": "mistralai/ministral-14b-2512",
+   "slug": "mistralai-ministral-14b-2512",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Ministral 3 14B 2512",
+   "created": "2025-12-02",
+   "context": 262144,
+   "maxOutput": 209715,
+   "input": 0.2,
+   "output": 0.2,
+   "cacheRead": 0.02,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Ministral-3-14B-Instruct-2512",
+   "verified": "match",
+   "listInput": 0.2,
+   "listOutput": 0.2,
+   "arch": {
+    "params": 13945032240,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 32,
+    "intermediate": 16384,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "mistralai/ministral-3b-2512",
+   "slug": "mistralai-ministral-3b-2512",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Ministral 3 3B 2512",
+   "created": "2025-12-02",
+   "context": 131072,
+   "maxOutput": 104857,
+   "input": 0.1,
+   "output": 0.1,
+   "cacheRead": 0.01,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Ministral-3-3B-Instruct-2512",
+   "verified": "match",
+   "listInput": 0.1,
+   "listOutput": 0.1,
+   "arch": {
+    "params": 3849090048,
+    "layers": 26,
+    "hidden": 3072,
+    "heads": 32,
+    "intermediate": 9216,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "mistralai/ministral-8b-2512",
+   "slug": "mistralai-ministral-8b-2512",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Ministral 3 8B 2512",
+   "created": "2025-12-02",
+   "context": 262144,
+   "maxOutput": 209715,
+   "input": 0.15,
+   "output": 0.15,
+   "cacheRead": 0.015,
+   "batchInput": 0.075,
+   "batchOutput": 0.075,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Ministral-3-8B-Instruct-2512",
+   "verified": "match",
+   "listInput": 0.15,
+   "listOutput": 0.15,
+   "arch": {
+    "params": 8918026716,
+    "layers": 34,
+    "hidden": 4096,
+    "heads": 32,
+    "intermediate": 14336,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v3.2",
+   "slug": "deepseek-deepseek-v3-2",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V3.2",
+   "created": "2025-12-01",
+   "context": 163840,
+   "maxOutput": 65536,
+   "input": 0.28,
+   "output": 0.42,
+   "cacheRead": 0.028,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V3.2",
+   "verified": "mismatch",
+   "listInput": 0.28,
+   "listOutput": 0.4,
+   "arch": {
+    "params": 685355329792,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 18432,
+    "vocab": 129280,
+    "kvHeads": 128,
+    "headDim": 56,
+    "maxContext": 163840,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "mistralai/mistral-large-2512",
+   "slug": "mistralai-mistral-large-2512",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Large 3 2512",
+   "created": "2025-12-01",
+   "context": 262144,
+   "maxOutput": 209715,
+   "input": 0.5,
+   "output": 1.5,
+   "cacheRead": 0.05,
+   "batchInput": 0.25,
+   "batchOutput": 0.75,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "verified": "match",
+   "listInput": 0.5,
+   "listOutput": 1.5
+  },
+  {
+   "id": "anthropic/claude-opus-4.5",
+   "slug": "anthropic-claude-opus-4-5",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Opus 4.5",
+   "created": "2025-11-24",
+   "context": 200000,
+   "maxOutput": 64000,
+   "input": 5,
+   "output": 25,
+   "cacheRead": 0.5,
+   "cacheWrite": 6.25,
+   "cacheWrite1h": 10,
+   "batchInput": 2.5,
+   "batchOutput": 12.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 5,
+   "listOutput": 25
+  },
+  {
+   "id": "google/gemini-3-pro-image-preview",
+   "slug": "google-gemini-3-pro-image-preview",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Nano Banana Pro (Gemini 3 Pro Image Preview)",
+   "created": "2025-11-20",
+   "context": 65536,
+   "maxOutput": 32768,
+   "input": 2,
+   "output": 12,
+   "cacheRead": 0.2,
+   "cacheWrite": 0.375,
+   "reasoningPrice": 12,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 12
+  },
+  {
+   "id": "openai/gpt-5.1",
+   "slug": "openai-gpt-5-1",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.1",
+   "created": "2025-11-13",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 1.25,
+   "output": 10,
+   "cacheRead": 0.125,
+   "batchInput": 0.625,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.25,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-5.1-codex",
+   "slug": "openai-gpt-5-1-codex",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.1-Codex",
+   "created": "2025-11-13",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 1.25,
+   "output": 10,
+   "cacheRead": 0.13,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.25,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-5.1-codex-mini",
+   "slug": "openai-gpt-5-1-codex-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5.1-Codex-Mini",
+   "created": "2025-11-13",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 0.25,
+   "output": 2,
+   "cacheRead": 0.03,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.25,
+   "listOutput": 2
+  },
+  {
+   "id": "moonshotai/kimi-k2-thinking",
+   "slug": "moonshotai-kimi-k2-thinking",
+   "provider": "moonshotai",
+   "providerName": "Moonshot AI",
+   "firstParty": false,
+   "name": "Kimi K2 Thinking",
+   "created": "2025-11-06",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.6,
+   "output": 2.5,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "moonshotai/Kimi-K2-Thinking",
+   "verified": "unchecked",
+   "arch": {
+    "params": 1026408240256,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 64,
+    "intermediate": 18432,
+    "vocab": 163840,
+    "kvHeads": 64,
+    "headDim": 112,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "amazon/nova-premier-v1",
+   "slug": "amazon-nova-premier-v1",
+   "provider": "amazon",
+   "providerName": "Amazon",
+   "firstParty": true,
+   "name": "Nova Premier 1.0",
+   "created": "2025-10-31",
+   "context": 1000000,
+   "maxOutput": 32000,
+   "input": 2.5,
+   "output": 12.5,
+   "cacheRead": 0.625,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Nova",
+   "verified": "unchecked"
+  },
+  {
+   "id": "mistralai/voxtral-small-24b-2507",
+   "slug": "mistralai-voxtral-small-24b-2507",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Voxtral Small 24B 2507",
+   "created": "2025-10-30",
+   "context": 32768,
+   "maxOutput": 26214,
+   "input": 0.1,
+   "output": 0.3,
+   "cacheRead": 0.01,
+   "inputModalities": [
+    "text",
+    "audio",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Voxtral-Small-24B-2507",
+   "verified": "unchecked",
+   "arch": {
+    "params": 24261800960,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 32,
+    "intermediate": 32768,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 131072,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "perplexity/sonar-pro-search",
+   "slug": "perplexity-sonar-pro-search",
+   "provider": "perplexity",
+   "providerName": "Perplexity",
+   "firstParty": true,
+   "name": "Sonar Pro Search",
+   "created": "2025-10-30",
+   "context": 200000,
+   "maxOutput": 8000,
+   "input": 3,
+   "output": 15,
+   "webSearch": 0.018,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-oss-safeguard-20b",
+   "slug": "openai-gpt-oss-safeguard-20b",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "gpt-oss-safeguard-20b",
+   "created": "2025-10-29",
+   "context": 131072,
+   "maxOutput": 65536,
+   "input": 0.075,
+   "output": 0.3,
+   "cacheRead": 0.0375,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "hfId": "openai/gpt-oss-safeguard-20b",
+   "verified": "unchecked",
+   "arch": {
+    "params": 21511953984,
+    "layers": 24,
+    "hidden": 2880,
+    "heads": 64,
+    "intermediate": 2880,
+    "vocab": 201088,
+    "kvHeads": 8,
+    "headDim": 64,
+    "maxContext": 131072,
+    "moe": true
+   }
+  },
+  {
+   "id": "minimax/minimax-m2",
+   "slug": "minimax-minimax-m2",
+   "provider": "minimax",
+   "providerName": "MiniMax",
+   "firstParty": false,
+   "name": "MiniMax M2",
+   "created": "2025-10-23",
+   "context": 204800,
+   "maxOutput": 176947,
+   "input": 0.3,
+   "output": 1.2,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "MiniMaxAI/MiniMax-M2",
+   "verified": "unchecked",
+   "arch": {
+    "params": 228689764864,
+    "layers": 62,
+    "hidden": 3072,
+    "heads": 48,
+    "intermediate": 1536,
+    "vocab": 200064,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 196608,
+    "moe": true
+   }
+  },
+  {
+   "id": "qwen/qwen3-vl-32b-instruct",
+   "slug": "qwen-qwen3-vl-32b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 VL 32B Instruct",
+   "created": "2025-10-23",
+   "context": 131072,
+   "maxOutput": 32768,
+   "input": 0.104,
+   "output": 0.416,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen3-VL-32B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 33357390064,
+    "layers": 64,
+    "hidden": 5120,
+    "heads": 64,
+    "intermediate": 25600,
+    "vocab": 151936,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "openai/gpt-5-image-mini",
+   "slug": "openai-gpt-5-image-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5 Image Mini",
+   "created": "2025-10-16",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 2.5,
+   "output": 2,
+   "cacheRead": 0.25,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "anthropic/claude-haiku-4.5",
+   "slug": "anthropic-claude-haiku-4-5",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Haiku 4.5",
+   "created": "2025-10-15",
+   "context": 200000,
+   "maxOutput": 64000,
+   "input": 1,
+   "output": 5,
+   "cacheRead": 0.1,
+   "cacheWrite": 1.25,
+   "cacheWrite1h": 2,
+   "batchInput": 0.5,
+   "batchOutput": 2.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 1,
+   "listOutput": 5
+  },
+  {
+   "id": "openai/gpt-5-image",
+   "slug": "openai-gpt-5-image",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5 Image",
+   "created": "2025-10-14",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 10,
+   "output": 10,
+   "cacheRead": 1.25,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3-vl-8b-instruct",
+   "slug": "qwen-qwen3-vl-8b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 VL 8B Instruct",
+   "created": "2025-10-14",
+   "context": 262144,
+   "maxOutput": 32768,
+   "input": 0.117,
+   "output": 0.455,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-VL-8B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 8767123696,
+    "layers": 36,
+    "hidden": 4096,
+    "heads": 32,
+    "intermediate": 12288,
+    "vocab": 151936,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "qwen/qwen3-vl-8b-thinking",
+   "slug": "qwen-qwen3-vl-8b-thinking",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 VL 8B Thinking",
+   "created": "2025-10-14",
+   "context": 131072,
+   "maxOutput": 32768,
+   "input": 0.18,
+   "output": 2.1,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-VL-8B-Thinking",
+   "verified": "unchecked",
+   "arch": {
+    "params": 8767123696,
+    "layers": 36,
+    "hidden": 4096,
+    "heads": 32,
+    "intermediate": 12288,
+    "vocab": 151936,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": false
+   }
+  },
+  {
+   "id": "google/gemini-2.5-flash-image",
+   "slug": "google-gemini-2-5-flash-image",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Nano Banana (Gemini 2.5 Flash Image)",
+   "created": "2025-10-07",
+   "context": 32768,
+   "maxOutput": 8192,
+   "input": 0.3,
+   "output": 2.5,
+   "cacheRead": 0.03,
+   "cacheWrite": 0.083333,
+   "reasoningPrice": 2.5,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "image",
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.3,
+   "listOutput": 2.5
+  },
+  {
+   "id": "openai/gpt-5-pro",
+   "slug": "openai-gpt-5-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5 Pro",
+   "created": "2025-10-06",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 15,
+   "output": 120,
+   "batchInput": 7.5,
+   "batchOutput": 60,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 15,
+   "listOutput": 120
+  },
+  {
+   "id": "qwen/qwen3-vl-30b-a3b-instruct",
+   "slug": "qwen-qwen3-vl-30b-a3b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 VL 30B A3B Instruct",
+   "created": "2025-10-06",
+   "context": 262144,
+   "maxOutput": 16384,
+   "input": 0.15,
+   "output": 0.6,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 31070754032,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 32,
+    "intermediate": 6144,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "qwen/qwen3-vl-30b-a3b-thinking",
+   "slug": "qwen-qwen3-vl-30b-a3b-thinking",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 VL 30B A3B Thinking",
+   "created": "2025-10-06",
+   "context": 262144,
+   "maxOutput": 32768,
+   "input": 0.2,
+   "output": 2.4,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-VL-30B-A3B-Thinking",
+   "verified": "unchecked",
+   "arch": {
+    "params": 31070754032,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 32,
+    "intermediate": 6144,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "z-ai/glm-4.6",
+   "slug": "z-ai-glm-4-6",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 4.6",
+   "created": "2025-09-30",
+   "context": 204800,
+   "maxOutput": 16384,
+   "input": 0.43,
+   "output": 1.75,
+   "cacheRead": 0.08,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-4.6",
+   "verified": "unchecked",
+   "arch": {
+    "params": 356785898816,
+    "layers": 92,
+    "hidden": 5120,
+    "heads": 96,
+    "intermediate": 12288,
+    "vocab": 151552,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 202752,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "anthropic/claude-sonnet-4.5",
+   "slug": "anthropic-claude-sonnet-4-5",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Sonnet 4.5",
+   "created": "2025-09-29",
+   "context": 1000000,
+   "maxOutput": 64000,
+   "input": 3,
+   "output": 15,
+   "cacheRead": 0.3,
+   "cacheWrite": 3.75,
+   "cacheWrite1h": 6,
+   "batchInput": 1.5,
+   "batchOutput": 7.5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 6,
+     "output": 22.5,
+     "cacheRead": 0.6
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "match",
+   "listInput": 3,
+   "listOutput": 15
+  },
+  {
+   "id": "deepseek/deepseek-v3.2-exp",
+   "slug": "deepseek-deepseek-v3-2-exp",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V3.2 Exp",
+   "created": "2025-09-29",
+   "context": 163840,
+   "maxOutput": 147456,
+   "input": 0.27,
+   "output": 0.41,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V3.2-Exp",
+   "verified": "unchecked",
+   "arch": {
+    "params": 685396921376,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 18432,
+    "vocab": 129280,
+    "kvHeads": 128,
+    "headDim": 56,
+    "maxContext": 163840,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "qwen/qwen3-coder-plus",
+   "slug": "qwen-qwen3-coder-plus",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Coder Plus",
+   "created": "2025-09-23",
+   "context": 1000000,
+   "maxOutput": 65536,
+   "input": 0.65,
+   "output": 3.25,
+   "cacheRead": 0.13,
+   "cacheWrite": 0.8125,
+   "tiers": [
+    {
+     "minPromptTokens": 32000,
+     "input": 1.17,
+     "output": 5.85,
+     "cacheRead": 0.234
+    },
+    {
+     "minPromptTokens": 128000,
+     "input": 1.95,
+     "output": 9.75,
+     "cacheRead": 0.39
+    }
+   ],
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3-max",
+   "slug": "qwen-qwen3-max",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Max",
+   "created": "2025-09-23",
+   "context": 262144,
+   "maxOutput": 65536,
+   "input": 0.78,
+   "output": 3.9,
+   "cacheRead": 0.156,
+   "cacheWrite": 0.975,
+   "tiers": [
+    {
+     "minPromptTokens": 32000,
+     "input": 1.56,
+     "output": 7.8,
+     "cacheRead": 0.312
+    },
+    {
+     "minPromptTokens": 128000,
+     "input": 1.95,
+     "output": 9.75,
+     "cacheRead": 0.39
+    }
+   ],
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3-vl-235b-a22b-instruct",
+   "slug": "qwen-qwen3-vl-235b-a22b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 VL 235B A22B Instruct",
+   "created": "2025-09-23",
+   "context": 262144,
+   "maxOutput": 32768,
+   "input": 0.21,
+   "output": 1.9,
+   "cacheRead": 0.1,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 235670022896,
+    "layers": 94,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "qwen/qwen3-vl-235b-a22b-thinking",
+   "slug": "qwen-qwen3-vl-235b-a22b-thinking",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 VL 235B A22B Thinking",
+   "created": "2025-09-23",
+   "context": 131072,
+   "maxOutput": 32768,
+   "input": 0.4,
+   "output": 4,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+   "verified": "unchecked",
+   "arch": {
+    "params": 235670022896,
+    "layers": 94,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v3.1-terminus",
+   "slug": "deepseek-deepseek-v3-1-terminus",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V3.1 Terminus",
+   "created": "2025-09-22",
+   "context": 163840,
+   "maxOutput": 147456,
+   "input": 0.27,
+   "output": 1,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V3.1-Terminus",
+   "verified": "unchecked",
+   "arch": {
+    "params": 684531386000,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 18432,
+    "vocab": 129280,
+    "kvHeads": 128,
+    "headDim": 56,
+    "maxContext": 163840,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "qwen/qwen3-coder-flash",
+   "slug": "qwen-qwen3-coder-flash",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Coder Flash",
+   "created": "2025-09-17",
+   "context": 1000000,
+   "maxOutput": 65536,
+   "input": 0.195,
+   "output": 0.975,
+   "cacheRead": 0.039,
+   "cacheWrite": 0.24375,
+   "tiers": [
+    {
+     "minPromptTokens": 32000,
+     "input": 0.325,
+     "output": 1.625,
+     "cacheRead": 0.065
+    },
+    {
+     "minPromptTokens": 128000,
+     "input": 0.52,
+     "output": 2.6,
+     "cacheRead": 0.104
+    }
+   ],
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3-next-80b-a3b-instruct",
+   "slug": "qwen-qwen3-next-80b-a3b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Next 80B A3B Instruct",
+   "created": "2025-09-11",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.1,
+   "output": 1.1,
+   "cacheRead": 0.07,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 81324862720,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 16,
+    "intermediate": 5120,
+    "vocab": 151936,
+    "kvHeads": 2,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3-next-80b-a3b-thinking",
+   "slug": "qwen-qwen3-next-80b-a3b-thinking",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Next 80B A3B Thinking",
+   "created": "2025-09-11",
+   "context": 262144,
+   "maxOutput": 32768,
+   "input": 0.15,
+   "output": 1.2,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+   "verified": "unchecked",
+   "arch": {
+    "params": 81324862720,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 16,
+    "intermediate": 5120,
+    "vocab": 151936,
+    "kvHeads": 2,
+    "headDim": 256,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen-plus-2025-07-28",
+   "slug": "qwen-qwen-plus-2025-07-28",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen Plus 0728",
+   "created": "2025-09-08",
+   "context": 1000000,
+   "maxOutput": 32768,
+   "input": 0.26,
+   "output": 0.78,
+   "tiers": [
+    {
+     "minPromptTokens": 256000,
+     "input": 0.78,
+     "output": 2.34
+    }
+   ],
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "verified": "unchecked"
+  },
+  {
+   "id": "moonshotai/kimi-k2-0905",
+   "slug": "moonshotai-kimi-k2-0905",
+   "provider": "moonshotai",
+   "providerName": "Moonshot AI",
+   "firstParty": false,
+   "name": "Kimi K2 0905",
+   "created": "2025-09-04",
+   "context": 262144,
+   "maxOutput": 98304,
+   "input": 0.6,
+   "output": 2.5,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "hfId": "moonshotai/Kimi-K2-Instruct-0905",
+   "verified": "unchecked",
+   "arch": {
+    "params": 1026470735448,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 64,
+    "intermediate": 18432,
+    "vocab": 163840,
+    "kvHeads": 64,
+    "headDim": 112,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "qwen/qwen3-30b-a3b-thinking-2507",
+   "slug": "qwen-qwen3-30b-a3b-thinking-2507",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 30B A3B Thinking 2507",
+   "created": "2025-08-28",
+   "context": 81920,
+   "maxOutput": 32768,
+   "input": 0.2,
+   "output": 2.4,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+   "verified": "unchecked",
+   "arch": {
+    "params": 30532122624,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 32,
+    "intermediate": 6144,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "deepseek/deepseek-chat-v3.1",
+   "slug": "deepseek-deepseek-chat-v3-1",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V3.1",
+   "created": "2025-08-21",
+   "context": 163840,
+   "maxOutput": 32768,
+   "input": 0.25,
+   "output": 0.95,
+   "cacheRead": 0.13,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V3.1",
+   "verified": "unchecked",
+   "arch": {
+    "params": 684531386000,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 18432,
+    "vocab": 129280,
+    "kvHeads": 128,
+    "headDim": 56,
+    "maxContext": 163840,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "mistralai/mistral-medium-3.1",
+   "slug": "mistralai-mistral-medium-3-1",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Medium 3.1",
+   "created": "2025-08-13",
+   "context": 131072,
+   "maxOutput": 104857,
+   "input": 0.4,
+   "output": 2,
+   "cacheRead": 0.04,
+   "batchInput": 0.2,
+   "batchOutput": 1,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "verified": "unchecked"
+  },
+  {
+   "id": "z-ai/glm-4.5v",
+   "slug": "z-ai-glm-4-5v",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 4.5V",
+   "created": "2025-08-11",
+   "context": 65536,
+   "maxOutput": 16384,
+   "input": 0.6,
+   "output": 1.8,
+   "cacheRead": 0.11,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-4.5V",
+   "verified": "unchecked",
+   "arch": {
+    "params": 107710933120,
+    "layers": 46,
+    "hidden": 4096,
+    "heads": 96,
+    "intermediate": 10944,
+    "vocab": 151552,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 65536,
+    "moe": true
+   }
+  },
+  {
+   "id": "openai/gpt-5",
+   "slug": "openai-gpt-5",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5",
+   "created": "2025-08-07",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 1.25,
+   "output": 10,
+   "cacheRead": 0.125,
+   "batchInput": 0.625,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.25,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-5-mini",
+   "slug": "openai-gpt-5-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5 Mini",
+   "created": "2025-08-07",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 0.25,
+   "output": 2,
+   "cacheRead": 0.025,
+   "batchInput": 0.125,
+   "batchOutput": 1,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.25,
+   "listOutput": 2
+  },
+  {
+   "id": "openai/gpt-5-nano",
+   "slug": "openai-gpt-5-nano",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-5 Nano",
+   "created": "2025-08-07",
+   "context": 400000,
+   "maxOutput": 128000,
+   "input": 0.05,
+   "output": 0.4,
+   "cacheRead": 0.005,
+   "batchInput": 0.025,
+   "batchOutput": 0.2,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.05,
+   "listOutput": 0.4
+  },
+  {
+   "id": "anthropic/claude-opus-4.1",
+   "slug": "anthropic-claude-opus-4-1",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Opus 4.1",
+   "created": "2025-08-05",
+   "context": 200000,
+   "maxOutput": 32000,
+   "input": 15,
+   "output": 75,
+   "cacheRead": 1.5,
+   "cacheWrite": 18.75,
+   "cacheWrite1h": 30,
+   "batchInput": 7.5,
+   "batchOutput": 37.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-oss-120b",
+   "slug": "openai-gpt-oss-120b",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "gpt-oss-120b",
+   "created": "2025-08-05",
+   "context": 131072,
+   "maxOutput": 117964,
+   "input": 0.037,
+   "output": 0.17,
+   "batchInput": 0.0296,
+   "batchOutput": 0.136,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "hfId": "openai/gpt-oss-120b",
+   "verified": "unchecked",
+   "arch": {
+    "params": 116829156672,
+    "layers": 36,
+    "hidden": 2880,
+    "heads": 64,
+    "intermediate": 2880,
+    "vocab": 201088,
+    "kvHeads": 8,
+    "headDim": 64,
+    "maxContext": 131072,
+    "moe": true
+   }
+  },
+  {
+   "id": "openai/gpt-oss-20b",
+   "slug": "openai-gpt-oss-20b",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "gpt-oss-20b",
+   "created": "2025-08-05",
+   "context": 131072,
+   "maxOutput": 32768,
+   "input": 0.018,
+   "output": 0.09,
+   "cacheRead": 0.009,
+   "batchInput": 0.024,
+   "batchOutput": 0.112,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "hfId": "openai/gpt-oss-20b",
+   "verified": "unchecked",
+   "arch": {
+    "params": 20914757184,
+    "layers": 24,
+    "hidden": 2880,
+    "heads": 64,
+    "intermediate": 2880,
+    "vocab": 201088,
+    "kvHeads": 8,
+    "headDim": 64,
+    "maxContext": 131072,
+    "moe": true
+   }
+  },
+  {
+   "id": "mistralai/codestral-2508",
+   "slug": "mistralai-codestral-2508",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Codestral 2508",
+   "created": "2025-08-01",
+   "context": 256000,
+   "maxOutput": 204800,
+   "input": 0.3,
+   "output": 0.9,
+   "cacheRead": 0.03,
+   "batchInput": 0.15,
+   "batchOutput": 0.45,
+   "inputModalities": [
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "verified": "match",
+   "listInput": 0.3,
+   "listOutput": 0.9
+  },
+  {
+   "id": "qwen/qwen3-coder-30b-a3b-instruct",
+   "slug": "qwen-qwen3-coder-30b-a3b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Coder 30B A3B Instruct",
+   "created": "2025-07-31",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.07,
+   "output": 0.28,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 30532122624,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 32,
+    "intermediate": 6144,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3-30b-a3b-instruct-2507",
+   "slug": "qwen-qwen3-30b-a3b-instruct-2507",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 30B A3B Instruct 2507",
+   "created": "2025-07-29",
+   "context": 262144,
+   "maxOutput": 235929,
+   "input": 0.1,
+   "output": 0.3,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+   "verified": "unchecked",
+   "arch": {
+    "params": 30532122624,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 32,
+    "intermediate": 6144,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3-235b-a22b-thinking-2507",
+   "slug": "qwen-qwen3-235b-a22b-thinking-2507",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 235B A22B Thinking 2507",
+   "created": "2025-07-25",
+   "context": 131072,
+   "maxOutput": 117964,
+   "input": 0.23,
+   "output": 2.3,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+   "verified": "unchecked",
+   "arch": {
+    "params": 235093634560,
+    "layers": 94,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "z-ai/glm-4.5",
+   "slug": "z-ai-glm-4-5",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 4.5",
+   "created": "2025-07-25",
+   "context": 131072,
+   "maxOutput": 98304,
+   "input": 0.6,
+   "output": 2.2,
+   "cacheRead": 0.11,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-4.5",
+   "verified": "unchecked",
+   "arch": {
+    "params": 358337791296,
+    "layers": 92,
+    "hidden": 5120,
+    "heads": 96,
+    "intermediate": 12288,
+    "vocab": 151552,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 131072,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "z-ai/glm-4.5-air",
+   "slug": "z-ai-glm-4-5-air",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 4.5 Air",
+   "created": "2025-07-25",
+   "context": 131072,
+   "maxOutput": 98304,
+   "input": 0.13,
+   "output": 0.85,
+   "cacheRead": 0.025,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "hfId": "zai-org/GLM-4.5-Air",
+   "verified": "unchecked",
+   "arch": {
+    "params": 110468824832,
+    "layers": 46,
+    "hidden": 4096,
+    "heads": 96,
+    "intermediate": 10944,
+    "vocab": 151552,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 131072,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3-coder",
+   "slug": "qwen-qwen3-coder",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 Coder 480B A35B",
+   "created": "2025-07-23",
+   "context": 262144,
+   "maxOutput": 65536,
+   "input": 0.3,
+   "output": 1,
+   "cacheRead": 0.1,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 480154875392,
+    "layers": 62,
+    "hidden": 6144,
+    "heads": 96,
+    "intermediate": 8192,
+    "vocab": 151936,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "google/gemini-2.5-flash-lite",
+   "slug": "google-gemini-2-5-flash-lite",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 2.5 Flash Lite",
+   "created": "2025-07-22",
+   "context": 1048576,
+   "maxOutput": 65535,
+   "input": 0.1,
+   "output": 0.4,
+   "cacheRead": 0.01,
+   "cacheWrite": 0.083333,
+   "batchInput": 0.05,
+   "batchOutput": 0.2,
+   "reasoningPrice": 0.4,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "file",
+    "audio",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.1,
+   "listOutput": 0.4
+  },
+  {
+   "id": "qwen/qwen3-235b-a22b-2507",
+   "slug": "qwen-qwen3-235b-a22b-2507",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 235B A22B Instruct 2507",
+   "created": "2025-07-21",
+   "context": 262144,
+   "maxOutput": 16384,
+   "input": 0.09,
+   "output": 0.55,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+   "verified": "unchecked",
+   "arch": {
+    "params": 235093634560,
+    "layers": 94,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "moonshotai/kimi-k2",
+   "slug": "moonshotai-kimi-k2",
+   "provider": "moonshotai",
+   "providerName": "Moonshot AI",
+   "firstParty": false,
+   "name": "Kimi K2 0711",
+   "created": "2025-07-11",
+   "context": 131072,
+   "maxOutput": 98304,
+   "input": 0.57,
+   "output": 2.3,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "hfId": "moonshotai/Kimi-K2-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 1026408235864,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 64,
+    "intermediate": 18432,
+    "vocab": 163840,
+    "kvHeads": 64,
+    "headDim": 112,
+    "maxContext": 131072,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "mistralai/mistral-small-3.2-24b-instruct",
+   "slug": "mistralai-mistral-small-3-2-24b-instruct",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Small 3.2 24B",
+   "created": "2025-06-20",
+   "context": 256000,
+   "maxOutput": 16384,
+   "input": 0.09375,
+   "output": 0.25,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+   "verified": "unchecked",
+   "arch": {
+    "params": 24011361280,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 32,
+    "intermediate": 32768,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 131072,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "google/gemini-2.5-flash",
+   "slug": "google-gemini-2-5-flash",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 2.5 Flash",
+   "created": "2025-06-17",
+   "context": 1048576,
+   "maxOutput": 65535,
+   "input": 0.3,
+   "output": 2.5,
+   "cacheRead": 0.03,
+   "cacheWrite": 0.083333,
+   "batchInput": 0.15,
+   "batchOutput": 1.25,
+   "reasoningPrice": 2.5,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "file",
+    "image",
+    "text",
+    "audio",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 0.3,
+   "listOutput": 2.5
+  },
+  {
+   "id": "google/gemini-2.5-pro",
+   "slug": "google-gemini-2-5-pro",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 2.5 Pro",
+   "created": "2025-06-17",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 1.25,
+   "output": 10,
+   "cacheRead": 0.125,
+   "cacheWrite": 0.375,
+   "batchInput": 0.625,
+   "batchOutput": 5,
+   "reasoningPrice": 10,
+   "webSearch": 0.014,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 2.5,
+     "output": 15,
+     "cacheRead": 0.25
+    }
+   ],
+   "inputModalities": [
+    "text",
+    "image",
+    "file",
+    "audio",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 1.25,
+   "listOutput": 10
+  },
+  {
+   "id": "minimax/minimax-m1",
+   "slug": "minimax-minimax-m1",
+   "provider": "minimax",
+   "providerName": "MiniMax",
+   "firstParty": false,
+   "name": "MiniMax M1",
+   "created": "2025-06-17",
+   "context": 1000000,
+   "maxOutput": 40000,
+   "input": 0.55,
+   "output": 2.2,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/o3-pro",
+   "slug": "openai-o3-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "o3 Pro",
+   "created": "2025-06-10",
+   "context": 200000,
+   "maxOutput": 100000,
+   "input": 20,
+   "output": 80,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "file",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 20,
+   "listOutput": 80
+  },
+  {
+   "id": "google/gemini-2.5-pro-preview",
+   "slug": "google-gemini-2-5-pro-preview",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 2.5 Pro Preview 06-05",
+   "created": "2025-06-05",
+   "context": 1048576,
+   "maxOutput": 65536,
+   "input": 1.25,
+   "output": 10,
+   "cacheRead": 0.125,
+   "cacheWrite": 0.375,
+   "reasoningPrice": 10,
+   "webSearch": 0.014,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 2.5,
+     "output": 15,
+     "cacheRead": 0.25
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text",
+    "audio"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "unchecked"
+  },
+  {
+   "id": "deepseek/deepseek-r1-0528",
+   "slug": "deepseek-deepseek-r1-0528",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "R1 0528",
+   "created": "2025-05-28",
+   "context": 163840,
+   "maxOutput": 32768,
+   "input": 0.5,
+   "output": 2.15,
+   "cacheRead": 0.35,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-R1-0528",
+   "verified": "unchecked",
+   "arch": {
+    "params": 684531386000,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 18432,
+    "vocab": 129280,
+    "kvHeads": 128,
+    "headDim": 56,
+    "maxContext": 163840,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "anthropic/claude-sonnet-4",
+   "slug": "anthropic-claude-sonnet-4",
+   "provider": "anthropic",
+   "providerName": "Anthropic",
+   "firstParty": true,
+   "name": "Claude Sonnet 4",
+   "created": "2025-05-22",
+   "context": 200000,
+   "maxOutput": 64000,
+   "input": 3,
+   "output": 15,
+   "cacheRead": 0.3,
+   "cacheWrite": 3.75,
+   "cacheWrite1h": 6,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 200000,
+     "input": 6,
+     "output": 22.5,
+     "cacheRead": 0.6
+    }
+   ],
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Claude",
+   "verified": "unchecked"
+  },
+  {
+   "id": "mistralai/mistral-medium-3",
+   "slug": "mistralai-mistral-medium-3",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Medium 3",
+   "created": "2025-05-07",
+   "context": 131072,
+   "maxOutput": 104857,
+   "input": 0.4,
+   "output": 2,
+   "cacheRead": 0.04,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "verified": "mismatch",
+   "listInput": 1.5,
+   "listOutput": 7.5
+  },
+  {
+   "id": "meta-llama/llama-guard-4-12b",
+   "slug": "meta-llama-llama-guard-4-12b",
+   "provider": "meta-llama",
+   "providerName": "Meta",
+   "firstParty": false,
+   "name": "Llama Guard 4 12B",
+   "created": "2025-04-30",
+   "context": 163840,
+   "maxOutput": 16384,
+   "input": 0.18,
+   "output": 0.18,
+   "inputModalities": [
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "hfId": "meta-llama/Llama-Guard-4-12B",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen3-14b",
+   "slug": "qwen-qwen3-14b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 14B",
+   "created": "2025-04-28",
+   "context": 131072,
+   "maxOutput": 16384,
+   "input": 0.12,
+   "output": 0.24,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-14B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 14768307200,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 40,
+    "intermediate": 17408,
+    "vocab": 151936,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 40960,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3-235b-a22b",
+   "slug": "qwen-qwen3-235b-a22b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 235B A22B",
+   "created": "2025-04-28",
+   "context": 131072,
+   "maxOutput": 8192,
+   "input": 0.455,
+   "output": 1.82,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-235B-A22B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 235093634560,
+    "layers": 94,
+    "hidden": 4096,
+    "heads": 64,
+    "intermediate": 12288,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 40960,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3-30b-a3b",
+   "slug": "qwen-qwen3-30b-a3b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 30B A3B",
+   "created": "2025-04-28",
+   "context": 131072,
+   "maxOutput": 16384,
+   "input": 0.12,
+   "output": 0.5,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-30B-A3B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 30532122624,
+    "layers": 48,
+    "hidden": 2048,
+    "heads": 32,
+    "intermediate": 6144,
+    "vocab": 151936,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 40960,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3-32b",
+   "slug": "qwen-qwen3-32b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 32B",
+   "created": "2025-04-28",
+   "context": 131072,
+   "maxOutput": 16384,
+   "input": 0.08,
+   "output": 0.28,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-32B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 32762123264,
+    "layers": 64,
+    "hidden": 5120,
+    "heads": 64,
+    "intermediate": 25600,
+    "vocab": 151936,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 40960,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen3-8b",
+   "slug": "qwen-qwen3-8b",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen3 8B",
+   "created": "2025-04-28",
+   "context": 131072,
+   "maxOutput": 8192,
+   "input": 0.117,
+   "output": 0.455,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Qwen3",
+   "hfId": "Qwen/Qwen3-8B",
+   "verified": "unchecked",
+   "arch": {
+    "params": 8190735360,
+    "layers": 36,
+    "hidden": 4096,
+    "heads": 32,
+    "intermediate": 12288,
+    "vocab": 151936,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 40960,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "openai/o3",
+   "slug": "openai-o3",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "o3",
+   "created": "2025-04-16",
+   "context": 200000,
+   "maxOutput": 100000,
+   "input": 2,
+   "output": 8,
+   "cacheRead": 0.5,
+   "batchInput": 1,
+   "batchOutput": 4,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 8
+  },
+  {
+   "id": "openai/o4-mini",
+   "slug": "openai-o4-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "o4 Mini",
+   "created": "2025-04-16",
+   "context": 200000,
+   "maxOutput": 100000,
+   "input": 1.1,
+   "output": 4.4,
+   "cacheRead": 0.275,
+   "batchInput": 0.55,
+   "batchOutput": 2.2,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.1,
+   "listOutput": 4.4
+  },
+  {
+   "id": "openai/o4-mini-high",
+   "slug": "openai-o4-mini-high",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "o4 Mini High",
+   "created": "2025-04-16",
+   "context": 200000,
+   "maxOutput": 100000,
+   "input": 1.1,
+   "output": 4.4,
+   "cacheRead": 0.275,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-4.1",
+   "slug": "openai-gpt-4-1",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4.1",
+   "created": "2025-04-14",
+   "context": 1047576,
+   "maxOutput": 32768,
+   "input": 2,
+   "output": 8,
+   "cacheRead": 0.5,
+   "batchInput": 1,
+   "batchOutput": 4,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 8
+  },
+  {
+   "id": "openai/gpt-4.1-mini",
+   "slug": "openai-gpt-4-1-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4.1 Mini",
+   "created": "2025-04-14",
+   "context": 1047576,
+   "maxOutput": 32768,
+   "input": 0.4,
+   "output": 1.6,
+   "cacheRead": 0.1,
+   "batchInput": 0.2,
+   "batchOutput": 0.8,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.4,
+   "listOutput": 1.6
+  },
+  {
+   "id": "openai/gpt-4.1-nano",
+   "slug": "openai-gpt-4-1-nano",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4.1 Nano",
+   "created": "2025-04-14",
+   "context": 1047576,
+   "maxOutput": 32768,
+   "input": 0.1,
+   "output": 0.4,
+   "cacheRead": 0.025,
+   "batchInput": 0.05,
+   "batchOutput": 0.2,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "image",
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.1,
+   "listOutput": 0.4
+  },
+  {
+   "id": "meta-llama/llama-4-maverick",
+   "slug": "meta-llama-llama-4-maverick",
+   "provider": "meta-llama",
+   "providerName": "Meta",
+   "firstParty": false,
+   "name": "Llama 4 Maverick",
+   "created": "2025-04-05",
+   "context": 1048576,
+   "maxOutput": 16384,
+   "input": 0.1875,
+   "output": 0.6525,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Llama4",
+   "hfId": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+   "verified": "unchecked"
+  },
+  {
+   "id": "meta-llama/llama-4-scout",
+   "slug": "meta-llama-llama-4-scout",
+   "provider": "meta-llama",
+   "providerName": "Meta",
+   "firstParty": false,
+   "name": "Llama 4 Scout",
+   "created": "2025-04-05",
+   "context": 1310720,
+   "maxOutput": 16384,
+   "input": 0.1,
+   "output": 0.3,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Llama4",
+   "hfId": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+   "verified": "unchecked"
+  },
+  {
+   "id": "deepseek/deepseek-chat-v3-0324",
+   "slug": "deepseek-deepseek-chat-v3-0324",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V3 0324",
+   "created": "2025-03-24",
+   "context": 163840,
+   "maxOutput": 115200,
+   "input": 0.29,
+   "output": 1.14,
+   "cacheRead": 0.11,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V3-0324",
+   "verified": "unchecked",
+   "arch": {
+    "params": 684531386000,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 18432,
+    "vocab": 129280,
+    "kvHeads": 128,
+    "headDim": 56,
+    "maxContext": 163840,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "openai/o1-pro",
+   "slug": "openai-o1-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "o1-pro",
+   "created": "2025-03-19",
+   "context": 200000,
+   "maxOutput": 100000,
+   "input": 150,
+   "output": 600,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 150,
+   "listOutput": 600
+  },
+  {
+   "id": "mistralai/mistral-small-3.1-24b-instruct",
+   "slug": "mistralai-mistral-small-3-1-24b-instruct",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Small 3.1 24B",
+   "created": "2025-03-17",
+   "context": 128000,
+   "maxOutput": 102400,
+   "input": 0.351,
+   "output": 0.555,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+   "verified": "unchecked",
+   "arch": {
+    "params": 24011361280,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 32,
+    "intermediate": 32768,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 131072,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "cohere/command-a",
+   "slug": "cohere-command-a",
+   "provider": "cohere",
+   "providerName": "Cohere",
+   "firstParty": true,
+   "name": "Command A",
+   "created": "2025-03-13",
+   "context": 256000,
+   "maxOutput": 8192,
+   "input": 2.5,
+   "output": 10,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "hfId": "CohereForAI/c4ai-command-a-03-2025",
+   "verified": "unchecked"
+  },
+  {
+   "id": "google/gemma-3-12b-it",
+   "slug": "google-gemma-3-12b-it",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemma 3 12B",
+   "created": "2025-03-13",
+   "context": 131072,
+   "maxOutput": 16384,
+   "input": 0.05,
+   "output": 0.15,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Gemini",
+   "hfId": "google/gemma-3-12b-it",
+   "verified": "unchecked"
+  },
+  {
+   "id": "google/gemma-3-4b-it",
+   "slug": "google-gemma-3-4b-it",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemma 3 4B",
+   "created": "2025-03-13",
+   "context": 131072,
+   "maxOutput": 16384,
+   "input": 0.05,
+   "output": 0.1,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Gemini",
+   "hfId": "google/gemma-3-4b-it",
+   "verified": "unchecked"
+  },
+  {
+   "id": "google/gemma-3-27b-it",
+   "slug": "google-gemma-3-27b-it",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemma 3 27B",
+   "created": "2025-03-12",
+   "context": 131072,
+   "maxOutput": 117964,
+   "input": 0.08,
+   "output": 0.45,
+   "cacheRead": 0.04,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Gemini",
+   "hfId": "google/gemma-3-27b-it",
+   "verified": "mismatch",
+   "listInput": 0,
+   "listOutput": 0
+  },
+  {
+   "id": "perplexity/sonar-deep-research",
+   "slug": "perplexity-sonar-deep-research",
+   "provider": "perplexity",
+   "providerName": "Perplexity",
+   "firstParty": true,
+   "name": "Sonar Deep Research",
+   "created": "2025-03-07",
+   "context": 128000,
+   "maxOutput": 115200,
+   "input": 2,
+   "output": 8,
+   "reasoningPrice": 3,
+   "webSearch": 0.005,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 8
+  },
+  {
+   "id": "perplexity/sonar-pro",
+   "slug": "perplexity-sonar-pro",
+   "provider": "perplexity",
+   "providerName": "Perplexity",
+   "firstParty": true,
+   "name": "Sonar Pro",
+   "created": "2025-03-07",
+   "context": 200000,
+   "maxOutput": 8000,
+   "input": 3,
+   "output": 15,
+   "webSearch": 0.005,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "verified": "match",
+   "listInput": 3,
+   "listOutput": 15
+  },
+  {
+   "id": "perplexity/sonar-reasoning-pro",
+   "slug": "perplexity-sonar-reasoning-pro",
+   "provider": "perplexity",
+   "providerName": "Perplexity",
+   "firstParty": true,
+   "name": "Sonar Reasoning Pro",
+   "created": "2025-03-07",
+   "context": 128000,
+   "maxOutput": 115200,
+   "input": 2,
+   "output": 8,
+   "webSearch": 0.005,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 8
+  },
+  {
+   "id": "mistralai/mistral-saba",
+   "slug": "mistralai-mistral-saba",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Saba",
+   "created": "2025-02-17",
+   "context": 32768,
+   "maxOutput": 26214,
+   "input": 0.2,
+   "output": 0.6,
+   "cacheRead": 0.02,
+   "inputModalities": [
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/o3-mini-high",
+   "slug": "openai-o3-mini-high",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "o3 Mini High",
+   "created": "2025-02-12",
+   "context": 200000,
+   "maxOutput": 100000,
+   "input": 1.1,
+   "output": 4.4,
+   "cacheRead": 0.55,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen-plus",
+   "slug": "qwen-qwen-plus",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen-Plus",
+   "created": "2025-02-01",
+   "context": 1000000,
+   "maxOutput": 32768,
+   "input": 0.26,
+   "output": 0.78,
+   "cacheRead": 0.052,
+   "cacheWrite": 0.325,
+   "tiers": [
+    {
+     "minPromptTokens": 256000,
+     "input": 0.78,
+     "output": 2.34,
+     "cacheRead": 0.156
+    }
+   ],
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen2.5-vl-72b-instruct",
+   "slug": "qwen-qwen2-5-vl-72b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen2.5 VL 72B Instruct",
+   "created": "2025-02-01",
+   "context": 128000,
+   "maxOutput": 115200,
+   "input": 0.8,
+   "output": 1,
+   "cacheRead": 0.4,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen2.5-VL-72B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 73410777344,
+    "layers": 80,
+    "hidden": 8192,
+    "heads": 64,
+    "intermediate": 29568,
+    "vocab": 152064,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 128000,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "openai/o3-mini",
+   "slug": "openai-o3-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "o3 Mini",
+   "created": "2025-01-31",
+   "context": 200000,
+   "maxOutput": 100000,
+   "input": 1.1,
+   "output": 4.4,
+   "cacheRead": 0.55,
+   "batchInput": 0.55,
+   "batchOutput": 2.2,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 1.1,
+   "listOutput": 4.4
+  },
+  {
+   "id": "mistralai/mistral-small-24b-instruct-2501",
+   "slug": "mistralai-mistral-small-24b-instruct-2501",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Small 3",
+   "created": "2025-01-30",
+   "context": 32768,
+   "maxOutput": 16384,
+   "input": 0.05,
+   "output": 0.08,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Mistral-Small-24B-Instruct-2501",
+   "verified": "unchecked",
+   "arch": {
+    "params": 23572403200,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 32,
+    "intermediate": 32768,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 32768,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "perplexity/sonar",
+   "slug": "perplexity-sonar",
+   "provider": "perplexity",
+   "providerName": "Perplexity",
+   "firstParty": true,
+   "name": "Sonar",
+   "created": "2025-01-27",
+   "context": 127072,
+   "maxOutput": 114364,
+   "input": 1,
+   "output": 1,
+   "webSearch": 0.005,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "verified": "mismatch",
+   "listInput": 0.25,
+   "listOutput": 2.5
+  },
+  {
+   "id": "deepseek/deepseek-r1",
+   "slug": "deepseek-deepseek-r1",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "R1",
+   "created": "2025-01-20",
+   "context": 64000,
+   "maxOutput": 16000,
+   "input": 0.7,
+   "output": 2.5,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-R1",
+   "verified": "mismatch",
+   "listInput": 0.55,
+   "listOutput": 2.19,
+   "arch": {
+    "params": 684489845504,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 18432,
+    "vocab": 129280,
+    "kvHeads": 128,
+    "headDim": 56,
+    "maxContext": 163840,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "minimax/minimax-01",
+   "slug": "minimax-minimax-01",
+   "provider": "minimax",
+   "providerName": "MiniMax",
+   "firstParty": false,
+   "name": "MiniMax-01",
+   "created": "2025-01-15",
+   "context": 1000192,
+   "maxOutput": 900172,
+   "input": 0.2,
+   "output": 1.1,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "hfId": "MiniMaxAI/MiniMax-Text-01",
+   "verified": "unchecked",
+   "arch": {
+    "params": 456089655296,
+    "layers": 80,
+    "hidden": 6144,
+    "heads": 64,
+    "intermediate": 9216,
+    "vocab": 200064,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 10240000,
+    "moe": true
+   }
+  },
+  {
+   "id": "microsoft/phi-4",
+   "slug": "microsoft-phi-4",
+   "provider": "microsoft",
+   "providerName": "Microsoft",
+   "firstParty": false,
+   "name": "Phi 4",
+   "created": "2025-01-10",
+   "context": 16384,
+   "maxOutput": 14745,
+   "input": 0.07,
+   "output": 0.14,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "hfId": "microsoft/phi-4",
+   "verified": "unchecked",
+   "arch": {
+    "params": 14659507200,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 40,
+    "intermediate": 17920,
+    "vocab": 100352,
+    "kvHeads": 10,
+    "headDim": 128,
+    "maxContext": 16384,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "deepseek/deepseek-chat",
+   "slug": "deepseek-deepseek-chat",
+   "provider": "deepseek",
+   "providerName": "DeepSeek",
+   "firstParty": true,
+   "name": "DeepSeek V3",
+   "created": "2024-12-26",
+   "context": 163840,
+   "maxOutput": 16000,
+   "input": 0.2574,
+   "output": 1.0287,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "DeepSeek",
+   "hfId": "deepseek-ai/DeepSeek-V3",
+   "verified": "mismatch",
+   "listInput": 0.28,
+   "listOutput": 0.42,
+   "arch": {
+    "params": 684531386000,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 128,
+    "intermediate": 18432,
+    "vocab": 129280,
+    "kvHeads": 128,
+    "headDim": 56,
+    "maxContext": 163840,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
+   }
+  },
+  {
+   "id": "openai/o1",
+   "slug": "openai-o1",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "o1",
+   "created": "2024-12-17",
+   "context": 200000,
+   "maxOutput": 100000,
+   "input": 15,
+   "output": 60,
+   "cacheRead": 7.5,
+   "webSearch": 0.01,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 15,
+   "listOutput": 60
+  },
+  {
+   "id": "cohere/command-r7b-12-2024",
+   "slug": "cohere-command-r7b-12-2024",
+   "provider": "cohere",
+   "providerName": "Cohere",
+   "firstParty": true,
+   "name": "Command R7B (12-2024)",
+   "created": "2024-12-14",
+   "context": 128000,
+   "maxOutput": 4000,
+   "input": 0.0375,
+   "output": 0.15,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Cohere",
+   "verified": "match",
+   "listInput": 0.0375,
+   "listOutput": 0.15
+  },
+  {
+   "id": "meta-llama/llama-3.3-70b-instruct",
+   "slug": "meta-llama-llama-3-3-70b-instruct",
+   "provider": "meta-llama",
+   "providerName": "Meta",
+   "firstParty": false,
+   "name": "Llama 3.3 70B Instruct",
+   "created": "2024-12-06",
+   "context": 131072,
+   "maxOutput": 16384,
+   "input": 0.22,
+   "output": 0.5,
+   "cacheRead": 0.11,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Llama3",
+   "hfId": "meta-llama/Llama-3.3-70B-Instruct",
+   "verified": "unchecked"
+  },
+  {
+   "id": "amazon/nova-lite-v1",
+   "slug": "amazon-nova-lite-v1",
+   "provider": "amazon",
+   "providerName": "Amazon",
+   "firstParty": true,
+   "name": "Nova Lite 1.0",
+   "created": "2024-12-05",
+   "context": 300000,
+   "maxOutput": 5120,
+   "input": 0.06,
+   "output": 0.24,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Nova",
+   "verified": "unchecked"
+  },
+  {
+   "id": "amazon/nova-micro-v1",
+   "slug": "amazon-nova-micro-v1",
+   "provider": "amazon",
+   "providerName": "Amazon",
+   "firstParty": true,
+   "name": "Nova Micro 1.0",
+   "created": "2024-12-05",
+   "context": 128000,
+   "maxOutput": 5120,
+   "input": 0.035,
+   "output": 0.14,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Nova",
+   "verified": "unchecked"
+  },
+  {
+   "id": "amazon/nova-pro-v1",
+   "slug": "amazon-nova-pro-v1",
+   "provider": "amazon",
+   "providerName": "Amazon",
+   "firstParty": true,
+   "name": "Nova Pro 1.0",
+   "created": "2024-12-05",
+   "context": 300000,
+   "maxOutput": 5120,
+   "input": 0.8,
+   "output": 3.2,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Nova",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-4o-2024-11-20",
+   "slug": "openai-gpt-4o-2024-11-20",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4o (2024-11-20)",
+   "created": "2024-11-20",
+   "context": 128000,
+   "maxOutput": 16384,
+   "input": 2.5,
+   "output": 10,
+   "cacheRead": 1.25,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2.5,
+   "listOutput": 10
+  },
+  {
+   "id": "mistralai/mistral-large-2407",
+   "slug": "mistralai-mistral-large-2407",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Large 2407",
+   "created": "2024-11-19",
+   "context": 131072,
+   "maxOutput": 104857,
+   "input": 2,
+   "output": 6,
+   "cacheRead": 0.2,
+   "inputModalities": [
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen-2.5-coder-32b-instruct",
+   "slug": "qwen-qwen-2-5-coder-32b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen2.5 Coder 32B Instruct",
+   "created": "2024-11-11",
+   "context": 32768,
+   "maxOutput": 29491,
+   "input": 0.66,
+   "output": 1,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen2.5-Coder-32B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 32763876352,
+    "layers": 64,
+    "hidden": 5120,
+    "heads": 40,
+    "intermediate": 27648,
+    "vocab": 152064,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 32768,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "qwen/qwen-2.5-7b-instruct",
+   "slug": "qwen-qwen-2-5-7b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen2.5 7B Instruct",
+   "created": "2024-10-16",
+   "context": 32768,
+   "maxOutput": 29491,
+   "input": 0.1,
+   "output": 0.2,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen2.5-7B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 7615616512,
+    "layers": 28,
+    "hidden": 3584,
+    "heads": 28,
+    "intermediate": 18944,
+    "vocab": 152064,
+    "kvHeads": 4,
+    "headDim": 128,
+    "maxContext": 32768,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "meta-llama/llama-3.2-1b-instruct",
+   "slug": "meta-llama-llama-3-2-1b-instruct",
+   "provider": "meta-llama",
+   "providerName": "Meta",
+   "firstParty": false,
+   "name": "Llama 3.2 1B Instruct",
+   "created": "2024-09-25",
+   "context": 60000,
+   "maxOutput": 54000,
+   "input": 0.027,
+   "output": 0.201,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Llama3",
+   "hfId": "meta-llama/Llama-3.2-1B-Instruct",
+   "verified": "unchecked"
+  },
+  {
+   "id": "meta-llama/llama-3.2-3b-instruct",
+   "slug": "meta-llama-llama-3-2-3b-instruct",
+   "provider": "meta-llama",
+   "providerName": "Meta",
+   "firstParty": false,
+   "name": "Llama 3.2 3B Instruct",
+   "created": "2024-09-25",
+   "context": 131072,
+   "maxOutput": 117964,
+   "input": 0.05,
+   "output": 0.33,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Llama3",
+   "hfId": "meta-llama/Llama-3.2-3B-Instruct",
+   "verified": "unchecked"
+  },
+  {
+   "id": "qwen/qwen-2.5-72b-instruct",
+   "slug": "qwen-qwen-2-5-72b-instruct",
+   "provider": "qwen",
+   "providerName": "Qwen",
+   "firstParty": false,
+   "name": "Qwen2.5 72B Instruct",
+   "created": "2024-09-19",
+   "context": 32768,
+   "maxOutput": 16384,
+   "input": 0.36,
+   "output": 0.4,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Qwen",
+   "hfId": "Qwen/Qwen2.5-72B-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 72706203648,
+    "layers": 80,
+    "hidden": 8192,
+    "heads": 64,
+    "intermediate": 29568,
+    "vocab": 152064,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 32768,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "cohere/command-r-08-2024",
+   "slug": "cohere-command-r-08-2024",
+   "provider": "cohere",
+   "providerName": "Cohere",
+   "firstParty": true,
+   "name": "Command R (08-2024)",
+   "created": "2024-08-30",
+   "context": 128000,
+   "maxOutput": 4000,
+   "input": 0.15,
+   "output": 0.6,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Cohere",
+   "verified": "match",
+   "listInput": 0.15,
+   "listOutput": 0.6
+  },
+  {
+   "id": "cohere/command-r-plus-08-2024",
+   "slug": "cohere-command-r-plus-08-2024",
+   "provider": "cohere",
+   "providerName": "Cohere",
+   "firstParty": true,
+   "name": "Command R+ (08-2024)",
+   "created": "2024-08-30",
+   "context": 128000,
+   "maxOutput": 4000,
+   "input": 2.5,
+   "output": 10,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Cohere",
+   "verified": "match",
+   "listInput": 2.5,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-4o-2024-08-06",
+   "slug": "openai-gpt-4o-2024-08-06",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4o (2024-08-06)",
+   "created": "2024-08-06",
+   "context": 128000,
+   "maxOutput": 16384,
+   "input": 2.5,
+   "output": 10,
+   "cacheRead": 1.25,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2.5,
+   "listOutput": 10
+  },
+  {
+   "id": "meta-llama/llama-3.1-70b-instruct",
+   "slug": "meta-llama-llama-3-1-70b-instruct",
+   "provider": "meta-llama",
+   "providerName": "Meta",
+   "firstParty": false,
+   "name": "Llama 3.1 70B Instruct",
+   "created": "2024-07-23",
+   "context": 131072,
+   "maxOutput": 16384,
+   "input": 0.4,
+   "output": 0.4,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Llama3",
+   "hfId": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+   "verified": "unchecked"
+  },
+  {
+   "id": "meta-llama/llama-3.1-8b-instruct",
+   "slug": "meta-llama-llama-3-1-8b-instruct",
+   "provider": "meta-llama",
+   "providerName": "Meta",
+   "firstParty": false,
+   "name": "Llama 3.1 8B Instruct",
+   "created": "2024-07-23",
+   "context": 131072,
+   "maxOutput": 117964,
+   "input": 0.05,
+   "output": 0.08,
+   "cacheRead": 0.025,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Llama3",
+   "hfId": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+   "verified": "unchecked"
+  },
+  {
+   "id": "mistralai/mistral-nemo",
+   "slug": "mistralai-mistral-nemo",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Nemo",
+   "created": "2024-07-19",
+   "context": 131072,
+   "maxOutput": 16384,
+   "input": 0.019,
+   "output": 0.03,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Mistral-Nemo-Instruct-2407",
+   "verified": "unchecked",
+   "arch": {
+    "params": 12247782400,
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 32,
+    "intermediate": 14336,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 131072,
+    "moe": false,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "openai/gpt-4o-mini",
+   "slug": "openai-gpt-4o-mini",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4o-mini",
+   "created": "2024-07-18",
+   "context": 128000,
+   "maxOutput": 16384,
+   "input": 0.15,
+   "output": 0.6,
+   "cacheRead": 0.075,
+   "batchInput": 0.075,
+   "batchOutput": 0.3,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.15,
+   "listOutput": 0.6
+  },
+  {
+   "id": "openai/gpt-4o-mini-2024-07-18",
+   "slug": "openai-gpt-4o-mini-2024-07-18",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4o-mini (2024-07-18)",
+   "created": "2024-07-18",
+   "context": 128000,
+   "maxOutput": 16384,
+   "input": 0.15,
+   "output": 0.6,
+   "cacheRead": 0.075,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.15,
+   "listOutput": 0.6
+  },
+  {
+   "id": "google/gemma-2-27b-it",
+   "slug": "google-gemma-2-27b-it",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemma 2 27B",
+   "created": "2024-07-13",
+   "context": 8192,
+   "maxOutput": 2048,
+   "input": 0.65,
+   "output": 0.65,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Gemini",
+   "hfId": "google/gemma-2-27b-it",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-4o",
+   "slug": "openai-gpt-4o",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4o",
+   "created": "2024-05-13",
+   "context": 128000,
+   "maxOutput": 16384,
+   "input": 2.5,
+   "output": 10,
+   "cacheRead": 1.25,
+   "batchInput": 1.25,
+   "batchOutput": 5,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2.5,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-4o-2024-05-13",
+   "slug": "openai-gpt-4o-2024-05-13",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4o (2024-05-13)",
+   "created": "2024-05-13",
+   "context": 128000,
+   "maxOutput": 4096,
+   "input": 5,
+   "output": 15,
+   "inputModalities": [
+    "text",
+    "image",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 5,
+   "listOutput": 15
+  },
+  {
+   "id": "mistralai/mixtral-8x22b-instruct",
+   "slug": "mistralai-mixtral-8x22b-instruct",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mixtral 8x22B Instruct",
+   "created": "2024-04-17",
+   "context": 65536,
+   "maxOutput": 52428,
+   "input": 2,
+   "output": 6,
+   "cacheRead": 0.2,
+   "inputModalities": [
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+   "verified": "unchecked",
+   "arch": {
+    "params": 140630071296,
+    "layers": 56,
+    "hidden": 6144,
+    "heads": 48,
+    "intermediate": 16384,
+    "vocab": 32768,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 65536,
+    "moe": true,
+    "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "microsoft/wizardlm-2-8x22b",
+   "slug": "microsoft-wizardlm-2-8x22b",
+   "provider": "microsoft",
+   "providerName": "Microsoft",
+   "firstParty": false,
+   "name": "WizardLM-2 8x22B",
+   "created": "2024-04-16",
+   "context": 65535,
+   "maxOutput": 8000,
+   "input": 0.62,
+   "output": 0.62,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "hfId": "microsoft/WizardLM-2-8x22B",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-4-turbo",
+   "slug": "openai-gpt-4-turbo",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4 Turbo",
+   "created": "2024-04-09",
+   "context": 128000,
+   "maxOutput": 4096,
+   "input": 10,
+   "output": 30,
+   "batchInput": 5,
+   "batchOutput": 15,
+   "inputModalities": [
+    "text",
+    "image"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 10,
+   "listOutput": 30
+  },
+  {
+   "id": "mistralai/mistral-large",
+   "slug": "mistralai-mistral-large",
+   "provider": "mistralai",
+   "providerName": "Mistral",
+   "firstParty": true,
+   "name": "Mistral Large",
+   "created": "2024-02-26",
+   "context": 128000,
+   "maxOutput": 102400,
+   "input": 2,
+   "output": 6,
+   "cacheRead": 0.2,
+   "inputModalities": [
+    "text",
+    "file"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Mistral",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-3.5-turbo-0613",
+   "slug": "openai-gpt-3-5-turbo-0613",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-3.5 Turbo (older v0613)",
+   "created": "2024-01-25",
+   "context": 4095,
+   "maxOutput": 3685,
+   "input": 1,
+   "output": 2,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-3.5-turbo-instruct",
+   "slug": "openai-gpt-3-5-turbo-instruct",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-3.5 Turbo Instruct",
+   "created": "2023-09-28",
+   "context": 4095,
+   "maxOutput": 3685,
+   "input": 1.5,
+   "output": 2,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": false,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-3.5-turbo-16k",
+   "slug": "openai-gpt-3-5-turbo-16k",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-3.5 Turbo 16k",
+   "created": "2023-08-28",
+   "context": 16385,
+   "maxOutput": 4096,
+   "input": 3,
+   "output": 4,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 3,
+   "listOutput": 4
+  },
+  {
+   "id": "openai/gpt-3.5-turbo",
+   "slug": "openai-gpt-3-5-turbo",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-3.5 Turbo",
+   "created": "2023-05-28",
+   "context": 16385,
+   "maxOutput": 4096,
+   "input": 0.5,
+   "output": 1.5,
+   "batchInput": 0.25,
+   "batchOutput": 0.75,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 0.5,
+   "listOutput": 1.5
+  },
+  {
+   "id": "openai/gpt-4",
+   "slug": "openai-gpt-4",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-4",
+   "created": "2023-05-28",
+   "context": 8191,
+   "maxOutput": 4096,
+   "input": 30,
+   "output": 60,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 30,
+   "listOutput": 60
+  }
+ ]
+}

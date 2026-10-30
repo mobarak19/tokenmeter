@@ -1,0 +1,164 @@
+[
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.055,
+  "to": 0.0495
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.0003,
+  "to": 0.0002
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0003,
+  "to": 0.0002
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "input",
+  "from": 1.32,
+  "to": 0.66
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "output",
+  "from": 3.96,
+  "to": 1.98
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.044,
+  "to": 0.022
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "input",
+  "from": 0.0103,
+  "to": 0.0152
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0103,
+  "to": 0.0152
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.0013,
+  "to": 0.0003
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0013,
+  "to": 0.0003
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.0033,
+  "to": 0.055
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0033,
+  "to": 0.0165
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "input",
+  "from": 0.0152,
+  "to": 0.0103
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0152,
+  "to": 0.0103
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.0018,
+  "to": 0.0013
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0018,
+  "to": 0.0013
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.002,
+  "to": 0.0018
+ },
+ {
+  "date": "2026-10-06",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.002,
+  "to": 0.0018
+ }
+]

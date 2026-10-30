@@ -1,0 +1,136 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Faq from '../../components/Faq.astro';
+import { MODELS, UPDATED, fmtDate, type Model } from '../../lib/models';
+import { requestCost, money, perMillion, compactTokens, type ClientModel } from '../../lib/llm';
+import { estimate } from '../../lib/vram';
+import { offersHtml } from '../../lib/offers';
+import { SITE } from '../../data/site';
+import { u } from '../../lib/url';
+import changes from '../../data/generated/changes.json';
+
+export function getStaticPaths() {
+  return MODELS.map((m) => ({ params: { slug: m.slug }, props: { m } }));
+}
+const { m } = Astro.props as { m: Model };
+const cm: ClientModel = { id: m.id, slug: m.slug, name: m.name, p: m.providerName, i: m.input, o: m.output, cr: m.cacheRead, cw: m.cacheWrite, bi: m.batchInput, bo: m.batchOutput, t: m.tiers, ctx: m.context, mo: m.maxOutput };
+const blend = (x: { input: number; output: number }) => (x.input * 3 + x.output) / 4;
+const workloads = [
+  { label: 'Chatbot reply', i: 1500, o: 300 },
+  { label: 'RAG answer', i: 6000, o: 500 },
+  { label: 'Summarise a long document', i: 20000, o: 800 },
+  { label: 'Agent step (large context)', i: 30000, o: 1500 },
+].map((w) => ({ ...w, cost: requestCost(cm, { inTok: w.i, outTok: w.o, cachedPct: 0, batch: false }).perRequest }));
+const alternatives = MODELS.filter((x) => x.id !== m.id && (x.context ?? 0) >= Math.min(m.context ?? 0, 128000) * 0.5)
+  .map((x) => ({ x, d: Math.abs(Math.log(blend(x) / blend(m))) }))
+  .sort((a, b) => a.d - b.d)
+  .slice(0, 8)
+  .map((a) => a.x)
+  .sort((a, b) => blend(a) - blend(b));
+const cheaperSameProvider = MODELS.filter((x) => x.provider === m.provider && x.id !== m.id && blend(x) < blend(m)).slice(0, 3);
+const history = (changes as { date: string; id: string; type: string; field?: string; from?: number; to?: number }[]).filter((c) => c.id === m.id);
+const vram = m.arch && m.arch.headDim ? [4.89, 8, 16].map((bits) => ({ bits, gb: estimate({ params: m.arch!.params, layers: m.arch!.layers, kvHeads: m.arch!.kvHeads, headDim: m.arch!.headDim!, mlaDim: m.arch!.mlaDim }, bits, 16, 8192, 1).total })) : null;
+const title = `${m.name} API Pricing: ${perMillion(m.input)} / ${perMillion(m.output)} per 1M Tokens`;
+const description = `${m.name} by ${m.providerName} costs ${perMillion(m.input)} per 1M input tokens and ${perMillion(m.output)} per 1M output tokens${m.cacheRead !== undefined ? `, ${perMillion(m.cacheRead)} cached` : ''}. Context ${compactTokens(m.context)}. Cost examples and calculator. Updated daily.`;
+const faq: [string, string][] = [
+  [`How much does ${m.name} cost?`, `${perMillion(m.input)} per million input tokens and ${perMillion(m.output)} per million output tokens. A typical chatbot reply (1,500 input + 300 output tokens) costs about ${money(workloads[0].cost)}, or ${money(workloads[0].cost * 1000)} per 1,000 replies.`],
+  [`What is the context window of ${m.name}?`, `${m.context ? `${m.context.toLocaleString()} tokens` : 'Not published'}${m.maxOutput ? `, with up to ${m.maxOutput.toLocaleString()} output tokens per request` : ''}.`],
+  [`Does ${m.name} support prompt caching or batch discounts?`, `${m.cacheRead !== undefined ? `Yes, cached input costs ${perMillion(m.cacheRead)} per million tokens. ` : 'No cache pricing is published. '}${m.batchInput !== undefined ? `Batch requests cost ${perMillion(m.batchInput)} input / ${perMillion(m.batchOutput)} output per million tokens.` : 'No batch pricing is published.'}`],
+];
+const site = Astro.site ?? new URL(SITE.url);
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(u('/'), site).href },
+    { '@type': 'ListItem', position: 2, name: 'LLM pricing', item: new URL(u('/llm-pricing/'), site).href },
+    { '@type': 'ListItem', position: 3, name: m.name, item: new URL(u(`/models/${m.slug}/`), site).href },
+  ] },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+];
+const priceTiles: [string, string, string?][] = [
+  ['Input', perMillion(m.input)],
+  ['Output', perMillion(m.output)],
+  ['Cached input', perMillion(m.cacheRead)],
+  ['Cache write', perMillion(m.cacheWrite), m.cacheWrite1h !== undefined ? `1-hour cache: ${perMillion(m.cacheWrite1h)}` : undefined],
+  ['Batch input / output', m.batchInput !== undefined ? `${perMillion(m.batchInput)} / ${perMillion(m.batchOutput)}` : '–'],
+  ['Context window', compactTokens(m.context), m.maxOutput ? `max output ${compactTokens(m.maxOutput)}` : undefined],
+];
+---
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <section class="hero container" style="text-align:left">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={u('/')}>Home</a> / <a href={u('/llm-pricing/')}>LLM pricing</a> / <span aria-current="page">{m.name}</span></nav>
+    <span class="eyebrow"><Icon name="bot" size={15} /> {m.providerName}{m.created && ` · released ${fmtDate(m.created)}`}</span>
+    <h1 style="margin-left:0">{m.name} pricing</h1>
+    <p class="lead" style="margin-left:0">{perMillion(m.input)} per 1M input tokens · {perMillion(m.output)} per 1M output tokens · <span class="mono">{m.id}</span></p>
+    <div class="trust-row" style="justify-content:flex-start">
+      {m.verified === 'match' && <span><Icon name="checkCircle" size={16} /> Matches {m.providerName}’s list price</span>}
+      {m.verified === 'mismatch' && <span style="color:var(--medium)"><Icon name="alert" size={16} /> Differs from list price ({perMillion(m.listInput)} / {perMillion(m.listOutput)})</span>}
+      {m.verified === 'unchecked' && !m.firstParty && <span><Icon name="info" size={16} /> Lowest hosted price (open-weight model)</span>}
+      <span><Icon name="history" size={16} /> Updated {fmtDate(UPDATED)}</span>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="card card-pad">
+      <div class="tiles">
+        {priceTiles.map(([k, v, s]) => <div class="tile"><div class="k">{k}</div><div class="v num">{v}</div>{s && <div class="small muted">{s}</div>}</div>)}
+      </div>
+      <div class="containers" style="margin-bottom:14px">
+        {m.inputModalities.map((x) => <span class="chip on">Input: {x}</span>)}
+        {m.outputModalities.filter((x) => x !== 'text').map((x) => <span class="chip on">Output: {x}</span>)}
+        {m.tools && <span class="chip on">Tool calling</span>}
+        {m.reasoning && <span class="chip on">Reasoning</span>}
+      </div>
+      {m.tiers && (
+        <div class="alert alert-info"><Fragment set:html={'<svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>'} /><div>
+          <h3>Long-context pricing</h3>
+          <p>{m.tiers.map((t) => `Above ${t.minPromptTokens.toLocaleString()} input tokens: ${perMillion(t.input)} input / ${perMillion(t.output)} output per 1M.`).join(' ')}</p>
+        </div></div>
+      )}
+      <h2 class="section-title"><Icon name="calculator" size={18} /> What it costs for common workloads</h2>
+      <div class="table-wrap"><table class="data-table">
+        <thead><tr><th><button disabled>Workload</button></th><th class="r"><button disabled>Tokens in / out</button></th><th class="r"><button disabled>Per request</button></th><th class="r"><button disabled>Per 1,000</button></th><th class="r"><button disabled>Month at 1,000/day</button></th></tr></thead>
+        <tbody>{workloads.map((w) => <tr><td>{w.label}</td><td class="r">{w.i.toLocaleString()} / {w.o.toLocaleString()}</td><td class="r">{money(w.cost)}</td><td class="r">{money(w.cost * 1000)}</td><td class="r">{money(w.cost * 30000)}</td></tr>)}</tbody>
+      </table></div>
+      <div class="share-row" style="margin-top:14px">
+        <a class="btn btn-primary" href={u(`/llm-cost-calculator/?m=${encodeURIComponent(m.id)}`)}><Icon name="calculator" size={18} /> Calculate with your numbers</a>
+        {m.cacheRead !== undefined && <a class="btn" href={u(`/prompt-caching-calculator/?m=${encodeURIComponent(m.id)}`)}>Caching savings</a>}
+      </div>
+    </div>
+    <Fragment set:html={offersHtml('llm', { title: 'Useful for this' })} />
+  </div>
+
+  <section class="section container">
+    <div class="two-col">
+      <div>
+        <h2>Similar-priced models</h2>
+        <div class="table-wrap"><table class="data-table">
+          <thead><tr><th><button disabled>Model</button></th><th class="r"><button disabled>Input</button></th><th class="r"><button disabled>Output</button></th><th class="r"><button disabled>Context</button></th></tr></thead>
+          <tbody>{alternatives.map((x) => <tr><td><a href={u(`/models/${x.slug}/`)}>{x.name}</a> <span class="muted small">{x.providerName}</span></td><td class="r">{perMillion(x.input)}</td><td class="r">{perMillion(x.output)}</td><td class="r">{compactTokens(x.context)}</td></tr>)}</tbody>
+        </table></div>
+        {cheaperSameProvider.length > 0 && (
+          <p class="small" style="margin-top:12px">Cheaper from {m.providerName}: {cheaperSameProvider.map((x, i) => <Fragment>{i > 0 && ', '}<a href={u(`/models/${x.slug}/`)}>{x.name}</a> ({perMillion(x.input)} / {perMillion(x.output)})</Fragment>)}</p>
+        )}
+        {vram && (
+          <Fragment>
+            <h2 style="margin-top:28px">Running it yourself</h2>
+            <p class="small" style="color:var(--text-2)">{(m.arch!.params / 1e9).toFixed(1)}B parameters{m.arch!.moe ? ' (mixture of experts)' : ''}, {m.arch!.layers} layers. Estimated memory with an 8K context:</p>
+            <div class="tiles">{vram.map((v) => <div class="tile"><div class="k">{v.bits === 16 ? 'FP16' : v.bits === 8 ? 'FP8 / INT8' : '4-bit'}</div><div class="v">{v.gb < 10 ? v.gb.toFixed(1) : Math.round(v.gb)} GB</div></div>)}</div>
+            <a class="small" href={u(`/gpu-vram-calculator/?preset=${encodeURIComponent(m.id)}`)}>Open in the GPU VRAM calculator →</a>
+          </Fragment>
+        )}
+      </div>
+      <aside class="aside-card">
+        <h3>Price history</h3>
+        {history.length ? (
+          <ul class="checklist small">{history.map((h) => <li>{h.date}: {h.type === 'new' ? 'added' : `${h.field} ${perMillion(h.from)} → ${perMillion(h.to)}`}</li>)}</ul>
+        ) : <p class="small muted">No price changes recorded since tracking started.</p>}
+        <a class="small" href={u('/llm-price-changes/')}>All price changes →</a>
+        <hr style="border:0;border-top:1px solid var(--border);margin:16px 0" />
+        <p class="small muted">Source: OpenRouter models API{m.verified !== 'unchecked' ? ', cross-checked with the LiteLLM price list' : ''}. Confirm on {m.providerName}’s pricing page before committing to a budget.</p>
+      </aside>
+    </div>
+  </section>
+
+  <Faq items={faq} />
+</Base>

@@ -1,0 +1,60 @@
+---
+import { MODELS } from '../../lib/models';
+import data from '../../data/generated/models.json';
+const embeds = (data as { embeddings?: { id: string; name: string; provider: string; price: number; dims?: number }[] }).embeddings ?? [];
+const def = embeds.find((e) => e.name === 'text-embedding-3-small') ?? embeds[0];
+---
+<div class="calc" data-calc="embed">
+  <form>
+    <div class="field"><label for="em">Embedding model</label>
+      <select class="select" id="em" name="em">{embeds.map((e) => <option value={e.id} selected={e.id === def?.id}>{e.provider}: {e.name} (${e.price}/1M{e.dims ? `, ${e.dims}d` : ''})</option>)}<option value="custom">Custom price</option></select>
+    </div>
+    <div class="row2" data-custom hidden>
+      <div class="field"><label for="cp">Custom $ / 1M tokens</label><input class="input" id="cp" name="cp" type="number" min="0" step="0.001" value="0.05" /></div>
+      <div class="field"><label for="cd">Dimensions</label><input class="input" id="cd" name="cd" type="number" min="1" step="1" value="1024" /></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="docs">Documents</label><input class="input" id="docs" name="docs" type="number" min="0" step="1000" value="100000" /></div>
+      <div class="field"><label for="tpd">Avg tokens per document</label><input class="input" id="tpd" name="tpd" type="number" min="1" step="100" value="1000" /></div>
+    </div>
+    <div class="row3">
+      <div class="field"><label for="chunk">Chunk size (tokens)</label><input class="input" id="chunk" name="chunk" type="number" min="16" step="64" value="512" /></div>
+      <div class="field"><label for="ov">Chunk overlap %</label><input class="input" id="ov" name="ov" type="number" min="0" max="90" step="5" value="10" /></div>
+      <div class="field"><label for="growth">New docs / month %</label><input class="input" id="growth" name="growth" type="number" min="0" step="1" value="5" /></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="dims">Dimensions <span class="hint">0 = model default</span></label><input class="input" id="dims" name="dims" type="number" min="0" step="1" value="0" /></div>
+      <div class="field"><label for="prec">Vector precision</label><select class="select" id="prec" name="prec"><option value="4" selected>float32 (4 B/dim)</option><option value="2">float16 (2 B/dim)</option><option value="1">int8 (1 B/dim)</option><option value="0.125">binary (1 bit/dim)</option></select></div>
+    </div>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { EMBEDDINGS } from '../../app/modelpicker';
+  import { money } from '../../lib/llm';
+  const root = document.querySelector<HTMLElement>('[data-calc="embed"]')!;
+  mountCalc(root, (v) => {
+    const custom = v.em === 'custom';
+    root.querySelector<HTMLElement>('[data-custom]')!.hidden = !custom;
+    const e = EMBEDDINGS.find((x) => x.id === v.em);
+    const price = custom ? num(v.cp) : e?.price ?? 0;
+    const dims = num(v.dims) || (custom ? num(v.cd) : e?.dims ?? 1536);
+    const tokens = num(v.docs) * num(v.tpd) * (1 + num(v.ov) / 100);
+    const vectors = Math.ceil(tokens / Math.max(1, num(v.chunk)));
+    const once = (tokens / 1e6) * price;
+    const monthly = once * (num(v.growth) / 100);
+    const bytes = vectors * dims * num(v.prec, 4);
+    const gb = bytes / 1024 ** 3;
+    return `<div class="big"><div class="k">One-time embedding cost</div><div class="v">${money(once)}</div><div class="s">${(tokens / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })}M tokens · ${custom ? 'custom price' : esc(e?.name ?? '')} at $${price}/1M</div></div>
+      <table class="kv">
+        <tr><th>Vectors (chunks)</th><td>${vectors.toLocaleString()}</td></tr>
+        <tr><th>Raw vector storage (${dims} dims)</th><td>${gb < 1 ? (gb * 1024).toFixed(1) + ' MB' : gb.toFixed(2) + ' GB'}</td></tr>
+        <tr><th>With typical index overhead (×2)</th><td>${(gb * 2) < 1 ? (gb * 2048).toFixed(1) + ' MB' : (gb * 2).toFixed(2) + ' GB'}</td></tr>
+        <tr><th>Monthly cost for new documents</th><td>${money(monthly)}</td></tr>
+        <tr><th>First-year total</th><td>${money(once + monthly * 12)}</td></tr>
+      </table>
+      <p class="note">Re-embedding the whole corpus (e.g. when switching models) costs the one-time amount again.</p>`;
+  });
+</script>

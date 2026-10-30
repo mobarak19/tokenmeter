@@ -1,0 +1,84 @@
+---
+// Server-rendered (crawlable) table; client script adds sort + filter.
+import { MODELS, UPDATED, fmtDate } from '../../lib/models';
+import { perMillion, compactTokens } from '../../lib/llm';
+import { u } from '../../lib/url';
+const providers = [...new Set(MODELS.map((m) => m.providerName))].sort();
+---
+<div data-tool="pricing">
+  <div class="toolbar">
+    <div class="search grow" style="margin:0"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder={`Search ${MODELS.length} models`} aria-label="Search models" data-q /></div>
+    <label class="visually-hidden" for="prov">Provider</label>
+    <select class="select" id="prov" style="width:auto" data-prov><option value="">All providers</option>{providers.map((p) => <option>{p}</option>)}</select>
+    <label class="switch"><input type="checkbox" data-cache /> Has caching</label>
+    <label class="switch"><input type="checkbox" data-batchf /> Has batch</label>
+  </div>
+  <p class="note" style="margin:-4px 0 10px"><span class="data-badge">Updated {fmtDate(UPDATED)}</span> Prices in USD per 1M tokens. ✓ = matches the provider’s list price. Click a column to sort.</p>
+  <div class="table-wrap" style="max-height:70vh;overflow:auto">
+    <table class="data-table" data-table>
+      <thead><tr>
+        <th><button data-sort="name">Model</button></th>
+        <th><button data-sort="provider">Provider</button></th>
+        <th class="r"><button data-sort="input">Input</button></th>
+        <th class="r"><button data-sort="output">Output</button></th>
+        <th class="r"><button data-sort="cache">Cached input</button></th>
+        <th class="r"><button data-sort="batch">Batch in / out</button></th>
+        <th class="r"><button data-sort="context">Context</button></th>
+        <th><button data-sort="created">Released</button></th>
+      </tr></thead>
+      <tbody>
+        {MODELS.map((m) => (
+          <tr data-name={m.name.toLowerCase() + ' ' + m.id} data-provider={m.providerName} data-input={m.input} data-output={m.output} data-cache={m.cacheRead ?? ''} data-batch={m.batchInput ?? ''} data-context={m.context ?? 0} data-created={m.created ?? ''}>
+            <td><a href={u(`/models/${m.slug}/`)}>{m.name}</a>{m.verified === 'match' && <span class="tag ok" title="Matches the provider's list price">✓</span>}</td>
+            <td>{m.providerName}</td>
+            <td class="r">{perMillion(m.input)}</td>
+            <td class="r">{perMillion(m.output)}</td>
+            <td class="r">{perMillion(m.cacheRead)}</td>
+            <td class="r">{m.batchInput !== undefined ? `${perMillion(m.batchInput)} / ${perMillion(m.batchOutput)}` : '–'}</td>
+            <td class="r">{compactTokens(m.context)}</td>
+            <td>{m.created ?? '–'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="note" data-count style="margin-top:8px"></p>
+</div>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-tool="pricing"]')!;
+  const tbody = root.querySelector('tbody')!;
+  const rows = [...tbody.querySelectorAll<HTMLTableRowElement>('tr')];
+  const q = root.querySelector<HTMLInputElement>('[data-q]')!;
+  const prov = root.querySelector<HTMLSelectElement>('[data-prov]')!;
+  const fc = root.querySelector<HTMLInputElement>('[data-cache]')!;
+  const fb = root.querySelector<HTMLInputElement>('[data-batchf]')!;
+  let sort = { key: 'created', dir: -1 };
+  function apply() {
+    const t = q.value.trim().toLowerCase();
+    let shown = 0;
+    for (const r of rows) {
+      const ok = (!t || r.dataset.name!.includes(t)) && (!prov.value || r.dataset.provider === prov.value) && (!fc.checked || r.dataset.cache !== '') && (!fb.checked || r.dataset.batch !== '');
+      r.hidden = !ok;
+      if (ok) shown++;
+    }
+    root.querySelector<HTMLElement>('[data-count]')!.textContent = `${shown} of ${rows.length} models shown`;
+  }
+  function doSort(key: string) {
+    sort = { key, dir: sort.key === key ? -sort.dir : key === 'name' || key === 'provider' ? 1 : 1 };
+    const numeric = !['name', 'provider', 'created'].includes(key);
+    rows.sort((a, b) => {
+      const x = a.dataset[key] ?? '', y = b.dataset[key] ?? '';
+      if (numeric) {
+        if (x === '' && y !== '') return 1;
+        if (y === '' && x !== '') return -1;
+        return (parseFloat(x) - parseFloat(y)) * sort.dir;
+      }
+      return x.localeCompare(y) * sort.dir;
+    });
+    tbody.append(...rows);
+    root.querySelectorAll('th').forEach((th) => th.setAttribute('aria-sort', th.querySelector('button')?.dataset.sort === key ? (sort.dir === 1 ? 'ascending' : 'descending') : 'none'));
+  }
+  root.querySelectorAll<HTMLButtonElement>('[data-sort]').forEach((b) => b.addEventListener('click', () => doSort(b.dataset.sort!)));
+  [q, prov, fc, fb].forEach((el) => el.addEventListener('input', apply));
+  apply();
+</script>

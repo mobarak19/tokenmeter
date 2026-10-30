@@ -1,0 +1,36 @@
+---
+import { QUANTS } from '../../lib/vram';
+const sizes = [0.5, 1, 1.5, 3, 4, 7, 8, 12, 13, 14, 24, 27, 32, 34, 70, 72, 123, 235, 405, 671];
+---
+<div class="calc" data-calc="quant">
+  <form>
+    <div class="field"><label for="b">Model size (billions of parameters)</label><input class="input" id="b" name="b" type="number" min="0.1" step="0.1" value="7" list="qsizes" /><datalist id="qsizes">{sizes.map((s) => <option value={s} />)}</datalist></div>
+    <div class="field"><label for="ctx">Context for KV cache (tokens) <span class="hint">0 = weights only</span></label><input class="input" id="ctx" name="ctx" type="number" min="0" step="1024" value="0" /></div>
+    <p class="note">KV cache assumes a Llama-style 7–8B layout scaled by size; use the GPU VRAM calculator for an exact model architecture.</p>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { QUANTS, DEVICES } from '../../lib/vram';
+  const GiB = 1024 ** 3;
+  mountCalc(document.querySelector<HTMLElement>('[data-calc="quant"]')!, (v) => {
+    const params = num(v.b) * 1e9;
+    // KV estimate: ~128 KiB per token for an 8B GQA model, scaled with sqrt of size (layers and width grow together).
+    const kvPerTok = 131072 * Math.sqrt(num(v.b) / 8);
+    const kv = (kvPerTok * num(v.ctx)) / GiB;
+    const rows = QUANTS.map((q) => {
+      const w = (params * q.bits) / 8 / GiB;
+      const total = w + kv + 0.8 + w * 0.05;
+      const dev = DEVICES.filter((d) => d.kind !== 'On-device').filter((d) => d.gb * 0.9 >= total).sort((a, b) => a.gb - b.gb)[0];
+      return { q, w, total, dev };
+    });
+    const q4 = rows.find((r) => r.q.id === 'q4_k_m')!;
+    return `<div class="big"><div class="k">${num(v.b)}B at 4-bit (Q4_K_M)</div><div class="v">${q4.w.toFixed(1)} GB</div><div class="s">weights · about ${q4.total.toFixed(1)} GB total to run${num(v.ctx) ? ` with ${num(v.ctx).toLocaleString()} tokens of context` : ''}</div></div>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th><button disabled>Precision</button></th><th class="r"><button disabled>Bits</button></th><th class="r"><button disabled>Weights</button></th><th class="r"><button disabled>To run</button></th><th><button disabled>Smallest fit</button></th></tr></thead><tbody>
+      ${rows.map((r) => `<tr><td>${esc(r.q.label)}</td><td class="r">${r.q.bits}</td><td class="r">${r.w.toFixed(1)} GB</td><td class="r">${r.total.toFixed(1)} GB</td><td>${r.dev ? esc(r.dev.name) : '<span class="muted">Multiple GPUs</span>'}</td></tr>`).join('')}
+      </tbody></table></div>
+      <p class="note">GB = GiB (2³⁰ bytes), the unit GPU memory is sold in. “To run” adds KV cache and ~0.8 GB + 5% runtime overhead; “smallest fit” leaves 10% headroom.</p>`;
+  });
+</script>

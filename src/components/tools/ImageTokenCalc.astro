@@ -1,0 +1,50 @@
+---
+import ImageDrop from '../ImageDrop.astro';
+import ModelPicker from '../ModelPicker.astro';
+import { VISION_METHODS } from '../../lib/vision';
+import { MODELS, flagship } from '../../lib/models';
+const def = flagship('openai') ?? MODELS[0];
+---
+<div class="calc" data-calc="imgtok">
+  <form>
+    <ImageDrop />
+    <div class="row2">
+      <div class="field"><label for="w">Width (px)</label><input class="input" id="w" name="w" type="number" min="1" step="1" value="4032" /></div>
+      <div class="field"><label for="h">Height (px)</label><input class="input" id="h" name="h" type="number" min="1" step="1" value="3024" /></div>
+    </div>
+    <div class="field"><label for="method">Counting method</label><select class="select" id="method" name="method">{VISION_METHODS.map((m) => <option value={m.id}>{m.label}</option>)}</select></div>
+    <div class="field"><label for="n">Images per month</label><input class="input" id="n" name="n" type="number" min="0" step="100" value="10000" /></div>
+    <ModelPicker value={def.id} label="Price images at this model’s input rate" max={1} />
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { mountPicker, byId } from '../../app/modelpicker';
+  import { mountImageDrop } from '../../app/imagedrop';
+  import { imageTokens, VISION_METHODS, type VisionMethod } from '../../lib/vision';
+  import { money } from '../../lib/llm';
+  const root = document.querySelector<HTMLElement>('[data-calc="imgtok"]')!;
+  const { form } = mountCalc(root, (v) => {
+    const r = imageTokens(num(v.w), num(v.h), v.method as VisionMethod);
+    const m = byId.get((v.m ?? '').split(',')[0]);
+    const per = m ? (r.tokens * m.i) / 1e6 : 0;
+    const doc = VISION_METHODS.find((x) => x.id === v.method)!.doc;
+    return `<div class="big"><div class="k">Tokens per image</div><div class="v">${r.tokens.toLocaleString()}</div><div class="s">${esc(r.note)}</div></div>
+      <table class="kv">
+        <tr><th>Counted at</th><td>${r.resized[0]} × ${r.resized[1]} px</td></tr>
+        <tr><th>Cost per image${m ? ` (${esc(m.name)})` : ''}</th><td>${money(per)}</td></tr>
+        <tr><th>Per 1,000 images</th><td>${money(per * 1000)}</td></tr>
+        <tr><th>Per month (${num(v.n).toLocaleString()} images)</th><td>${money(per * num(v.n))}</td></tr>
+      </table>
+      ${m && !m.im ? `<div class="alert alert-warn" style="margin:0"><div><p>${esc(m.name)} doesn’t list image input. Pick a multimodal model.</p></div></div>` : ''}
+      <p class="note">Formula from the <a href="${doc}" target="_blank" rel="noopener">provider’s documentation</a>. Check it for your exact model.</p>`;
+  });
+  mountPicker(root.querySelector<HTMLElement>('[data-picker]')!, 1);
+  mountImageDrop(root.querySelector<HTMLElement>('[data-imgdrop]')!, (w, h) => {
+    (form.elements.namedItem('w') as HTMLInputElement).value = String(w);
+    (form.elements.namedItem('h') as HTMLInputElement).value = String(h);
+    form.dispatchEvent(new Event('input'));
+  });
+</script>

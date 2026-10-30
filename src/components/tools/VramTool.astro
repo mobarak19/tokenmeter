@@ -1,0 +1,79 @@
+---
+import { MODELS } from '../../lib/models';
+import { QUANTS, KV_BITS } from '../../lib/vram';
+const presets = MODELS.filter((m) => m.arch && m.arch.headDim)
+  .map((m) => ({ id: m.id, name: `${m.name} (${(m.arch!.params / 1e9).toFixed(m.arch!.params < 1e10 ? 1 : 0)}B)`, a: m.arch }))
+  .sort((a, b) => a.a!.params - b.a!.params);
+const def = presets.find((p) => p.a!.params > 6e9 && p.a!.params < 1e10) ?? presets[0];
+---
+<div class="calc" data-calc="vram">
+  <script type="application/json" data-presets set:html={JSON.stringify(presets)} />
+  <form>
+    <div class="field">
+      <label for="preset">Model <span class="hint">architecture from Hugging Face</span></label>
+      <select class="select" id="preset" name="preset">
+        {presets.map((p) => <option value={p.id} selected={p.id === def?.id}>{p.name}</option>)}
+        <option value="custom">Custom…</option>
+      </select>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="params">Parameters <span class="hint">billions</span></label><input class="input" id="params" name="params" type="number" min="0.1" step="0.1" value={def ? +(def.a!.params / 1e9).toFixed(2) : 8} /></div>
+      <div class="field"><label for="layers">Layers</label><input class="input" id="layers" name="layers" type="number" min="1" step="1" value={def?.a!.layers ?? 32} /></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="kvh">KV heads</label><input class="input" id="kvh" name="kvh" type="number" min="1" step="1" value={def?.a!.kvHeads ?? 8} /></div>
+      <div class="field"><label for="hd">Head dimension</label><input class="input" id="hd" name="hd" type="number" min="1" step="1" value={def?.a!.headDim ?? 128} /></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="q">Weight precision</label><select class="select" id="q" name="q">{QUANTS.map((q) => <option value={q.id} selected={q.id === 'q4_k_m'}>{q.label}</option>)}</select></div>
+      <div class="field"><label for="kv">KV cache precision</label><select class="select" id="kv" name="kv">{KV_BITS.map((k) => <option value={k.id}>{k.label}</option>)}</select></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="ctx">Context length <span class="hint">tokens</span></label><input class="input" id="ctx" name="ctx" type="number" min="512" step="1024" value="8192" /></div>
+      <div class="field"><label for="batch">Concurrent sequences</label><input class="input" id="batch" name="batch" type="number" min="1" step="1" value="1" /></div>
+    </div>
+    <input type="hidden" name="mla" value={def?.a!.mlaDim ?? ''} />
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { estimate, QUANTS, KV_BITS, DEVICES } from '../../lib/vram';
+  import { icon } from '../../lib/icons';
+  const root = document.querySelector<HTMLElement>('[data-calc="vram"]')!;
+  const presets = JSON.parse(root.querySelector('[data-presets]')!.textContent!) as { id: string; a: { params: number; layers: number; kvHeads: number; headDim: number; mlaDim?: number; maxContext?: number; moe?: boolean } }[];
+  const { form } = mountCalc(root, (v) => {
+    const a = { params: num(v.params) * 1e9, layers: num(v.layers), kvHeads: num(v.kvh), headDim: num(v.hd), mlaDim: num(v.mla) || undefined };
+    const qb = QUANTS.find((q) => q.id === v.q)!.bits;
+    const kb = KV_BITS.find((k) => k.id === v.kv)!.bits;
+    const r = estimate(a, qb, kb, num(v.ctx), Math.max(1, num(v.batch)));
+    const p = presets.find((x) => x.id === v.preset);
+    const pct = (x: number) => (x / r.total) * 100;
+    const gb = (x: number) => `${x < 10 ? x.toFixed(1) : Math.round(x)} GB`;
+    const fits = DEVICES.map((d) => ({ d, s: r.total <= d.gb * 0.9 ? 'ok' : r.total <= d.gb ? 'warn' : 'bad' }));
+    return `<div class="big"><div class="k">Estimated memory</div><div class="v">${gb(r.total)}</div>
+        <div class="s">${(qb).toString()} bits/weight · ${num(v.ctx).toLocaleString()} tokens context${num(v.batch) > 1 ? ` × ${num(v.batch)}` : ''}</div>
+        <div class="bar-split" aria-hidden="true"><i class="c1" style="width:${pct(r.weights)}%"></i><i class="c2" style="width:${pct(r.kv)}%"></i><i class="c5" style="width:${pct(r.overhead)}%"></i></div>
+        <div class="legend"><span><b class="c1"></b>Weights ${gb(r.weights)}</span><span><b class="c2"></b>KV cache ${gb(r.kv)}</span><span><b class="c5"></b>Overhead ${gb(r.overhead)}</span></div></div>
+      ${p?.a.moe ? `<div class="alert alert-info" style="margin:0"><div><p>Mixture-of-experts model: all experts must be in memory, even though only some run per token.</p></div></div>` : ''}
+      ${a.mlaDim ? `<p class="note">Uses latent attention (compressed KV cache): ${(r.kvPerToken / 1024).toFixed(0)} KB per token.</p>` : `<p class="note">KV cache: ${(r.kvPerToken / 1024).toFixed(0)} KB per token.</p>`}
+      <ul class="checklist">${fits.map(({ d, s }) => `<li><span class="${s}">${icon(s === 'ok' ? 'check' : s === 'warn' ? 'alert' : 'x', 16)}</span>${esc(d.name)} <span class="muted">· ${d.kind}, ~${Math.round(d.gb)} GB usable</span>${s === 'warn' ? ' <span class="muted">(tight)</span>' : ''}</li>`).join('')}</ul>
+      <p class="note">Estimate ±15%. Runtimes differ (llama.cpp, vLLM, MLX). Multi-GPU setups add some per-GPU overhead.</p>`;
+  });
+  const presetSelect = form.querySelector<HTMLSelectElement>('[name=preset]')!;
+  presetSelect.addEventListener('change', (e) => {
+    const p = presets.find((x) => x.id === (e.target as HTMLSelectElement).value);
+    if (!p) return;
+    const set = (n: string, val: string | number) => ((form.elements.namedItem(n) as HTMLInputElement).value = String(val));
+    set('params', +(p.a.params / 1e9).toFixed(2));
+    set('layers', p.a.layers);
+    set('kvh', p.a.kvHeads);
+    set('hd', p.a.headDim);
+    set('mla', p.a.mlaDim ?? '');
+    form.dispatchEvent(new Event('input'));
+  });
+  // Deep links like ?preset=<model id> (from model pages) fill in the architecture.
+  const qs = new URLSearchParams(location.search);
+  if (qs.has('preset') && !qs.has('params')) presetSelect.dispatchEvent(new Event('change'));
+</script>

@@ -1,0 +1,60 @@
+---
+import { defaultModels } from '../../lib/models';
+const sample = 'You are a helpful assistant for a photo-editing app. Answer briefly and suggest one next step.\n\nUser: How do I remove the location from a photo before I share it?';
+---
+<div class="calc" data-tool="tokens" data-defaults={defaultModels(['openai', 'anthropic', 'google', 'deepseek', 'mistralai', 'meta-llama']).join(',')}>
+  <form>
+    <div class="field">
+      <label for="tok-text">Your prompt or document <span class="hint" data-chars></span></label>
+      <textarea class="input" id="tok-text" rows="14" style="min-height:280px">{sample}</textarea>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="tok-out">Expected output tokens</label><input class="input" id="tok-out" type="number" min="0" step="50" value="300" /></div>
+      <div class="field"><label for="tok-n">Requests</label><input class="input" id="tok-n" type="number" min="1" step="100" value="1000" /></div>
+    </div>
+    <p class="note">Your text stays in your browser. The tokenizer (~2 MB) is downloaded once, the first time you count.</p>
+  </form>
+  <div class="out" data-out aria-live="polite"><div class="loading" style="min-height:160px"><div class="spinner"></div><span class="small muted">Loading tokenizer…</span></div></div>
+</div>
+<script>
+  import { byId, MODELS } from '../../app/modelpicker';
+  import { requestCost, money, compactTokens } from '../../lib/llm';
+  import { esc } from '../../app/calc';
+  import { u } from '../../lib/url';
+  const root = document.querySelector<HTMLElement>('[data-tool="tokens"]')!;
+  const ta = root.querySelector<HTMLTextAreaElement>('textarea')!;
+  const outTok = root.querySelector<HTMLInputElement>('#tok-out')!;
+  const nReq = root.querySelector<HTMLInputElement>('#tok-n')!;
+  const out = root.querySelector<HTMLElement>('[data-out]')!;
+  const defaults = root.dataset.defaults!.split(',').filter((id) => byId.has(id));
+  let enc: { encode: (s: string) => number[] } | null = null;
+
+  async function load() {
+    const [{ Tiktoken }, ranks] = await Promise.all([import('js-tiktoken/lite'), import('js-tiktoken/ranks/o200k_base')]);
+    enc = new Tiktoken(ranks.default);
+  }
+  let t = 0;
+  function run() {
+    clearTimeout(t);
+    t = window.setTimeout(() => {
+      if (!enc) return;
+      const text = ta.value;
+      const tokens = enc.encode(text).length;
+      const words = (text.match(/\S+/g) ?? []).length;
+      root.querySelector<HTMLElement>('[data-chars]')!.textContent = `${[...text].length.toLocaleString()} characters · ${words.toLocaleString()} words`;
+      const o = Number(outTok.value) || 0;
+      const n = Number(nReq.value) || 1;
+      const rows = defaults.map((id) => byId.get(id)!).map((m) => ({ m, c: requestCost(m, { inTok: tokens, outTok: o, cachedPct: 0, batch: false }) }));
+      const fits = MODELS.filter((m) => m.ctx && m.ctx >= tokens + o);
+      const largest = [...MODELS].sort((a, b) => (b.ctx ?? 0) - (a.ctx ?? 0))[0];
+      out.innerHTML = `<div class="big"><div class="k">Tokens (GPT o200k)</div><div class="v">${tokens.toLocaleString()}</div>
+          <div class="s">${words ? (tokens / words).toFixed(2) : 0} tokens per word · ${tokens ? (([...text].length) / tokens).toFixed(1) : 0} characters per token</div></div>
+        <table class="kv"><tr><th>Model</th><td>${n.toLocaleString()} requests</td></tr>
+          ${rows.map((r) => `<tr><th><a href="${u(`/models/${r.m.slug}/`)}">${esc(r.m.name)}</a></th><td>${money(r.c.perRequest * n)}</td></tr>`).join('')}</table>
+        <p class="note">Cost = these tokens as input + ${o} output tokens per request. Other model families tokenise differently (often ±20% for English).</p>
+        <div class="alert ${fits.length === MODELS.length ? 'alert-ok' : 'alert-warn'}" style="margin:0"><div><p>Fits the context window of <strong>${fits.length}</strong> of ${MODELS.length} models${fits.length < MODELS.length ? ` (largest: ${esc(largest.name)}, ${compactTokens(largest.ctx)})` : ''}.</p></div></div>`;
+    }, 120);
+  }
+  [ta, outTok, nReq].forEach((el) => el.addEventListener('input', run));
+  load().then(run).catch(() => (out.innerHTML = '<p class="muted">The tokenizer could not be loaded. Check your connection and reload.</p>'));
+</script>

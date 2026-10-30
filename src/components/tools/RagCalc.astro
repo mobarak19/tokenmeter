@@ -1,0 +1,73 @@
+---
+import ModelPicker from '../ModelPicker.astro';
+import { defaultModels } from '../../lib/models';
+import data from '../../data/generated/models.json';
+const embeds = (data as { embeddings?: { id: string; name: string; provider: string; price: number }[] }).embeddings ?? [];
+const def = embeds.find((e) => e.name === 'text-embedding-3-small') ?? embeds[0];
+---
+<div class="calc" data-calc="rag">
+  <form>
+    <h3 class="section-title" style="margin-top:0">1 · Your documents</h3>
+    <div class="row3">
+      <div class="field"><label for="docs">Documents</label><input class="input" id="docs" name="docs" type="number" min="0" step="1000" value="50000" /></div>
+      <div class="field"><label for="tpd">Tokens / doc</label><input class="input" id="tpd" name="tpd" type="number" min="1" step="100" value="1500" /></div>
+      <div class="field"><label for="chunk">Chunk size</label><input class="input" id="chunk" name="chunk" type="number" min="16" step="64" value="500" /></div>
+    </div>
+    <div class="field"><label for="em">Embedding model</label><select class="select" id="em" name="em">{embeds.map((e) => <option value={e.id} selected={e.id === def?.id}>{e.provider}: {e.name} (${e.price}/1M)</option>)}</select></div>
+    <h3 class="section-title">2 · Each query</h3>
+    <ModelPicker value={defaultModels(['openai'])[0]} label="LLM for answers" max={1} />
+    <div class="row3">
+      <div class="field"><label for="sys">System prompt</label><input class="input" id="sys" name="sys" type="number" min="0" step="100" value="800" /></div>
+      <div class="field"><label for="k">Chunks retrieved (k)</label><input class="input" id="k" name="k" type="number" min="0" step="1" value="6" /></div>
+      <div class="field"><label for="q">Question tokens</label><input class="input" id="q" name="q" type="number" min="0" step="10" value="60" /></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="ans">Answer tokens</label><input class="input" id="ans" name="ans" type="number" min="0" step="50" value="400" /></div>
+      <div class="field"><label for="cache">Cached input % <span class="hint">e.g. system prompt</span></label><input class="input" id="cache" name="cache" type="number" min="0" max="95" step="5" value="0" /></div>
+    </div>
+    <h3 class="section-title">3 · Volume</h3>
+    <div class="row3">
+      <div class="field"><label for="qpd">Queries / day</label><input class="input" id="qpd" name="qpd" type="number" min="0" step="100" value="2000" /></div>
+      <div class="field"><label for="users">Active users</label><input class="input" id="users" name="users" type="number" min="1" step="10" value="400" /></div>
+      <div class="field"><label for="vdb">Vector DB $ / month</label><input class="input" id="vdb" name="vdb" type="number" min="0" step="5" value="50" /></div>
+    </div>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { mountPicker, byId, EMBEDDINGS } from '../../app/modelpicker';
+  import { requestCost, money } from '../../lib/llm';
+  const root = document.querySelector<HTMLElement>('[data-calc="rag"]')!;
+  mountCalc(root, (v) => {
+    const m = byId.get((v.m ?? '').split(',')[0]);
+    if (!m) return '<p class="muted">Choose an LLM.</p>';
+    const e = EMBEDDINGS.find((x) => x.id === v.em);
+    const ep = e?.price ?? 0;
+    const corpus = num(v.docs) * num(v.tpd);
+    const indexCost = (corpus / 1e6) * ep;
+    const chunks = Math.ceil(corpus / Math.max(1, num(v.chunk)));
+    const inTok = num(v.sys) + num(v.q) + num(v.k) * num(v.chunk);
+    const llm = requestCost(m, { inTok, outTok: num(v.ans), cachedPct: num(v.cache), batch: false });
+    const queryEmbed = (num(v.q) / 1e6) * ep;
+    const perQuery = llm.perRequest + queryEmbed;
+    const monthlyQueries = perQuery * num(v.qpd) * 30;
+    const monthly = monthlyQueries + num(v.vdb);
+    const pct = (x: number) => (monthly ? (x / monthly) * 100 : 0);
+    const inputShare = llm.input + llm.cached;
+    return `<div class="big"><div class="k">Monthly cost</div><div class="v">${money(monthly)}</div><div class="s">${money(perQuery)} per query · ${money(monthly / Math.max(1, num(v.users)))} per user · ${money(monthly * 12)} per year</div>
+        <div class="bar-split" aria-hidden="true"><i class="c1" style="width:${pct(inputShare * num(v.qpd) * 30)}%"></i><i class="c2" style="width:${pct(llm.output * num(v.qpd) * 30)}%"></i><i class="c5" style="width:${pct(num(v.vdb))}%"></i><i class="c4" style="width:${pct(queryEmbed * num(v.qpd) * 30)}%"></i></div>
+        <div class="legend"><span><b class="c1"></b>LLM input</span><span><b class="c2"></b>LLM output</span><span><b class="c5"></b>Vector DB</span><span><b class="c4"></b>Query embeddings</span></div></div>
+      <table class="kv">
+        <tr><th>One-time indexing (${(corpus / 1e6).toFixed(1)}M tokens)</th><td>${money(indexCost)}</td></tr>
+        <tr><th>Vectors stored</th><td>${chunks.toLocaleString()}</td></tr>
+        <tr><th>Input tokens per query</th><td>${inTok.toLocaleString()}</td></tr>
+        <tr><th>LLM input / output per query</th><td>${money(inputShare)} / ${money(llm.output)}</td></tr>
+        <tr><th>Query embedding per query</th><td>${money(queryEmbed)}</td></tr>
+        <tr><th>Per 1,000 queries</th><td>${money(perQuery * 1000)}</td></tr>
+      </table>
+      <p class="note">${esc(m.name)} · ${esc(e?.name ?? '')}. Retrieved context is ${Math.round(((num(v.k) * num(v.chunk)) / Math.max(1, inTok)) * 100)}% of each prompt. Fewer, better chunks is usually the biggest saving.</p>`;
+  });
+  mountPicker(root.querySelector<HTMLElement>('[data-picker]')!, 1);
+</script>

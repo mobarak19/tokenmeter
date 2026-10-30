@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+import { SITE } from '../data/site';
+import { SECTIONS, toolsIn } from '../data/tools';
+import { donation } from '../lib/offers';
+import { u } from '../lib/url';
+import data from '../data/generated/models.json';
+const support = donation();
+const year = new Date().getFullYear();
+const updated = new Date(data.updated).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href={u('/')}><span class="logo-mark"><Icon name="gauge" size={20} /></span>{SITE.name}</a>
+        <p style="margin-top:12px;max-width:320px">Free AI cost, token and GPU calculators. Prices for {data.models.length} models, updated daily. Everything runs in your browser.</p>
+        <p class="small muted">Prices updated {updated}</p>
+        <p class="small">Building an app? <a href={SITE.sister.url} target="_blank" rel="noopener">{SITE.sister.name}: {SITE.sister.text}</a></p>
+        {support && (<a class:list={['btn btn-sm support-btn', { placeholder: !support.ready }]} href={support.ready ? support.url : '#'} target="_blank" rel="noopener"><Icon name="zap" size={16} /> {support.label}</a>)}
+      </div>
+      <div><h3>{SECTIONS.cost.name}</h3><ul>{toolsIn('cost').map((t) => <li><a href={u(`/${t.slug}/`)}>{t.name}</a></li>)}</ul></div>
+      <div><h3>Tokens · GPU · SaaS</h3><ul>{[...toolsIn('tokens'), ...toolsIn('hardware'), ...toolsIn('saas')].map((t) => <li><a href={u(`/${t.slug}/`)}>{t.name}</a></li>)}</ul></div>
+      <div><h3>Data &amp; more</h3><ul>
+        {toolsIn('data').map((t) => <li><a href={u(`/${t.slug}/`)}>{t.name}</a></li>)}
+        <li><a href={u('/vram/')}>VRAM by model size</a></li>
+        <li><a href={u('/guides/how-llm-api-pricing-works/')}>How LLM pricing works</a></li>
+        <li><a href={u('/about/')}>About</a> · <a href={u('/privacy/')}>Privacy</a> · <a href={u('/disclosure/')}>Disclosure</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {year} {SITE.name}. Not affiliated with OpenAI, Anthropic, Google or any provider listed.</span>
+      <span>Made by {SITE.author}</span>
+    </div>
+  </div>
+</footer>

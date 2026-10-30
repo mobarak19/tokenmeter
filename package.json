@@ -1,0 +1,22 @@
+{
+  "name": "ai-dev-utilities",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "update-data": "node scripts/update-data.mjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.5",
+    "js-tiktoken": "^1.0.21",
+    "jszip": "^3.10.2"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "private": true
+}

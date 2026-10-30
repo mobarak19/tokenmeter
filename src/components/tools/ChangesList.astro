@@ -1,0 +1,31 @@
+---
+import changes from '../../data/generated/changes.json';
+import { MODELS, TRACKING_SINCE, fmtDate } from '../../lib/models';
+import { perMillion } from '../../lib/llm';
+import { u } from '../../lib/url';
+const bySlug = new Map(MODELS.map((m) => [m.id, m.slug]));
+type Change = { date: string; id: string; name: string; type: string; field?: string; from?: number; to?: number; input?: number; output?: number };
+const groups = new Map<string, Change[]>();
+for (const c of changes as Change[]) groups.set(c.date, [...(groups.get(c.date) ?? []), c]);
+const label: Record<string, string> = { input: 'input', output: 'output', cacheRead: 'cached input' };
+---
+<div>
+  <p class="note" style="margin-bottom:14px"><span class="data-badge">Tracking since {fmtDate(TRACKING_SINCE)}</span> Prices per 1M tokens. Checked daily.</p>
+  {groups.size === 0 && <p class="muted">No changes detected yet. Changes appear here automatically as soon as the daily check finds them.</p>}
+  {[...groups].map(([date, list]) => (
+    <section style="margin-bottom:22px">
+      <h3 class="section-title">{fmtDate(date)} <span class="tag">{list.length}</span></h3>
+      <ul class="checklist">
+        {list.map((c) => {
+          const slug = bySlug.get(c.id);
+          const name = slug ? <a href={u(`/models/${slug}/`)}>{c.name}</a> : <strong>{c.name}</strong>;
+          if (c.type === 'new') return <li><span class="tag ok">New</span> {name}: {perMillion(c.input)} in / {perMillion(c.output)} out</li>;
+          if (c.type === 'removed') return <li><span class="tag">Removed</span> {name}</li>;
+          const down = (c.to ?? 0) < (c.from ?? 0);
+          const pct = c.from ? Math.round((((c.to ?? 0) - c.from) / c.from) * 100) : 0;
+          return <li><span class:list={['tag', down ? 'ok' : 'warn']}>{down ? '↓' : '↑'} {Math.abs(pct)}%</span> {name}: {label[c.field ?? ''] ?? c.field} {perMillion(c.from)} → {perMillion(c.to)}</li>;
+        })}
+      </ul>
+    </section>
+  ))}
+</div>

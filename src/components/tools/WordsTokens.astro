@@ -1,0 +1,40 @@
+---
+import ratios from '../../data/token-ratios.json';
+const langs = Object.keys(ratios.languages);
+---
+<div class="calc" data-calc="words">
+  <form>
+    <div class="row2">
+      <div class="field"><label for="amt">Amount</label><input class="input" id="amt" name="amt" type="number" min="0" step="any" value="10000" /></div>
+      <div class="field"><label for="unit">Unit</label><select class="select" id="unit" name="unit"><option value="words" selected>words</option><option value="chars">characters</option><option value="tokens">tokens</option><option value="pages">pages (500 words)</option></select></div>
+    </div>
+    <div class="field"><label for="lang">Language / content</label><select class="select" id="lang" name="lang">{langs.map((l) => <option value={l}>{l}</option>)}</select></div>
+    <p class="note">Ratios measured with the GPT <code>{ratios.tokenizer}</code> tokenizer on sample text. {ratios.note}</p>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num } from '../../app/calc';
+  import ratios from '../../data/token-ratios.json';
+  const R = ratios.languages as Record<string, { tokensPerWord: number | null; charsPerToken: number }>;
+  mountCalc(document.querySelector<HTMLElement>('[data-calc="words"]')!, (v) => {
+    const r = R[v.lang];
+    const noWords = r.tokensPerWord === null; // Chinese / Japanese: no spaces between words
+    const amt = num(v.amt);
+    let tokens: number;
+    if (v.unit === 'tokens') tokens = amt;
+    else if (v.unit === 'chars') tokens = amt / r.charsPerToken;
+    else if (noWords) return '<div class="alert alert-info" style="margin:0"><div><p>This language isn’t written with spaces between words. Convert from characters instead.</p></div></div>';
+    else tokens = (v.unit === 'pages' ? amt * 500 : amt) * r.tokensPerWord!;
+    const words = noWords ? null : tokens / r.tokensPerWord!;
+    const fmt = (x: number) => Math.round(x).toLocaleString();
+    return `<div class="big"><div class="k">≈ Tokens</div><div class="v">${fmt(tokens)}</div><div class="s">${v.lang}: ${noWords ? '' : `${r.tokensPerWord} tokens per word · `}${r.charsPerToken} characters per token</div></div>
+      <table class="kv">
+        ${words !== null ? `<tr><th>Words</th><td>${fmt(words)}</td></tr><tr><th>Pages (500 words)</th><td>${(words / 500).toLocaleString(undefined, { maximumFractionDigits: 1 })}</td></tr>` : ''}
+        <tr><th>Characters (incl. spaces)</th><td>${fmt(tokens * r.charsPerToken)}</td></tr>
+        <tr><th>vs English, same content</th><td>${words !== null ? `${(r.tokensPerWord! / R.English.tokensPerWord!).toFixed(2)}× the tokens` : '–'}</td></tr>
+      </table>
+      <p class="note">Estimate only. For an exact count, paste your text into the token counter.</p>`;
+  });
+</script>

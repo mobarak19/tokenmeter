@@ -1,0 +1,62 @@
+---
+import { MODELS } from '../../lib/models';
+const presets = MODELS.filter((m) => m.arch && m.arch.headDim && (m.arch as any).hidden && (m.arch as any).intermediate && (m.arch as any).vocab)
+  .map((m) => ({ id: m.id, name: `${m.name} (${(m.arch!.params / 1e9).toFixed(m.arch!.params < 1e10 ? 1 : 0)}B)`, a: m.arch }))
+  .sort((a, b) => a.a!.params - b.a!.params);
+const def = presets.find((p) => p.a!.params > 6e9 && p.a!.params < 1e10) ?? presets[0];
+---
+<div class="calc" data-calc="lora">
+  <script type="application/json" data-presets set:html={JSON.stringify(presets)} />
+  <form>
+    <div class="field"><label for="preset">Model <span class="hint">architecture from Hugging Face</span></label>
+      <select class="select" id="preset" name="preset">{presets.map((p) => <option value={p.id} selected={p.id === def?.id}>{p.name}</option>)}</select>
+    </div>
+    <div class="field"><span class="label">Method</span>
+      <div class="seg" role="radiogroup" aria-label="Fine-tuning method">
+        <label><input type="radio" name="method" value="qlora" checked /><span>QLoRA (4-bit)</span></label>
+        <label><input type="radio" name="method" value="lora" /><span>LoRA</span></label>
+        <label><input type="radio" name="method" value="full" /><span>Full fine-tune</span></label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="rank">LoRA rank</label><select class="select" id="rank" name="rank">{[4, 8, 16, 32, 64, 128].map((r) => <option value={r} selected={r === 16}>{r}</option>)}</select></div>
+      <div class="field"><label for="targets">LoRA targets</label><select class="select" id="targets" name="targets"><option value="all" selected>All linear layers</option><option value="attn">Attention only (q, k, v, o)</option></select></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="seq">Sequence length</label><select class="select" id="seq" name="seq">{[512, 1024, 2048, 4096, 8192, 16384, 32768].map((s) => <option value={s} selected={s === 2048}>{s.toLocaleString()}</option>)}</select></div>
+      <div class="field"><label for="batch">Micro-batch size</label><input class="input" id="batch" name="batch" type="number" min="1" step="1" value="2" /></div>
+    </div>
+    <div class="row2">
+      <label class="switch"><input type="checkbox" name="gc" checked /> <span>Gradient checkpointing</span></label>
+      <div class="field"><label for="opt">Optimizer</label><select class="select" id="opt" name="opt"><option value="adamw" selected>AdamW</option><option value="adamw8bit">AdamW 8-bit</option></select></div>
+    </div>
+    <p class="note">Gradient accumulation doesn’t add memory. It only multiplies the effective batch size.</p>
+    <div class="share-row"><button type="button" class="btn btn-sm" data-action="copy-link">Copy link to this result</button><button type="button" class="btn btn-sm btn-ghost" data-action="reset">Reset</button></div>
+  </form>
+  <div class="out" data-out aria-live="polite"></div>
+</div>
+<script>
+  import { mountCalc, num, esc } from '../../app/calc';
+  import { trainMemory, type Method, type TrainArch } from '../../lib/training';
+  import { DEVICES } from '../../lib/vram';
+  import { icon } from '../../lib/icons';
+  const root = document.querySelector<HTMLElement>('[data-calc="lora"]')!;
+  const presets = JSON.parse(root.querySelector('[data-presets]')!.textContent!) as { id: string; name: string; a: TrainArch & { moe?: boolean } }[];
+  mountCalc(root, (v) => {
+    const p = presets.find((x) => x.id === v.preset) ?? presets[0];
+    const method = v.method as Method;
+    const r = trainMemory(p.a, { method, rank: num(v.rank, 16), targets: v.targets as 'all' | 'attn', seq: num(v.seq, 2048), batch: Math.max(1, num(v.batch, 1)), checkpointing: !!v.gc, optimizer: v.opt as 'adamw' | 'adamw8bit' });
+    const pct = (x: number) => (x / r.total) * 100;
+    const gb = (x: number) => `${x < 10 ? x.toFixed(1) : Math.round(x)} GB`;
+    const fits = DEVICES.filter((d) => d.kind !== 'On-device').map((d) => ({ d, s: r.total <= d.gb * 0.9 ? 'ok' : r.total <= d.gb ? 'warn' : 'bad' }));
+    const nGpu = Math.ceil(r.total / (80 * 0.9));
+    return `<div class="big"><div class="k">Estimated GPU memory</div><div class="v">${gb(r.total)}</div>
+        <div class="s">${method === 'full' ? 'Training all' : `Training ${(r.trainable / 1e6).toFixed(1)}M`} parameters (${r.trainablePct < 1 ? r.trainablePct.toFixed(2) : r.trainablePct.toFixed(0)}%)</div>
+        <div class="bar-split" aria-hidden="true"><i class="c1" style="width:${pct(r.base)}%"></i><i class="c3" style="width:${pct(r.optimizer)}%"></i><i class="c2" style="width:${pct(r.activations + r.logits)}%"></i><i class="c5" style="width:${pct(r.overhead)}%"></i></div>
+        <div class="legend"><span><b class="c1"></b>Weights ${gb(r.base)}</span><span><b class="c3"></b>Optimizer + grads ${gb(r.optimizer)}</span><span><b class="c2"></b>Activations ${gb(r.activations + r.logits)}</span><span><b class="c5"></b>Overhead ${gb(r.overhead)}</span></div></div>
+      ${p.a.moe && method !== 'full' && v.targets === 'all' ? '<p class="note">Mixture-of-experts model: LoRA on expert layers adds more trainable parameters than shown.</p>' : ''}
+      ${r.total > 80 ? `<div class="alert alert-info" style="margin:0"><div><p>Needs more than one 80 GB GPU: about ${nGpu}× H100/A100 80GB with optimizer sharding (DeepSpeed ZeRO / FSDP).</p></div></div>` : ''}
+      <ul class="checklist">${fits.map(({ d, s }) => `<li><span class="${s}">${icon(s === 'ok' ? 'check' : s === 'warn' ? 'alert' : 'x', 16)}</span>${esc(d.name)} <span class="muted">· ~${Math.round(d.gb)} GB usable</span></li>`).join('')}</ul>
+      <p class="note">Estimate ±30%, assuming FlashAttention and a single GPU. Frameworks (Unsloth, Axolotl, TRL) and kernels can lower it.</p>`;
+  });
+</script>

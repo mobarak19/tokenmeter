@@ -1,0 +1,91 @@
+{
+ "tokenizer": "o200k_base",
+ "measured": "2026-10-06",
+ "note": "Measured on ~90-word sample paragraphs; real text varies by roughly \u00b115%.",
+ "languages": {
+  "English": {
+   "tokensPerWord": 1.111,
+   "charsPerToken": 5.77,
+   "tokens": 100,
+   "words": 90,
+   "chars": 577
+  },
+  "Spanish": {
+   "tokensPerWord": 1.185,
+   "charsPerToken": 5.281,
+   "tokens": 96,
+   "words": 81,
+   "chars": 507
+  },
+  "French": {
+   "tokensPerWord": 1.247,
+   "charsPerToken": 5.248,
+   "tokens": 101,
+   "words": 81,
+   "chars": 530
+  },
+  "German": {
+   "tokensPerWord": 1.479,
+   "charsPerToken": 4.695,
+   "tokens": 105,
+   "words": 71,
+   "chars": 493
+  },
+  "Portuguese": {
+   "tokensPerWord": 1.227,
+   "charsPerToken": 5.109,
+   "tokens": 92,
+   "words": 75,
+   "chars": 470
+  },
+  "Russian": {
+   "tokensPerWord": 1.794,
+   "charsPerToken": 4.31,
+   "tokens": 113,
+   "words": 63,
+   "chars": 487
+  },
+  "Arabic": {
+   "tokensPerWord": 1.859,
+   "charsPerToken": 3.294,
+   "tokens": 119,
+   "words": 64,
+   "chars": 392
+  },
+  "Hindi": {
+   "tokensPerWord": 1.424,
+   "charsPerToken": 3.42,
+   "tokens": 131,
+   "words": 92,
+   "chars": 448
+  },
+  "Bengali": {
+   "tokensPerWord": 1.943,
+   "charsPerToken": 3.081,
+   "tokens": 136,
+   "words": 70,
+   "chars": 419
+  },
+  "Chinese": {
+   "tokensPerWord": null,
+   "charsPerToken": 1.442,
+   "tokens": 113,
+   "words": null,
+   "chars": 163
+  },
+  "Japanese": {
+   "tokensPerWord": null,
+   "charsPerToken": 1.268,
+   "tokens": 164,
+   "words": null,
+   "chars": 208
+  },
+  "Code": {
+   "tokensPerWord": 2.517,
+   "charsPerToken": 3.0,
+   "tokens": 146,
+   "words": 58,
+   "chars": 438
+  }
+ }
+}

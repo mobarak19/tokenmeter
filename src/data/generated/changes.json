@@ -1,5 +1,1246 @@
 [
  {
+  "date": "2026-10-31",
+  "id": "openai/gpt-6.1-terra",
+  "name": "GPT-6.1 Terra",
+  "type": "new",
+  "input": 1,
+  "output": 5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-6.1-terra-pro",
+  "name": "GPT-6.1 Terra Pro",
+  "type": "new",
+  "input": 1,
+  "output": 5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "new",
+  "input": 2,
+  "output": 10
+ },
+ {
+  "date": "2026-10-31",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "new",
+  "input": 0.15,
+  "output": 0.6
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "new",
+  "input": 0.15,
+  "output": 0.6
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3.5-super-vl",
+  "name": "Nemotron 3.5 Super VL",
+  "type": "new",
+  "input": 0.15,
+  "output": 0.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemini-4-argon",
+  "name": "Gemini 4 Argon",
+  "type": "new",
+  "input": 2,
+  "output": 10
+ },
+ {
+  "date": "2026-10-31",
+  "id": "anthropic/claude-haiku-5.5",
+  "name": "Claude Haiku 5.5",
+  "type": "new",
+  "input": 0.1,
+  "output": 0.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemini-nano-banana-2.1",
+  "name": "Nano Banana 2.1",
+  "type": "new",
+  "input": 1.5,
+  "output": 7.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "mistralai/mistral-large-4-0",
+  "name": "Mistral Large 4",
+  "type": "new",
+  "input": 0.7,
+  "output": 2.1
+ },
+ {
+  "date": "2026-10-31",
+  "id": "anthropic/claude-sonnet-5.5",
+  "name": "Claude Sonnet 5.5",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.2,
+  "to": 0.1
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.0495,
+  "to": 0.045
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 1.32,
+  "to": 0.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0165,
+  "to": 0.006
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemini-3.8-flash",
+  "name": "Gemini 3.8 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.75,
+  "to": 0.825
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemini-3.8-flash",
+  "name": "Gemini 3.8 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 3.75,
+  "to": 4.125
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemini-3.8-flash",
+  "name": "Gemini 3.8 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.075,
+  "to": 0.0825
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.0163
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.5,
+  "to": 0.1479
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.03,
+  "to": 0.0163
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "input",
+  "from": 0.07,
+  "to": 0.0699
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "output",
+  "from": 7,
+  "to": 1.4
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.065,
+  "to": 0.0689
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.425,
+  "to": 0.04
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "output",
+  "from": 2.55,
+  "to": 2.3
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.085,
+  "to": 0.02
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3.5-lightning",
+  "name": "Nemotron 3.5 Lightning",
+  "type": "price",
+  "field": "input",
+  "from": 0.06,
+  "to": 0.07
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3.5-lightning",
+  "name": "Nemotron 3.5 Lightning",
+  "type": "price",
+  "field": "output",
+  "from": 0.16,
+  "to": 0.2
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3.5-lightning",
+  "name": "Nemotron 3.5 Lightning",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.03,
+  "to": 0.04
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "input",
+  "from": 0.0152,
+  "to": 0.119
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "output",
+  "from": 1.28,
+  "to": 0.238
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0152,
+  "to": 0.0238
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k3",
+  "name": "Kimi K3",
+  "type": "price",
+  "field": "input",
+  "from": 0.83,
+  "to": 0.192
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k3",
+  "name": "Kimi K3",
+  "type": "price",
+  "field": "output",
+  "from": 14,
+  "to": 15
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k3",
+  "name": "Kimi K3",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.27,
+  "to": 0.182
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "input",
+  "from": 2,
+  "to": 4
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "output",
+  "from": 10,
+  "to": 20
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.2,
+  "to": 0.4
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-5.6-sol-pro",
+  "name": "GPT-5.6 Sol Pro",
+  "type": "price",
+  "field": "input",
+  "from": 2,
+  "to": 4
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-5.6-sol-pro",
+  "name": "GPT-5.6 Sol Pro",
+  "type": "price",
+  "field": "output",
+  "from": 10,
+  "to": 20
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-5.6-sol-pro",
+  "name": "GPT-5.6 Sol Pro",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.2,
+  "to": 0.4
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.2",
+  "name": "GLM 5.2",
+  "type": "price",
+  "field": "input",
+  "from": 0.152,
+  "to": 0.006
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.2",
+  "name": "GLM 5.2",
+  "type": "price",
+  "field": "output",
+  "from": 12,
+  "to": 6.8
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5.2",
+  "name": "GLM 5.2",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.15,
+  "to": 0.005
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.7-code",
+  "name": "Kimi K2.7 Code",
+  "type": "price",
+  "field": "input",
+  "from": 0.6712,
+  "to": 0.6
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.7-code",
+  "name": "Kimi K2.7 Code",
+  "type": "price",
+  "field": "output",
+  "from": 3.35,
+  "to": 3.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.7-code",
+  "name": "Kimi K2.7 Code",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.18,
+  "to": 0.15
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3-ultra-550b-a55b",
+  "name": "Nemotron 3 Ultra",
+  "type": "price",
+  "field": "input",
+  "from": 0.5,
+  "to": 0.6
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3-ultra-550b-a55b",
+  "name": "Nemotron 3 Ultra",
+  "type": "price",
+  "field": "output",
+  "from": 2.2,
+  "to": 2.4
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3-ultra-550b-a55b",
+  "name": "Nemotron 3 Ultra",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.1,
+  "to": 0.12
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.6-27b",
+  "name": "Qwen3.6 27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.32,
+  "to": 0.45
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.6-27b",
+  "name": "Qwen3.6 27B",
+  "type": "price",
+  "field": "output",
+  "from": 3.25,
+  "to": 2.7
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.6-35b-a3b",
+  "name": "Qwen3.6 35B A3B",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.1
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.6-35b-a3b",
+  "name": "Qwen3.6 35B A3B",
+  "type": "price",
+  "field": "output",
+  "from": 1,
+  "to": 0.9
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.6-35b-a3b",
+  "name": "Qwen3.6 35B A3B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.05,
+  "to": 0.025
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.0002,
+  "to": 0.091
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "output",
+  "from": 1.28,
+  "to": 0.182
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-flash",
+  "name": "DeepSeek V4 Flash 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0002,
+  "to": 0.0182
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.2088,
+  "to": 1.6
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "output",
+  "from": 0.4176,
+  "to": 3.2
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0174,
+  "to": 0.135
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.6",
+  "name": "Kimi K2.6",
+  "type": "price",
+  "field": "input",
+  "from": 0.95,
+  "to": 0.65
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.6",
+  "name": "Kimi K2.6",
+  "type": "price",
+  "field": "output",
+  "from": 4,
+  "to": 3.41
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.6",
+  "name": "Kimi K2.6",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.16,
+  "to": 0.15
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "input",
+  "from": 0.09,
+  "to": 0.0675
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "output",
+  "from": 0.3,
+  "to": 0.225
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.05,
+  "to": 0.0375
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemma-4-31b-it",
+  "name": "Gemma 4 31B",
+  "type": "price",
+  "field": "input",
+  "from": 0.09,
+  "to": 0.2
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemma-4-31b-it",
+  "name": "Gemma 4 31B",
+  "type": "price",
+  "field": "output",
+  "from": 0.34,
+  "to": 0.4
+ },
+ {
+  "date": "2026-10-31",
+  "id": "minimax/minimax-m2.7",
+  "name": "MiniMax M2.7",
+  "type": "price",
+  "field": "input",
+  "from": 0.21,
+  "to": 0.3
+ },
+ {
+  "date": "2026-10-31",
+  "id": "minimax/minimax-m2.7",
+  "name": "MiniMax M2.7",
+  "type": "price",
+  "field": "output",
+  "from": 0.84,
+  "to": 1.2
+ },
+ {
+  "date": "2026-10-31",
+  "id": "minimax/minimax-m2.7",
+  "name": "MiniMax M2.7",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.042,
+  "to": 0.06
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3-super-120b-a12b",
+  "name": "Nemotron 3 Super",
+  "type": "price",
+  "field": "input",
+  "from": 0.08,
+  "to": 0.3
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3-super-120b-a12b",
+  "name": "Nemotron 3 Super",
+  "type": "price",
+  "field": "output",
+  "from": 0.45,
+  "to": 2.4
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "input",
+  "from": 0.1,
+  "to": 0.17
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "output",
+  "from": 0.15,
+  "to": 0.25
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-27b",
+  "name": "Qwen3.5-27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.195,
+  "to": 0.26
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-27b",
+  "name": "Qwen3.5-27B",
+  "type": "price",
+  "field": "output",
+  "from": 1.56,
+  "to": 2.6
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-35b-a3b",
+  "name": "Qwen3.5-35B-A3B",
+  "type": "price",
+  "field": "input",
+  "from": 0.08,
+  "to": 0.14
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-35b-a3b",
+  "name": "Qwen3.5-35B-A3B",
+  "type": "price",
+  "field": "output",
+  "from": 0.75,
+  "to": 1
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-35b-a3b",
+  "name": "Qwen3.5-35B-A3B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.04,
+  "to": 0.05
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-397b-a17b",
+  "name": "Qwen3.5 397B A17B",
+  "type": "price",
+  "field": "input",
+  "from": 0.45,
+  "to": 0.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-397b-a17b",
+  "name": "Qwen3.5 397B A17B",
+  "type": "price",
+  "field": "output",
+  "from": 3,
+  "to": 3.6
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.5-397b-a17b",
+  "name": "Qwen3.5 397B A17B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.22,
+  "to": 0.3
+ },
+ {
+  "date": "2026-10-31",
+  "id": "minimax/minimax-m2.5",
+  "name": "MiniMax M2.5",
+  "type": "price",
+  "field": "output",
+  "from": 1.08,
+  "to": 0.95
+ },
+ {
+  "date": "2026-10-31",
+  "id": "minimax/minimax-m2.5",
+  "name": "MiniMax M2.5",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.027,
+  "to": 0.03
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5",
+  "name": "GLM 5",
+  "type": "price",
+  "field": "input",
+  "from": 0.6,
+  "to": 1
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5",
+  "name": "GLM 5",
+  "type": "price",
+  "field": "output",
+  "from": 1.92,
+  "to": 3.2
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-5",
+  "name": "GLM 5",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.12,
+  "to": 0.2
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "input",
+  "from": 0.45,
+  "to": 0.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "output",
+  "from": 2.25,
+  "to": 2.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.07,
+  "to": 0.15
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "input",
+  "from": 0.6,
+  "to": 0.54
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "output",
+  "from": 2.2,
+  "to": 1.98
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.11,
+  "to": 0.099
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3-nano-30b-a3b",
+  "name": "Nemotron 3 Nano 30B A3B",
+  "type": "price",
+  "field": "input",
+  "from": 0.05,
+  "to": 0.06
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3-nano-30b-a3b",
+  "name": "Nemotron 3 Nano 30B A3B",
+  "type": "price",
+  "field": "output",
+  "from": 0.2,
+  "to": 0.24
+ },
+ {
+  "date": "2026-10-31",
+  "id": "nvidia/nemotron-3-nano-30b-a3b",
+  "name": "Nemotron 3 Nano 30B A3B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.03,
+  "to": 0.012
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-4.6v",
+  "name": "GLM 4.6V",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.05,
+  "to": 0.055
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v3.2",
+  "name": "DeepSeek V3.2",
+  "type": "price",
+  "field": "input",
+  "from": 0.28,
+  "to": 0.26
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v3.2",
+  "name": "DeepSeek V3.2",
+  "type": "price",
+  "field": "output",
+  "from": 0.42,
+  "to": 0.38
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-v3.2",
+  "name": "DeepSeek V3.2",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.028,
+  "to": 0.13
+ },
+ {
+  "date": "2026-10-31",
+  "id": "minimax/minimax-m2",
+  "name": "MiniMax M2",
+  "type": "price",
+  "field": "input",
+  "from": 0.3,
+  "to": 0.255
+ },
+ {
+  "date": "2026-10-31",
+  "id": "minimax/minimax-m2",
+  "name": "MiniMax M2",
+  "type": "price",
+  "field": "output",
+  "from": 1.2,
+  "to": 1.02
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-vl-8b-instruct",
+  "name": "Qwen3 VL 8B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.117,
+  "to": 0.25
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-vl-8b-instruct",
+  "name": "Qwen3 VL 8B Instruct",
+  "type": "price",
+  "field": "output",
+  "from": 0.455,
+  "to": 0.75
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-vl-30b-a3b-thinking",
+  "name": "Qwen3 VL 30B A3B Thinking",
+  "type": "price",
+  "field": "input",
+  "from": 0.2,
+  "to": 0.29
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-vl-30b-a3b-thinking",
+  "name": "Qwen3 VL 30B A3B Thinking",
+  "type": "price",
+  "field": "output",
+  "from": 2.4,
+  "to": 1
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-4.6",
+  "name": "GLM 4.6",
+  "type": "price",
+  "field": "input",
+  "from": 0.43,
+  "to": 0.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-4.6",
+  "name": "GLM 4.6",
+  "type": "price",
+  "field": "output",
+  "from": 1.75,
+  "to": 2
+ },
+ {
+  "date": "2026-10-31",
+  "id": "z-ai/glm-4.6",
+  "name": "GLM 4.6",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.08,
+  "to": 0.1
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-next-80b-a3b-instruct",
+  "name": "Qwen3 Next 80B A3B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.1,
+  "to": 0.09
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "input",
+  "from": 0.037,
+  "to": 0.15
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "output",
+  "from": 0.17,
+  "to": 0.6
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-235b-a22b-thinking-2507",
+  "name": "Qwen3 235B A22B Thinking 2507",
+  "type": "price",
+  "field": "input",
+  "from": 0.23,
+  "to": 0.45
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-235b-a22b-thinking-2507",
+  "name": "Qwen3 235B A22B Thinking 2507",
+  "type": "price",
+  "field": "output",
+  "from": 2.3,
+  "to": 3.5
+ },
+ {
+  "date": "2026-10-31",
+  "id": "mistralai/mistral-small-3.2-24b-instruct",
+  "name": "Mistral Small 3.2 24B",
+  "type": "price",
+  "field": "input",
+  "from": 0.09375,
+  "to": 0.075
+ },
+ {
+  "date": "2026-10-31",
+  "id": "mistralai/mistral-small-3.2-24b-instruct",
+  "name": "Mistral Small 3.2 24B",
+  "type": "price",
+  "field": "output",
+  "from": 0.25,
+  "to": 0.2
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-4.1-nano",
+  "name": "GPT-4.1 Nano",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.025,
+  "to": 0.03
+ },
+ {
+  "date": "2026-10-31",
+  "id": "google/gemma-3-27b-it",
+  "name": "Gemma 3 27B",
+  "type": "price",
+  "field": "output",
+  "from": 0.45,
+  "to": 0.35
+ },
+ {
+  "date": "2026-10-31",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.22,
+  "to": 0.1
+ },
+ {
+  "date": "2026-10-31",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "output",
+  "from": 0.5,
+  "to": 0.32
+ },
+ {
+  "date": "2026-10-31",
+  "id": "mistralai/mistral-nemo",
+  "name": "Mistral Nemo",
+  "type": "price",
+  "field": "input",
+  "from": 0.019,
+  "to": 0.029
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3.6-max-preview",
+  "name": "Qwen3.6 Max Preview",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-max-thinking",
+  "name": "Qwen3 Max Thinking",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-vl-32b-instruct",
+  "name": "Qwen3 VL 32B Instruct",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-vl-8b-thinking",
+  "name": "Qwen3 VL 8B Thinking",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-coder-plus",
+  "name": "Qwen3 Coder Plus",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-max",
+  "name": "Qwen3 Max",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-vl-235b-a22b-thinking",
+  "name": "Qwen3 VL 235B A22B Thinking",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-next-80b-a3b-thinking",
+  "name": "Qwen3 Next 80B A3B Thinking",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen-plus-2025-07-28",
+  "name": "Qwen Plus 0728",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-30b-a3b-thinking-2507",
+  "name": "Qwen3 30B A3B Thinking 2507",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "anthropic/claude-sonnet-4",
+  "name": "Claude Sonnet 4",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-235b-a22b",
+  "name": "Qwen3 235B A22B",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "qwen/qwen3-8b",
+  "name": "Qwen3 8B",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/o4-mini",
+  "name": "o4 Mini",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/o4-mini-high",
+  "name": "o4 Mini High",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/o1-pro",
+  "name": "o1-pro",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/o3-mini-high",
+  "name": "o3 Mini High",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/o3-mini",
+  "name": "o3 Mini",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "deepseek/deepseek-r1",
+  "name": "R1",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/o1",
+  "name": "o1",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "microsoft/wizardlm-2-8x22b",
+  "name": "WizardLM-2 8x22B",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-4-turbo",
+  "name": "GPT-4 Turbo",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-3.5-turbo-instruct",
+  "name": "GPT-3.5 Turbo Instruct",
+  "type": "removed"
+ },
+ {
+  "date": "2026-10-31",
+  "id": "openai/gpt-3.5-turbo",
+  "name": "GPT-3.5 Turbo",
+  "type": "removed"
+ },
+ {
   "date": "2026-10-06",
   "id": "deepseek/deepseek-v4.1-flash",
   "name": "DeepSeek V4.1 Flash",

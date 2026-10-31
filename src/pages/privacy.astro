@@ -3,28 +3,29 @@ import Base from '../layouts/Base.astro';
 import { SITE } from '../data/site';
 import { u } from '../lib/url';
 ---
-<Base title={`Privacy | ${SITE.name}`} description={`${SITE.name} runs calculators and file tools in your browser. No accounts, no tracking scripts, no uploads.`}>
+<Base title={`Privacy | ${SITE.name}`} description={`${SITE.name} runs calculators and file tools in your browser. No accounts, no ad trackers, no uploads.`}>
   <div class="container" style="padding-top:32px">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={u('/')}>Home</a> / <span aria-current="page">Privacy</span></nav>
     <article class="prose">
       <h1>Privacy</h1>
-      <p class="muted small">Last updated 6 October 2026</p>
-      <p>{SITE.name} has no accounts, no ads scripts and no third-party trackers. Calculators run entirely in your browser. File tools (screenshot resizer, icon generator) and the token counter process your images and text <strong>on your device</strong>. Nothing is uploaded.</p>
+      <p class="muted small">Last updated 31 October 2026</p>
+      <p>{SITE.name} has no accounts, no ad scripts and no cross-site trackers. Calculators run entirely in your browser. File tools (screenshot resizer, icon generator) and the token counter process your images and text <strong>on your device</strong>. Nothing is uploaded.</p>
       <h2>Network requests this site makes</h2>
       <table>
         <thead><tr><th>Request</th><th>When</th><th>Contains your data?</th></tr></thead>
         <tbody>
           <tr><td>Pages, scripts, styles and the price dataset</td><td>When you open a page</td><td>No</td></tr>
+          <tr><td>Visit statistics (Cloudflare Web Analytics)</td><td>When you open a page</td><td>No personal data or files: page address, referring site, browser and country</td></tr>
           <tr><td>Tokenizer data (~2 MB)</td><td>First use of the token counter</td><td>No: it’s downloaded, your text is never sent</td></tr>
         </tbody>
       </table>
-      <p>Calculator inputs are stored only in the page URL (so you can share a result). Nothing is sent to us. A strict <code>Content-Security-Policy</code> prevents scripts from sending data to other servers.</p>
+      <p>Calculator inputs are stored only in the page URL (so you can share a result). Nothing is sent to us. A strict <code>Content-Security-Policy</code> prevents scripts from sending data to any other server, except the cookie-free visit counter described below.</p>
 <h2>Affiliate links and app links</h2>
       <p>Some pages recommend products through plain affiliate links, and link to our own iPhone apps. Clicking one takes you to the partner’s website, which then applies its own privacy policy. A short tag only tells the partner which page of ours you came from. See our <a href={u('/disclosure/')}>affiliate disclosure</a>.</p>
       <p>On iPhone and iPad, Safari may show a small App Store banner. Safari generates it from a single tag; nothing is loaded from third parties.</p>
 
       <h2>Cookies and analytics</h2>
-      <p>The site sets no cookies. If privacy-friendly, cookie-free visit statistics are added in future (page views only, never file data), this page will be updated first.</p>
+      <p>The site sets no cookies. We count visits with <a href="https://www.cloudflare.com/web-analytics/" rel="noopener">Cloudflare Web Analytics</a>, which does not use cookies or local storage and does not follow you across websites. It records the page address you opened, the site you came from, your browser type and country, so we can see which tools are useful. It never receives your files or file data.</p>
 
       <h2>Contact</h2>
       <p>Questions or a security concern? Contact {SITE.author} via the <a href={u('/about/')}>About page</a>.</p>

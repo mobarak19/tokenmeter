@@ -1,23 +1,23 @@
-name: Update prices & deploy to GitHub Pages
+name: Update prices
+
+# Hosting is Cloudflare Pages, which rebuilds on every push to main.
+# This job only refreshes the LLM price data and commits it; that push
+# triggers the Cloudflare deploy.
 
 on:
-  push:
-    branches: [main]
   schedule:
     - cron: '17 6 * * *' # daily, 06:17 UTC
   workflow_dispatch:
 
 permissions:
   contents: write # commit refreshed price data
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: update-prices
   cancel-in-progress: false
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,11 +28,13 @@ jobs:
       - run: npm ci
 
       - name: Refresh LLM prices
-        if: github.event_name != 'push'
         run: npm run update-data
 
+      # Don't commit data that breaks the build.
+      - name: Build
+        run: npm run build
+
       - name: Commit data changes
-        if: github.event_name != 'push'
         run: |
           if [ -n "$(git status --porcelain src/data)" ]; then
             git config user.name "price-bot"
@@ -41,26 +43,3 @@ jobs:
             git commit -m "chore: refresh LLM prices $(date -u +%F)"
             git push
           fi
-
-      - name: Configure Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Build
-        run: npm run build
-        env:
-          SITE_URL: ${{ steps.pages.outputs.origin }}
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4

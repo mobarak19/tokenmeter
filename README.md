@@ -1,6 +1,6 @@
 # TokenMeter: AI/ML Developer Utilities
 
-AI cost, token and GPU calculators with **LLM prices updated automatically every day**. Static site (Astro), free on GitHub Pages. Sister site: ShipMath (App Store tools). AI tools were moved here from ShipMath so the two sites don't compete for the same searches.
+AI cost, token and GPU calculators with **LLM prices updated automatically every day**. Static site (Astro), hosted on Cloudflare Pages. Sister site: ShipMath (App Store tools). AI tools were moved here from ShipMath so the two sites don't compete for the same searches.
 
 ## Pages (303)
 
@@ -30,7 +30,14 @@ npm run update-data      # refresh prices now
 npm run build && npm run preview
 ```
 
-GitHub Pages: push this folder as a repo root → **Settings → Pages → Source: GitHub Actions**, and allow **Read and write** workflow permissions (the daily job commits refreshed prices). Base path is automatic; use `u('/path/')` for internal links.
+Cloudflare Pages builds and deploys on every push to `main` (Workers & Pages → Create → Pages → Import an existing Git repository):
+
+- Framework preset: Astro · Build command: `npm run build` · Output directory: `dist`
+- Environment variables: `NODE_VERSION=24`, `SITE_URL=https://<project>.pages.dev` (or your custom domain), used for canonical links and the sitemap.
+
+`public/_headers` (CSP and security headers) is applied by Cloudflare automatically.
+
+`.github/workflows/update-prices.yml` refreshes prices daily and commits them, which triggers a Cloudflare deploy. On GitHub, allow **Read and write** workflow permissions (Settings → Actions → General). Use `u('/path/')` for internal links.
 
 ## Before launch
 

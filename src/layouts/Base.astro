@@ -61,6 +61,9 @@ import { appStoreId } from '../lib/offers';
       <slot />
     </main>
     <Footer />
+    {import.meta.env.PROD && SITE.analyticsToken && (
+      <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: SITE.analyticsToken })}></script>
+    )}
     <script>
       // Close nav menus when clicking elsewhere, opening another, or pressing Escape.
       const navs = [...document.querySelectorAll<HTMLDetailsElement>('[data-nav-tools]')];

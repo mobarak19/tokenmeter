@@ -1,6 +1,6 @@
 # TokenMeter: AI/ML Developer Utilities
 
-AI cost, token and GPU calculators with **LLM prices updated automatically every day**. Static site (Astro), hosted on Cloudflare Pages. Sister site: ShipMath (App Store tools). AI tools were moved here from ShipMath so the two sites don't compete for the same searches.
+AI cost, token and GPU calculators with **LLM prices updated automatically every day**. Static site (Astro), hosted on Cloudflare. Sister site: ShipMath (App Store tools). AI tools were moved here from ShipMath so the two sites don't compete for the same searches.
 
 ## Pages (303)
 
@@ -30,18 +30,16 @@ npm run update-data      # refresh prices now
 npm run build && npm run preview
 ```
 
-Cloudflare Pages builds and deploys on every push to `main` (Workers & Pages → Create → Pages → Import an existing Git repository):
+Cloudflare builds and deploys on every push to `main` (Workers Builds: build command `npm run build`, static assets from `dist`). Node 24 comes from `.node-version`. `public/_headers` (CSP and security headers) is applied automatically.
 
-- Framework preset: Astro · Build command: `npm run build` · Output directory: `dist`
-- Environment variables: `NODE_VERSION=24`, `SITE_URL=https://<project>.pages.dev` (or your custom domain), used for canonical links and the sitemap.
-
-`public/_headers` (CSP and security headers) is applied by Cloudflare automatically.
+- Live URL: `SITE.url` in `src/data/site.ts`, used for canonical links and the sitemap. Change it when you add a custom domain.
+- Visit statistics: create a site under Cloudflare dashboard → Web Analytics, and paste its token into `SITE.analyticsToken`.
 
 `.github/workflows/update-prices.yml` refreshes prices daily and commits them, which triggers a Cloudflare deploy. On GitHub, allow **Read and write** workflow permissions (Settings → Actions → General). Use `u('/path/')` for internal links.
 
 ## Before launch
 
-- Name/URLs: `src/data/site.ts` (“TokenMeter” is a placeholder; set `sister.url` to ShipMath's real URL), `public/manifest.webmanifest`.
+- Name/URLs: `src/data/site.ts` (“TokenMeter” is a placeholder), `public/manifest.webmanifest`.
 - Monetization placeholders: `src/data/monetization.ts` (GPU cloud referral, LLM-observability sponsor, vector-DB sponsor, billing affiliate, your app). Hidden in production until filled.
 
 ## Method notes

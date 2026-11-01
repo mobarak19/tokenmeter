@@ -1,5 +1,185 @@
 [
  {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.0163,
+  "to": 0.0285
+ },
+ {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.1479,
+  "to": 0.0923
+ },
+ {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0163,
+  "to": 0.0285
+ },
+ {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "input",
+  "from": 0.0699,
+  "to": 0.08
+ },
+ {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "output",
+  "from": 1.4,
+  "to": 3.6
+ },
+ {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0689,
+  "to": 0.076
+ },
+ {
+  "date": "2026-11-01",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.04,
+  "to": 0.15
+ },
+ {
+  "date": "2026-11-01",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "output",
+  "from": 2.3,
+  "to": 1.875
+ },
+ {
+  "date": "2026-11-01",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.02,
+  "to": 0.0375
+ },
+ {
+  "date": "2026-11-01",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "input",
+  "from": 0.66,
+  "to": 0.115
+ },
+ {
+  "date": "2026-11-01",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "output",
+  "from": 1.98,
+  "to": 4
+ },
+ {
+  "date": "2026-11-01",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.022,
+  "to": 0.11
+ },
+ {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "input",
+  "from": 0.54,
+  "to": 0.6
+ },
+ {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "output",
+  "from": 1.98,
+  "to": 2.2
+ },
+ {
+  "date": "2026-11-01",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.099,
+  "to": 0.11
+ },
+ {
+  "date": "2026-11-01",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.018
+ },
+ {
+  "date": "2026-11-01",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "output",
+  "from": 0.6,
+  "to": 0.065
+ },
+ {
+  "date": "2026-11-01",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "input",
+  "from": 0.018,
+  "to": 0.03
+ },
+ {
+  "date": "2026-11-01",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "output",
+  "from": 0.09,
+  "to": 0.13
+ },
+ {
+  "date": "2026-11-01",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.009,
+  "to": 0.03
+ },
+ {
   "date": "2026-10-31",
   "id": "openai/gpt-6.1-terra",
   "name": "GPT-6.1 Terra",

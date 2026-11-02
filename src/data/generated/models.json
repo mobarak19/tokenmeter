@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-01T13:18:31.748Z",
- "checked": "2026-11-01T13:18:31.748Z",
+ "updated": "2026-11-02T15:46:58.384Z",
+ "checked": "2026-11-02T15:46:58.384Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -13,7 +13,7 @@
   "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.2156/0.6468 vs LiteLLM 0.3/1.2 per 1M",
   "deepseek/deepseek-v4-pro: OpenRouter 1.6/3.2 vs LiteLLM 1.32/3.96 per 1M",
   "deepseek/deepseek-v4-flash: OpenRouter 0.091/0.182 vs LiteLLM 0.3/1.2 per 1M",
-  "google/gemma-4-26b-a4b-it: OpenRouter 0.0675/0.225 vs LiteLLM 0/0 per 1M",
+  "google/gemma-4-26b-a4b-it: OpenRouter 0.094/0.283 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
   "mistralai/mistral-medium-3: OpenRouter 0.4/2 vs LiteLLM 1.5/7.5 per 1M",
@@ -346,6 +346,32 @@
  ],
  "models": [
   {
+   "id": "z-ai/glm-5.3-flashx-legal",
+   "slug": "z-ai-glm-5-3-flashx-legal",
+   "provider": "z-ai",
+   "providerName": "Z.ai",
+   "firstParty": false,
+   "name": "GLM 5.3 FlashX Legal",
+   "created": "2026-11-02",
+   "context": 1048576,
+   "maxOutput": 131072,
+   "input": 0.37,
+   "output": 1.25,
+   "cacheRead": 0.075,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Other",
+   "verified": "unchecked"
+  },
+  {
    "id": "openai/gpt-6.1-terra",
    "slug": "openai-gpt-6-1-terra",
    "provider": "openai",
@@ -459,9 +485,9 @@
    "created": "2026-10-19",
    "context": 1048576,
    "maxOutput": 524288,
-   "input": 0.15,
-   "output": 0.6,
-   "cacheRead": 0.015,
+   "input": 0.075,
+   "output": 0.3,
+   "cacheRead": 0.0075,
    "inputModalities": [
     "text",
     "image",
@@ -1137,7 +1163,7 @@
    "maxOutput": 131072,
    "input": 0.37,
    "output": 1.25,
-   "cacheRead": 0.09,
+   "cacheRead": 0.075,
    "inputModalities": [
     "text",
     "image",
@@ -1533,7 +1559,7 @@
    "firstParty": false,
    "name": "Qwen3.8 27B",
    "created": "2026-08-14",
-   "context": 1000000,
+   "context": 1024000,
    "maxOutput": 235929,
    "input": 0.15,
    "output": 1.875,
@@ -3317,10 +3343,10 @@
    "name": "Gemma 4 26B A4B",
    "created": "2026-04-03",
    "context": 262144,
-   "maxOutput": 235929,
-   "input": 0.0675,
-   "output": 0.225,
-   "cacheRead": 0.0375,
+   "maxOutput": 32768,
+   "input": 0.094,
+   "output": 0.283,
+   "cacheRead": 0.047,
    "inputModalities": [
     "image",
     "text",
@@ -6298,8 +6324,9 @@
    "created": "2025-08-05",
    "context": 131072,
    "maxOutput": 65536,
-   "input": 0.018,
-   "output": 0.065,
+   "input": 0.15,
+   "output": 0.6,
+   "cacheRead": 0.075,
    "batchInput": 0.0296,
    "batchOutput": 0.136,
    "inputModalities": [
@@ -8120,9 +8147,9 @@
    "name": "Llama 3.2 3B Instruct",
    "created": "2024-09-25",
    "context": 131072,
-   "maxOutput": 117964,
-   "input": 0.05,
-   "output": 0.33,
+   "maxOutput": 72000,
+   "input": 0.0509,
+   "output": 0.335,
    "inputModalities": [
     "text"
    ],

@@ -1,5 +1,185 @@
 [
  {
+  "date": "2026-11-03",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.075,
+  "to": 0.15
+ },
+ {
+  "date": "2026-11-03",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.3,
+  "to": 0.6
+ },
+ {
+  "date": "2026-11-03",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0075,
+  "to": 0.015
+ },
+ {
+  "date": "2026-11-03",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.006,
+  "to": 0.012
+ },
+ {
+  "date": "2026-11-03",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.0285,
+  "to": 0.0313
+ },
+ {
+  "date": "2026-11-03",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.0923,
+  "to": 0.0846
+ },
+ {
+  "date": "2026-11-03",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0285,
+  "to": 0.03
+ },
+ {
+  "date": "2026-11-03",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "input",
+  "from": 0.119,
+  "to": 0.059
+ },
+ {
+  "date": "2026-11-03",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "output",
+  "from": 0.238,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-03",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0238,
+  "to": 0.035
+ },
+ {
+  "date": "2026-11-03",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "input",
+  "from": 0.094,
+  "to": 0.086
+ },
+ {
+  "date": "2026-11-03",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "output",
+  "from": 0.283,
+  "to": 0.257
+ },
+ {
+  "date": "2026-11-03",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.047,
+  "to": 0.043
+ },
+ {
+  "date": "2026-11-03",
+  "id": "qwen/qwen3-next-80b-a3b-instruct",
+  "name": "Qwen3 Next 80B A3B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.09,
+  "to": 0.1
+ },
+ {
+  "date": "2026-11-03",
+  "id": "qwen/qwen3-coder-30b-a3b-instruct",
+  "name": "Qwen3 Coder 30B A3B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.07,
+  "to": 0.15
+ },
+ {
+  "date": "2026-11-03",
+  "id": "qwen/qwen3-coder-30b-a3b-instruct",
+  "name": "Qwen3 Coder 30B A3B Instruct",
+  "type": "price",
+  "field": "output",
+  "from": 0.28,
+  "to": 0.6
+ },
+ {
+  "date": "2026-11-03",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.1,
+  "to": 0.2
+ },
+ {
+  "date": "2026-11-03",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "output",
+  "from": 0.32,
+  "to": 0.52
+ },
+ {
+  "date": "2026-11-03",
+  "id": "meta-llama/llama-3.1-70b-instruct",
+  "name": "Llama 3.1 70B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.4,
+  "to": 0.72
+ },
+ {
+  "date": "2026-11-03",
+  "id": "meta-llama/llama-3.1-70b-instruct",
+  "name": "Llama 3.1 70B Instruct",
+  "type": "price",
+  "field": "output",
+  "from": 0.4,
+  "to": 0.72
+ },
+ {
   "date": "2026-11-02",
   "id": "z-ai/glm-5.3-flashx-legal",
   "name": "GLM 5.3 FlashX Legal",

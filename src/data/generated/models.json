@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-02T15:46:58.384Z",
- "checked": "2026-11-02T15:46:58.384Z",
+ "updated": "2026-11-03T14:09:33.101Z",
+ "checked": "2026-11-03T14:09:33.101Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -8,12 +8,11 @@
   "architecture": "Hugging Face"
  },
  "flagged": [
-  "mistralai/mistral-large-4-0: OpenRouter 0.7/2.1 vs LiteLLM 1.36/4.18 per 1M",
   "google/gemini-3.8-flash: OpenRouter 0.825/4.125 vs LiteLLM 0.75/3.75 per 1M",
   "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.2156/0.6468 vs LiteLLM 0.3/1.2 per 1M",
   "deepseek/deepseek-v4-pro: OpenRouter 1.6/3.2 vs LiteLLM 1.32/3.96 per 1M",
   "deepseek/deepseek-v4-flash: OpenRouter 0.091/0.182 vs LiteLLM 0.3/1.2 per 1M",
-  "google/gemma-4-26b-a4b-it: OpenRouter 0.094/0.283 vs LiteLLM 0/0 per 1M",
+  "google/gemma-4-26b-a4b-it: OpenRouter 0.086/0.257 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
   "mistralai/mistral-medium-3: OpenRouter 0.4/2 vs LiteLLM 1.5/7.5 per 1M",
@@ -485,9 +484,9 @@
    "created": "2026-10-19",
    "context": 1048576,
    "maxOutput": 524288,
-   "input": 0.075,
-   "output": 0.3,
-   "cacheRead": 0.0075,
+   "input": 0.15,
+   "output": 0.6,
+   "cacheRead": 0.015,
    "inputModalities": [
     "text",
     "image",
@@ -708,9 +707,9 @@
    "reasoning": true,
    "tokenizer": "Mistral",
    "hfId": "mistralai/Mistral-Large-4-1T-A52B",
-   "verified": "mismatch",
-   "listInput": 1.36,
-   "listOutput": 4.18
+   "verified": "match",
+   "listInput": 0.7,
+   "listOutput": 2.1
   },
   {
    "id": "openai/gpt-6.1-sol",
@@ -1189,7 +1188,7 @@
    "maxOutput": 943718,
    "input": 0.045,
    "output": 0.5,
-   "cacheRead": 0.006,
+   "cacheRead": 0.012,
    "batchInput": 0.05,
    "batchOutput": 0.15,
    "inputModalities": [
@@ -1438,9 +1437,9 @@
    "created": "2026-08-26",
    "context": 1048576,
    "maxOutput": 131072,
-   "input": 0.0285,
-   "output": 0.0923,
-   "cacheRead": 0.0285,
+   "input": 0.0313,
+   "output": 0.0846,
+   "cacheRead": 0.03,
    "batchInput": 0.05,
    "batchOutput": 0.18,
    "inputModalities": [
@@ -1784,9 +1783,9 @@
    "created": "2026-07-31",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 0.119,
-   "output": 0.238,
-   "cacheRead": 0.0238,
+   "input": 0.059,
+   "output": 0.3,
+   "cacheRead": 0.035,
    "inputModalities": [
     "text"
    ],
@@ -3344,9 +3343,9 @@
    "created": "2026-04-03",
    "context": 262144,
    "maxOutput": 32768,
-   "input": 0.094,
-   "output": 0.283,
-   "cacheRead": 0.047,
+   "input": 0.086,
+   "output": 0.257,
+   "cacheRead": 0.043,
    "inputModalities": [
     "image",
     "text",
@@ -6021,9 +6020,10 @@
    "name": "Qwen3 Next 80B A3B Instruct",
    "created": "2025-09-11",
    "context": 262144,
-   "maxOutput": 16384,
-   "input": 0.09,
+   "maxOutput": 235929,
+   "input": 0.1,
    "output": 1.1,
+   "cacheRead": 0.07,
    "inputModalities": [
     "text"
    ],
@@ -6429,8 +6429,8 @@
    "created": "2025-07-31",
    "context": 262144,
    "maxOutput": 235929,
-   "input": 0.07,
-   "output": 0.28,
+   "input": 0.15,
+   "output": 0.6,
    "inputModalities": [
     "text"
    ],
@@ -7901,9 +7901,10 @@
    "name": "Llama 3.3 70B Instruct",
    "created": "2024-12-06",
    "context": 131072,
-   "maxOutput": 16384,
-   "input": 0.1,
-   "output": 0.32,
+   "maxOutput": 128000,
+   "input": 0.2,
+   "output": 0.52,
+   "cacheRead": 0.1,
    "inputModalities": [
     "text"
    ],
@@ -8286,16 +8287,16 @@
    "name": "Llama 3.1 70B Instruct",
    "created": "2024-07-23",
    "context": 131072,
-   "maxOutput": 16384,
-   "input": 0.4,
-   "output": 0.4,
+   "maxOutput": 8192,
+   "input": 0.72,
+   "output": 0.72,
    "inputModalities": [
     "text"
    ],
    "outputModalities": [
     "text"
    ],
-   "tools": true,
+   "tools": false,
    "reasoning": false,
    "tokenizer": "Llama3",
    "hfId": "meta-llama/Meta-Llama-3.1-70B-Instruct",

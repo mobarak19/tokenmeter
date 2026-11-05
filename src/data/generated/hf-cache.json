@@ -1249,5 +1249,18 @@
   "moe": true
  },
  "nvidia/NVIDIA-Nemotron-3.5-Super-VL": null,
- "mistralai/Mistral-Large-4-1T-A52B": null
+ "mistralai/Mistral-Large-4-1T-A52B": null,
+ "moonshotai/Kimi-K3.1-Pro": {
+  "params": 2780110363392,
+  "layers": 93,
+  "hidden": 7168,
+  "heads": 96,
+  "intermediate": 33792,
+  "vocab": 163840,
+  "kvHeads": 96,
+  "headDim": 75,
+  "maxContext": 1048576,
+  "moe": true,
+  "mlaDim": 576
+ }
 }

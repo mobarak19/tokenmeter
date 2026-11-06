@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-05T14:37:01.966Z",
- "checked": "2026-11-05T14:37:01.966Z",
+ "updated": "2026-11-06T14:14:05.032Z",
+ "checked": "2026-11-06T14:14:05.032Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -9,16 +9,16 @@
  },
  "flagged": [
   "google/gemini-3.8-flash: OpenRouter 0.825/4.125 vs LiteLLM 0.75/3.75 per 1M",
-  "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.2156/0.6468 vs LiteLLM 0.3/1.2 per 1M",
-  "deepseek/deepseek-v4-pro: OpenRouter 1.6/3.2 vs LiteLLM 1.32/3.96 per 1M",
+  "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.44/1.32 vs LiteLLM 0.3/1.2 per 1M",
+  "deepseek/deepseek-v4-pro: OpenRouter 0.888966/1.777932 vs LiteLLM 1.32/3.96 per 1M",
   "deepseek/deepseek-v4-flash: OpenRouter 0.091/0.182 vs LiteLLM 0.3/1.2 per 1M",
-  "google/gemma-4-26b-a4b-it: OpenRouter 0.017/0.052 vs LiteLLM 0/0 per 1M",
+  "google/gemma-4-26b-a4b-it: OpenRouter 0.09/0.3 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
   "mistralai/mistral-medium-3: OpenRouter 0.4/2 vs LiteLLM 1.5/7.5 per 1M",
   "google/gemma-3-27b-it: OpenRouter 0.08/0.35 vs LiteLLM 0/0 per 1M",
   "perplexity/sonar: OpenRouter 1/1 vs LiteLLM 0.25/2.5 per 1M",
-  "deepseek/deepseek-chat: OpenRouter 0.2574/1.0287 vs LiteLLM 0.28/0.42 per 1M",
+  "deepseek/deepseek-chat: OpenRouter 0.32/0.89 vs LiteLLM 0.28/0.42 per 1M",
   "embedding embed-multilingual-light-v3.0: implausible 100/1M, skipped"
  ],
  "embeddings": [
@@ -344,6 +344,64 @@
   }
  ],
  "models": [
+  {
+   "id": "google/gemini-omni-1.2-flash",
+   "slug": "google-gemini-omni-1-2-flash",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini Omni 1.2 Flash",
+   "created": "2026-11-05",
+   "context": 131072,
+   "maxOutput": 65536,
+   "input": 1.5,
+   "output": 9,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text",
+    "video"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 1.5,
+   "listOutput": 9
+  },
+  {
+   "id": "google/gemini-omni-1.1-flash",
+   "slug": "google-gemini-omni-1-1-flash",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini Omni 1.1 Flash",
+   "created": "2026-11-04",
+   "context": 131072,
+   "maxOutput": 65536,
+   "input": 1.5,
+   "output": 9,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "text",
+    "image",
+    "video"
+   ],
+   "outputModalities": [
+    "text",
+    "video"
+   ],
+   "tools": false,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 1.5,
+   "listOutput": 9
+  },
   {
    "id": "z-ai/glm-5.3-flashx-legal",
    "slug": "z-ai-glm-5-3-flashx-legal",
@@ -1202,8 +1260,8 @@
    "created": "2026-09-10",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 0.045,
-   "output": 0.5,
+   "input": 0.051,
+   "output": 0.567,
    "cacheRead": 0.018,
    "batchInput": 0.112,
    "batchOutput": 0.336,
@@ -1494,10 +1552,10 @@
    "name": "DeepSeek V4 Flash Vision Exp",
    "created": "2026-08-21",
    "context": 1048576,
-   "maxOutput": 262144,
-   "input": 0.2156,
-   "output": 0.6468,
-   "cacheRead": 0.00686,
+   "maxOutput": 943717,
+   "input": 0.44,
+   "output": 1.32,
+   "cacheRead": 0.014,
    "inputModalities": [
     "text",
     "image"
@@ -1650,9 +1708,9 @@
    "created": "2026-08-12",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 0.103,
-   "output": 4.11,
-   "cacheRead": 0.098,
+   "input": 0.1165,
+   "output": 4.66,
+   "cacheRead": 0.111,
    "inputModalities": [
     "text"
    ],
@@ -1801,7 +1859,7 @@
    "created": "2026-07-31",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 0.054,
+   "input": 0.0566,
    "output": 0.3,
    "cacheRead": 0.035,
    "inputModalities": [
@@ -3106,10 +3164,10 @@
    "name": "DeepSeek V4 Pro 0423",
    "created": "2026-04-24",
    "context": 1048576,
-   "maxOutput": 393216,
-   "input": 1.6,
-   "output": 3.2,
-   "cacheRead": 0.135,
+   "maxOutput": 384000,
+   "input": 0.888966,
+   "output": 1.777932,
+   "cacheRead": 0.074081,
    "inputModalities": [
     "text"
    ],
@@ -3360,10 +3418,10 @@
    "name": "Gemma 4 26B A4B",
    "created": "2026-04-03",
    "context": 262144,
-   "maxOutput": 32768,
-   "input": 0.017,
-   "output": 0.052,
-   "cacheRead": 0.009,
+   "maxOutput": 235929,
+   "input": 0.09,
+   "output": 0.3,
+   "cacheRead": 0.05,
    "inputModalities": [
     "image",
     "text",
@@ -3738,10 +3796,9 @@
    "name": "Nemotron 3 Super",
    "created": "2026-03-11",
    "context": 1048576,
-   "maxOutput": 262144,
-   "input": 0.3,
-   "output": 2.4,
-   "cacheRead": 0.15,
+   "maxOutput": 16384,
+   "input": 0.075,
+   "output": 0.4,
    "inputModalities": [
     "text"
    ],
@@ -4453,10 +4510,10 @@
    "name": "Kimi K2.5",
    "created": "2026-01-27",
    "context": 262144,
-   "maxOutput": 235929,
-   "input": 0.5,
-   "output": 2.5,
-   "cacheRead": 0.15,
+   "maxOutput": 65536,
+   "input": 0.532,
+   "output": 3.325,
+   "cacheRead": 0.209,
    "inputModalities": [
     "text",
     "image"
@@ -6244,9 +6301,9 @@
    "created": "2025-08-05",
    "context": 131072,
    "maxOutput": 65536,
-   "input": 0.15,
-   "output": 0.6,
-   "cacheRead": 0.075,
+   "input": 0.026,
+   "output": 0.096,
+   "cacheRead": 0.023,
    "batchInput": 0.0296,
    "batchOutput": 0.136,
    "inputModalities": [
@@ -7720,9 +7777,9 @@
    "name": "DeepSeek V3",
    "created": "2024-12-26",
    "context": 163840,
-   "maxOutput": 16000,
-   "input": 0.2574,
-   "output": 1.0287,
+   "maxOutput": 16384,
+   "input": 0.32,
+   "output": 0.89,
    "inputModalities": [
     "text"
    ],
@@ -7785,10 +7842,10 @@
    "name": "Llama 3.3 70B Instruct",
    "created": "2024-12-06",
    "context": 131072,
-   "maxOutput": 128000,
-   "input": 0.2,
-   "output": 0.52,
-   "cacheRead": 0.1,
+   "maxOutput": 32768,
+   "input": 0.59,
+   "output": 0.79,
+   "cacheRead": 0.295,
    "inputModalities": [
     "text"
    ],

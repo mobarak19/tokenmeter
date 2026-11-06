@@ -1,5 +1,273 @@
 [
  {
+  "date": "2026-11-06",
+  "id": "google/gemini-omni-1.2-flash",
+  "name": "Gemini Omni 1.2 Flash",
+  "type": "new",
+  "input": 1.5,
+  "output": 9
+ },
+ {
+  "date": "2026-11-06",
+  "id": "google/gemini-omni-1.1-flash",
+  "name": "Gemini Omni 1.1 Flash",
+  "type": "new",
+  "input": 1.5,
+  "output": 9
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.045,
+  "to": 0.051
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.5,
+  "to": 0.567
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek V4 Flash Vision Exp",
+  "type": "price",
+  "field": "input",
+  "from": 0.2156,
+  "to": 0.44
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek V4 Flash Vision Exp",
+  "type": "price",
+  "field": "output",
+  "from": 0.6468,
+  "to": 1.32
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek V4 Flash Vision Exp",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.00686,
+  "to": 0.014
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "input",
+  "from": 0.103,
+  "to": 0.1165
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "output",
+  "from": 4.11,
+  "to": 4.66
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.098,
+  "to": 0.111
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "input",
+  "from": 0.054,
+  "to": 0.0566
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "input",
+  "from": 1.6,
+  "to": 0.888966
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "output",
+  "from": 3.2,
+  "to": 1.777932
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.135,
+  "to": 0.074081
+ },
+ {
+  "date": "2026-11-06",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "input",
+  "from": 0.017,
+  "to": 0.09
+ },
+ {
+  "date": "2026-11-06",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "output",
+  "from": 0.052,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-06",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.009,
+  "to": 0.05
+ },
+ {
+  "date": "2026-11-06",
+  "id": "nvidia/nemotron-3-super-120b-a12b",
+  "name": "Nemotron 3 Super",
+  "type": "price",
+  "field": "input",
+  "from": 0.3,
+  "to": 0.075
+ },
+ {
+  "date": "2026-11-06",
+  "id": "nvidia/nemotron-3-super-120b-a12b",
+  "name": "Nemotron 3 Super",
+  "type": "price",
+  "field": "output",
+  "from": 2.4,
+  "to": 0.4
+ },
+ {
+  "date": "2026-11-06",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "input",
+  "from": 0.5,
+  "to": 0.532
+ },
+ {
+  "date": "2026-11-06",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "output",
+  "from": 2.5,
+  "to": 3.325
+ },
+ {
+  "date": "2026-11-06",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.15,
+  "to": 0.209
+ },
+ {
+  "date": "2026-11-06",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.026
+ },
+ {
+  "date": "2026-11-06",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "output",
+  "from": 0.6,
+  "to": 0.096
+ },
+ {
+  "date": "2026-11-06",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.075,
+  "to": 0.023
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-chat",
+  "name": "DeepSeek V3",
+  "type": "price",
+  "field": "input",
+  "from": 0.2574,
+  "to": 0.32
+ },
+ {
+  "date": "2026-11-06",
+  "id": "deepseek/deepseek-chat",
+  "name": "DeepSeek V3",
+  "type": "price",
+  "field": "output",
+  "from": 1.0287,
+  "to": 0.89
+ },
+ {
+  "date": "2026-11-06",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.2,
+  "to": 0.59
+ },
+ {
+  "date": "2026-11-06",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "output",
+  "from": 0.52,
+  "to": 0.79
+ },
+ {
+  "date": "2026-11-06",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.1,
+  "to": 0.295
+ },
+ {
   "date": "2026-11-05",
   "id": "z-ai/glm-5.3-flash",
   "name": "GLM 5.3 Flash",

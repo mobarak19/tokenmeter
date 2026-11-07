@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-06T14:14:05.032Z",
- "checked": "2026-11-06T14:14:05.032Z",
+ "updated": "2026-11-07T12:57:34.674Z",
+ "checked": "2026-11-07T12:57:34.674Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -10,9 +10,9 @@
  "flagged": [
   "google/gemini-3.8-flash: OpenRouter 0.825/4.125 vs LiteLLM 0.75/3.75 per 1M",
   "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.44/1.32 vs LiteLLM 0.3/1.2 per 1M",
-  "deepseek/deepseek-v4-pro: OpenRouter 0.888966/1.777932 vs LiteLLM 1.32/3.96 per 1M",
+  "deepseek/deepseek-v4-pro: OpenRouter 0.717924/1.435848 vs LiteLLM 1.32/3.96 per 1M",
   "deepseek/deepseek-v4-flash: OpenRouter 0.091/0.182 vs LiteLLM 0.3/1.2 per 1M",
-  "google/gemma-4-26b-a4b-it: OpenRouter 0.09/0.3 vs LiteLLM 0/0 per 1M",
+  "google/gemma-4-26b-a4b-it: OpenRouter 0.0675/0.225 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
   "mistralai/mistral-medium-3: OpenRouter 0.4/2 vs LiteLLM 1.5/7.5 per 1M",
@@ -1637,6 +1637,8 @@
    "input": 0.15,
    "output": 1.875,
    "cacheRead": 0.0375,
+   "batchInput": 0.16,
+   "batchOutput": 2,
    "inputModalities": [
     "text",
     "image",
@@ -1859,9 +1861,11 @@
    "created": "2026-07-31",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 0.0566,
+   "input": 0.0474,
    "output": 0.3,
    "cacheRead": 0.035,
+   "batchInput": 0.048,
+   "batchOutput": 0.144,
    "inputModalities": [
     "text"
    ],
@@ -2685,6 +2689,8 @@
    "input": 0.3,
    "output": 1.2,
    "cacheRead": 0.06,
+   "batchInput": 0.224,
+   "batchOutput": 0.88,
    "inputModalities": [
     "text",
     "image",
@@ -3165,9 +3171,9 @@
    "created": "2026-04-24",
    "context": 1048576,
    "maxOutput": 384000,
-   "input": 0.888966,
-   "output": 1.777932,
-   "cacheRead": 0.074081,
+   "input": 0.717924,
+   "output": 1.435848,
+   "cacheRead": 0.059827,
    "inputModalities": [
     "text"
    ],
@@ -3419,9 +3425,9 @@
    "created": "2026-04-03",
    "context": 262144,
    "maxOutput": 235929,
-   "input": 0.09,
-   "output": 0.3,
-   "cacheRead": 0.05,
+   "input": 0.0675,
+   "output": 0.225,
+   "cacheRead": 0.0375,
    "inputModalities": [
     "image",
     "text",
@@ -4364,10 +4370,10 @@
    "name": "MiniMax M2.5",
    "created": "2026-02-12",
    "context": 204800,
-   "maxOutput": 32768,
-   "input": 0.27,
-   "output": 0.95,
-   "cacheRead": 0.03,
+   "maxOutput": 58982,
+   "input": 0.3,
+   "output": 1.2,
+   "cacheRead": 0.06,
    "inputModalities": [
     "text"
    ],
@@ -4510,10 +4516,10 @@
    "name": "Kimi K2.5",
    "created": "2026-01-27",
    "context": 262144,
-   "maxOutput": 65536,
-   "input": 0.532,
-   "output": 3.325,
-   "cacheRead": 0.209,
+   "maxOutput": 235929,
+   "input": 0.5,
+   "output": 2.5,
+   "cacheRead": 0.15,
    "inputModalities": [
     "text",
     "image"
@@ -6301,9 +6307,9 @@
    "created": "2025-08-05",
    "context": 131072,
    "maxOutput": 65536,
-   "input": 0.026,
-   "output": 0.096,
-   "cacheRead": 0.023,
+   "input": 0.017,
+   "output": 0.064,
+   "cacheRead": 0.016,
    "batchInput": 0.0296,
    "batchOutput": 0.136,
    "inputModalities": [
@@ -7405,7 +7411,7 @@
    "outputModalities": [
     "text"
    ],
-   "tools": false,
+   "tools": true,
    "reasoning": false,
    "tokenizer": "Other",
    "hfId": "CohereForAI/c4ai-command-a-03-2025",
@@ -7826,7 +7832,7 @@
    "outputModalities": [
     "text"
    ],
-   "tools": false,
+   "tools": true,
    "reasoning": false,
    "tokenizer": "Cohere",
    "verified": "match",

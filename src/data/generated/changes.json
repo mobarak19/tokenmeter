@@ -1,5 +1,221 @@
 [
  {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.006
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "output",
+  "from": 0.6,
+  "to": 0.5
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.003,
+  "to": 0.005
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.567,
+  "to": 0.41
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.018,
+  "to": 0.022
+ },
+ {
+  "date": "2026-11-08",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.0335
+ },
+ {
+  "date": "2026-11-08",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.5,
+  "to": 0.083
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "input",
+  "from": 0.1165,
+  "to": 0.111
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "output",
+  "from": 4.66,
+  "to": 4.44
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.111,
+  "to": 0.097
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "input",
+  "from": 0.0474,
+  "to": 0.0434
+ },
+ {
+  "date": "2026-11-08",
+  "id": "qwen/qwen3.6-27b",
+  "name": "Qwen3.6 27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.45,
+  "to": 0.32
+ },
+ {
+  "date": "2026-11-08",
+  "id": "qwen/qwen3.6-27b",
+  "name": "Qwen3.6 27B",
+  "type": "price",
+  "field": "output",
+  "from": 2.7,
+  "to": 3.2
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.717924,
+  "to": 0.241338
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "output",
+  "from": 1.435848,
+  "to": 0.482676
+ },
+ {
+  "date": "2026-11-08",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.059827,
+  "to": 0.020112
+ },
+ {
+  "date": "2026-11-08",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "input",
+  "from": 0.5,
+  "to": 0.532
+ },
+ {
+  "date": "2026-11-08",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "output",
+  "from": 2.5,
+  "to": 3.325
+ },
+ {
+  "date": "2026-11-08",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.15,
+  "to": 0.209
+ },
+ {
+  "date": "2026-11-08",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "input",
+  "from": 0.017,
+  "to": 0.025
+ },
+ {
+  "date": "2026-11-08",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "output",
+  "from": 0.064,
+  "to": 0.094
+ },
+ {
+  "date": "2026-11-08",
+  "id": "openai/gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.016,
+  "to": 0.023
+ },
+ {
+  "date": "2026-11-08",
+  "id": "meta-llama/llama-3.2-3b-instruct",
+  "name": "Llama 3.2 3B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.0509,
+  "to": 0.05
+ },
+ {
+  "date": "2026-11-08",
+  "id": "meta-llama/llama-3.2-3b-instruct",
+  "name": "Llama 3.2 3B Instruct",
+  "type": "price",
+  "field": "output",
+  "from": 0.335,
+  "to": 0.33
+ },
+ {
   "date": "2026-11-07",
   "id": "deepseek/deepseek-v4-flash-0731",
   "name": "DeepSeek V4 Flash 0731",

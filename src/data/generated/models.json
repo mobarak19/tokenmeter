@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-08T13:21:17.817Z",
- "checked": "2026-11-08T13:21:17.817Z",
+ "updated": "2026-11-09T16:13:44.090Z",
+ "checked": "2026-11-09T16:13:44.090Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -10,13 +10,13 @@
  "flagged": [
   "google/gemini-3.8-flash: OpenRouter 0.825/4.125 vs LiteLLM 0.75/3.75 per 1M",
   "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.44/1.32 vs LiteLLM 0.3/1.2 per 1M",
-  "deepseek/deepseek-v4-pro: OpenRouter 0.241338/0.482676 vs LiteLLM 1.32/3.96 per 1M",
+  "deepseek/deepseek-v4-pro: OpenRouter 0.894012/1.788024 vs LiteLLM 1.32/3.96 per 1M",
   "deepseek/deepseek-v4-flash: OpenRouter 0.091/0.182 vs LiteLLM 0.3/1.2 per 1M",
-  "google/gemma-4-26b-a4b-it: OpenRouter 0.0675/0.225 vs LiteLLM 0/0 per 1M",
+  "google/gemma-4-26b-a4b-it: OpenRouter 0.09/0.3 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
   "mistralai/mistral-medium-3: OpenRouter 0.4/2 vs LiteLLM 1.5/7.5 per 1M",
-  "google/gemma-3-27b-it: OpenRouter 0.08/0.35 vs LiteLLM 0/0 per 1M",
+  "google/gemma-3-27b-it: OpenRouter 0.08/0.45 vs LiteLLM 0/0 per 1M",
   "perplexity/sonar: OpenRouter 1/1 vs LiteLLM 0.25/2.5 per 1M",
   "deepseek/deepseek-chat: OpenRouter 0.32/0.89 vs LiteLLM 0.28/0.42 per 1M",
   "embedding embed-multilingual-light-v3.0: implausible 100/1M, skipped"
@@ -556,9 +556,9 @@
    "created": "2026-10-19",
    "context": 1048576,
    "maxOutput": 524288,
-   "input": 0.15,
-   "output": 0.6,
-   "cacheRead": 0.015,
+   "input": 0.075,
+   "output": 0.3,
+   "cacheRead": 0.0075,
    "inputModalities": [
     "text",
     "image",
@@ -1263,8 +1263,8 @@
    "context": 1048576,
    "maxOutput": 943718,
    "input": 0.051,
-   "output": 0.41,
-   "cacheRead": 0.022,
+   "output": 0.567,
+   "cacheRead": 0.018,
    "batchInput": 0.011,
    "batchOutput": 0.2,
    "inputModalities": [
@@ -1383,6 +1383,8 @@
    "input": 2,
    "output": 6,
    "cacheRead": 0.25,
+   "batchInput": 1.15,
+   "batchOutput": 3.45,
    "inputModalities": [
     "text",
     "image",
@@ -1516,8 +1518,8 @@
    "input": 0.0335,
    "output": 0.083,
    "cacheRead": 0.03,
-   "batchInput": 0.05,
-   "batchOutput": 0.18,
+   "batchInput": 0.043,
+   "batchOutput": 0.087,
    "inputModalities": [
     "text",
     "image",
@@ -1599,8 +1601,8 @@
    "input": 0.0699,
    "output": 1.4,
    "cacheRead": 0.0689,
-   "batchInput": 0.37,
-   "batchOutput": 1.5,
+   "batchInput": 0.45,
+   "batchOutput": 2,
    "inputModalities": [
     "text"
    ],
@@ -2050,7 +2052,7 @@
    "input": 0.192,
    "output": 16,
    "cacheRead": 0.182,
-   "batchInput": 0.917,
+   "batchInput": 0.883,
    "batchOutput": 6,
    "inputModalities": [
     "text",
@@ -2480,11 +2482,11 @@
    "created": "2026-06-16",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 0.006,
+   "input": 0.0075,
    "output": 6.8,
    "cacheRead": 0.005,
-   "batchInput": 0.37,
-   "batchOutput": 1.5,
+   "batchInput": 0.623,
+   "batchOutput": 1.271,
    "inputModalities": [
     "text"
    ],
@@ -3175,9 +3177,9 @@
    "created": "2026-04-24",
    "context": 1048576,
    "maxOutput": 384000,
-   "input": 0.241338,
-   "output": 0.482676,
-   "cacheRead": 0.020112,
+   "input": 0.894012,
+   "output": 1.788024,
+   "cacheRead": 0.074501,
    "inputModalities": [
     "text"
    ],
@@ -3429,9 +3431,9 @@
    "created": "2026-04-03",
    "context": 262144,
    "maxOutput": 235929,
-   "input": 0.0675,
-   "output": 0.225,
-   "cacheRead": 0.0375,
+   "input": 0.09,
+   "output": 0.3,
+   "cacheRead": 0.05,
    "inputModalities": [
     "image",
     "text",
@@ -3641,7 +3643,7 @@
    "firstParty": false,
    "name": "MiniMax M2.7",
    "created": "2026-03-18",
-   "context": 204800,
+   "context": 196608,
    "maxOutput": 176947,
    "input": 0.21,
    "output": 0.84,
@@ -4303,10 +4305,10 @@
    "name": "Qwen3.5 397B A17B",
    "created": "2026-02-16",
    "context": 262144,
-   "maxOutput": 235929,
-   "input": 0.5,
+   "maxOutput": 64000,
+   "input": 0.6,
    "output": 3.6,
-   "cacheRead": 0.3,
+   "cacheRead": 0.12,
    "inputModalities": [
     "text",
     "image",
@@ -4373,7 +4375,7 @@
    "firstParty": false,
    "name": "MiniMax M2.5",
    "created": "2026-02-12",
-   "context": 204800,
+   "context": 200000,
    "maxOutput": 58982,
    "input": 0.3,
    "output": 1.2,
@@ -6311,9 +6313,9 @@
    "created": "2025-08-05",
    "context": 131072,
    "maxOutput": 65536,
-   "input": 0.025,
-   "output": 0.094,
-   "cacheRead": 0.023,
+   "input": 0.15,
+   "output": 0.6,
+   "cacheRead": 0.075,
    "batchInput": 0.0296,
    "batchOutput": 0.136,
    "inputModalities": [
@@ -6566,9 +6568,9 @@
    "created": "2025-07-25",
    "context": 131072,
    "maxOutput": 98304,
-   "input": 0.13,
-   "output": 0.85,
-   "cacheRead": 0.025,
+   "input": 0.2,
+   "output": 1.1,
+   "cacheRead": 0.03,
    "inputModalities": [
     "text"
    ],
@@ -6750,9 +6752,10 @@
    "name": "Mistral Small 3.2 24B",
    "created": "2025-06-20",
    "context": 256000,
-   "maxOutput": 16384,
-   "input": 0.075,
-   "output": 0.2,
+   "maxOutput": 26214,
+   "input": 0.1,
+   "output": 0.3,
+   "cacheRead": 0.01,
    "inputModalities": [
     "image",
     "text"
@@ -6852,29 +6855,6 @@
    "verified": "match",
    "listInput": 1.25,
    "listOutput": 10
-  },
-  {
-   "id": "minimax/minimax-m1",
-   "slug": "minimax-minimax-m1",
-   "provider": "minimax",
-   "providerName": "MiniMax",
-   "firstParty": false,
-   "name": "MiniMax M1",
-   "created": "2025-06-17",
-   "context": 1000000,
-   "maxOutput": 40000,
-   "input": 0.55,
-   "output": 2.2,
-   "inputModalities": [
-    "text"
-   ],
-   "outputModalities": [
-    "text"
-   ],
-   "tools": true,
-   "reasoning": true,
-   "tokenizer": "Other",
-   "verified": "unchecked"
   },
   {
    "id": "openai/o3-pro",
@@ -7482,7 +7462,7 @@
    "context": 131072,
    "maxOutput": 117964,
    "input": 0.08,
-   "output": 0.35,
+   "output": 0.45,
    "cacheRead": 0.04,
    "inputModalities": [
     "text",
@@ -8262,10 +8242,9 @@
    "name": "Llama 3.1 8B Instruct",
    "created": "2024-07-23",
    "context": 131072,
-   "maxOutput": 117964,
-   "input": 0.05,
-   "output": 0.08,
-   "cacheRead": 0.025,
+   "maxOutput": 16384,
+   "input": 0.02,
+   "output": 0.04,
    "inputModalities": [
     "text"
    ],

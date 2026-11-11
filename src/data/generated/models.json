@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-10T14:50:27.796Z",
- "checked": "2026-11-10T14:50:27.796Z",
+ "updated": "2026-11-11T14:18:39.817Z",
+ "checked": "2026-11-11T14:18:39.817Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -10,8 +10,8 @@
  "flagged": [
   "google/gemini-3.8-flash: OpenRouter 0.825/4.125 vs LiteLLM 0.75/3.75 per 1M",
   "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.44/1.32 vs LiteLLM 0.3/1.2 per 1M",
-  "deepseek/deepseek-v4-pro: OpenRouter 0.95526/1.91052 vs LiteLLM 1.32/3.96 per 1M",
-  "deepseek/deepseek-v4-flash: OpenRouter 0.091/0.182 vs LiteLLM 0.3/1.2 per 1M",
+  "deepseek/deepseek-v4-pro: OpenRouter 0.888966/1.777932 vs LiteLLM 1.32/3.96 per 1M",
+  "deepseek/deepseek-v4-flash: OpenRouter 0.09/0.18 vs LiteLLM 0.3/1.2 per 1M",
   "google/gemma-4-26b-a4b-it: OpenRouter 0.08/0.1 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
@@ -344,6 +344,41 @@
   }
  ],
  "models": [
+  {
+   "id": "google/gemini-4-carbon",
+   "slug": "google-gemini-4-carbon",
+   "provider": "google",
+   "providerName": "Google",
+   "firstParty": true,
+   "name": "Gemini 4 Carbon",
+   "created": "2026-11-10",
+   "context": 1048576,
+   "maxOutput": 943718,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.1,
+   "cacheWrite": 0.1875,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "reasoningPrice": 10,
+   "webSearch": 0.014,
+   "inputModalities": [
+    "audio",
+    "file",
+    "image",
+    "text",
+    "video"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "Gemini",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 10
+  },
   {
    "id": "anthropic/claude-fable-5.2",
    "slug": "anthropic-claude-fable-5-2",
@@ -683,7 +718,7 @@
    "tools": true,
    "reasoning": true,
    "tokenizer": "Other",
-   "hfId": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+   "hfId": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
    "verified": "unchecked"
   },
   {
@@ -1035,7 +1070,20 @@
    "tools": true,
    "reasoning": true,
    "tokenizer": "Cohere",
-   "verified": "unchecked"
+   "hfId": "CohereLabs/command-a-plus-05-2026-bf16",
+   "verified": "unchecked",
+   "arch": {
+    "params": 218750277872,
+    "layers": 32,
+    "hidden": 4096,
+    "heads": 128,
+    "intermediate": 4096,
+    "vocab": 262144,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 200000,
+    "moe": true
+   }
   },
   {
    "id": "openai/gpt-6-luna",
@@ -1295,9 +1343,9 @@
    "created": "2026-09-10",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 0.3,
-   "output": 1.2,
-   "cacheRead": 0.006,
+   "input": 0.051,
+   "output": 0.567,
+   "cacheRead": 0.018,
    "batchInput": 0.112,
    "batchOutput": 0.336,
    "inputModalities": [
@@ -1551,7 +1599,7 @@
    "input": 0.0399,
    "output": 0.0784,
    "cacheRead": 0.03,
-   "batchInput": 0.03,
+   "batchInput": 0.047,
    "batchOutput": 0.061,
    "inputModalities": [
     "text",
@@ -2974,9 +3022,22 @@
    "tools": true,
    "reasoning": true,
    "tokenizer": "Mistral",
+   "hfId": "mistralai/Mistral-Medium-3.5-128B",
    "verified": "match",
    "listInput": 1.5,
-   "listOutput": 7.5
+   "listOutput": 7.5,
+   "arch": {
+    "params": 127704210176,
+    "layers": 88,
+    "hidden": 12288,
+    "heads": 96,
+    "intermediate": 28672,
+    "vocab": 131072,
+    "kvHeads": 8,
+    "headDim": 128,
+    "maxContext": 262144,
+    "moe": false
+   }
   },
   {
    "id": "x-ai/grok-4.3",
@@ -3169,10 +3230,10 @@
    "name": "DeepSeek V4 Flash 0423",
    "created": "2026-04-24",
    "context": 1048576,
-   "maxOutput": 943717,
-   "input": 0.091,
-   "output": 0.182,
-   "cacheRead": 0.0182,
+   "maxOutput": 393216,
+   "input": 0.09,
+   "output": 0.18,
+   "cacheRead": 0.018,
    "inputModalities": [
     "text"
    ],
@@ -3210,9 +3271,9 @@
    "created": "2026-04-24",
    "context": 1048576,
    "maxOutput": 384000,
-   "input": 0.95526,
-   "output": 1.91052,
-   "cacheRead": 0.079605,
+   "input": 0.888966,
+   "output": 1.777932,
+   "cacheRead": 0.074081,
    "inputModalities": [
     "text"
    ],
@@ -3426,9 +3487,9 @@
    "created": "2026-04-07",
    "context": 204800,
    "maxOutput": 131072,
-   "input": 1.4,
-   "output": 4.4,
-   "cacheRead": 0.26,
+   "input": 1.33,
+   "output": 4.18,
+   "cacheRead": 0.247,
    "inputModalities": [
     "text"
    ],
@@ -3840,7 +3901,7 @@
    "firstParty": false,
    "name": "Nemotron 3 Super",
    "created": "2026-03-11",
-   "context": 1048576,
+   "context": 262144,
    "maxOutput": 16384,
    "input": 0.075,
    "output": 0.4,
@@ -4409,10 +4470,10 @@
    "name": "MiniMax M2.5",
    "created": "2026-02-12",
    "context": 200000,
-   "maxOutput": 58982,
-   "input": 0.3,
-   "output": 1.2,
-   "cacheRead": 0.06,
+   "maxOutput": 128000,
+   "input": 0.27,
+   "output": 1.08,
+   "cacheRead": 0.027,
    "inputModalities": [
     "text"
    ],
@@ -5219,6 +5280,7 @@
    "tools": true,
    "reasoning": false,
    "tokenizer": "Mistral",
+   "hfId": "mistralai/Mistral-Large-3-675B-Instruct-2512",
    "verified": "match",
    "listInput": 0.5,
    "listOutput": 1.5
@@ -7852,6 +7914,7 @@
    "tools": true,
    "reasoning": false,
    "tokenizer": "Cohere",
+   "hfId": "CohereLabs/c4ai-command-r7b-12-2024",
    "verified": "match",
    "listInput": 0.0375,
    "listOutput": 0.15
@@ -8003,6 +8066,7 @@
    "tools": true,
    "reasoning": false,
    "tokenizer": "Mistral",
+   "hfId": "mistralai/Mistral-Large-Instruct-2407",
    "verified": "unchecked"
   },
   {
@@ -8036,43 +8100,6 @@
     "intermediate": 27648,
     "vocab": 152064,
     "kvHeads": 8,
-    "headDim": 128,
-    "maxContext": 32768,
-    "moe": false,
-    "dtype": "bfloat16"
-   }
-  },
-  {
-   "id": "qwen/qwen-2.5-7b-instruct",
-   "slug": "qwen-qwen-2-5-7b-instruct",
-   "provider": "qwen",
-   "providerName": "Qwen",
-   "firstParty": false,
-   "name": "Qwen2.5 7B Instruct",
-   "created": "2024-10-16",
-   "context": 32768,
-   "maxOutput": 29491,
-   "input": 0.1,
-   "output": 0.2,
-   "inputModalities": [
-    "text"
-   ],
-   "outputModalities": [
-    "text"
-   ],
-   "tools": true,
-   "reasoning": false,
-   "tokenizer": "Qwen",
-   "hfId": "Qwen/Qwen2.5-7B-Instruct",
-   "verified": "unchecked",
-   "arch": {
-    "params": 7615616512,
-    "layers": 28,
-    "hidden": 3584,
-    "heads": 28,
-    "intermediate": 18944,
-    "vocab": 152064,
-    "kvHeads": 4,
     "headDim": 128,
     "maxContext": 32768,
     "moe": false,
@@ -8185,6 +8212,7 @@
    "tools": true,
    "reasoning": false,
    "tokenizer": "Cohere",
+   "hfId": "CohereLabs/c4ai-command-r-08-2024",
    "verified": "match",
    "listInput": 0.15,
    "listOutput": 0.6
@@ -8210,6 +8238,7 @@
    "tools": true,
    "reasoning": false,
    "tokenizer": "Cohere",
+   "hfId": "CohereLabs/c4ai-command-r-plus-08-2024",
    "verified": "match",
    "listInput": 2.5,
    "listOutput": 10

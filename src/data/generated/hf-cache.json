@@ -1262,5 +1262,35 @@
   "maxContext": 1048576,
   "moe": true,
   "mlaDim": 576
- }
+ },
+ "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16": null,
+ "CohereLabs/command-a-plus-05-2026-bf16": {
+  "params": 218750277872,
+  "layers": 32,
+  "hidden": 4096,
+  "heads": 128,
+  "intermediate": 4096,
+  "vocab": 262144,
+  "kvHeads": 8,
+  "headDim": 128,
+  "maxContext": 200000,
+  "moe": true
+ },
+ "mistralai/Mistral-Medium-3.5-128B": {
+  "params": 127704210176,
+  "layers": 88,
+  "hidden": 12288,
+  "heads": 96,
+  "intermediate": 28672,
+  "vocab": 131072,
+  "kvHeads": 8,
+  "headDim": 128,
+  "maxContext": 262144,
+  "moe": false
+ },
+ "mistralai/Mistral-Large-3-675B-Instruct-2512": null,
+ "CohereLabs/c4ai-command-r7b-12-2024": null,
+ "mistralai/Mistral-Large-Instruct-2407": null,
+ "CohereLabs/c4ai-command-r-08-2024": null,
+ "CohereLabs/c4ai-command-r-plus-08-2024": null
 }

@@ -1,5 +1,221 @@
 [
  {
+  "date": "2026-11-12",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "price",
+  "field": "input",
+  "from": 2,
+  "to": 0.2375
+ },
+ {
+  "date": "2026-11-12",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "price",
+  "field": "output",
+  "from": 10,
+  "to": 8.7856
+ },
+ {
+  "date": "2026-11-12",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.2,
+  "to": 0.19
+ },
+ {
+  "date": "2026-11-12",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.075
+ },
+ {
+  "date": "2026-11-12",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.6,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-12",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.015,
+  "to": 0.0075
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "input",
+  "from": 0.006,
+  "to": 0.15
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "output",
+  "from": 0.5,
+  "to": 0.6
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.005,
+  "to": 0.003
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.051,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.567,
+  "to": 1.2
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.018,
+  "to": 0.006
+ },
+ {
+  "date": "2026-11-12",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "input",
+  "from": 4,
+  "to": 4.4
+ },
+ {
+  "date": "2026-11-12",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "output",
+  "from": 20,
+  "to": 22
+ },
+ {
+  "date": "2026-11-12",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.4,
+  "to": 0.44
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.888966,
+  "to": 0.892272
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "output",
+  "from": 1.777932,
+  "to": 1.784544
+ },
+ {
+  "date": "2026-11-12",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.074081,
+  "to": 0.074356
+ },
+ {
+  "date": "2026-11-12",
+  "id": "z-ai/glm-5.1",
+  "name": "GLM 5.1",
+  "type": "price",
+  "field": "input",
+  "from": 1.33,
+  "to": 1.4
+ },
+ {
+  "date": "2026-11-12",
+  "id": "z-ai/glm-5.1",
+  "name": "GLM 5.1",
+  "type": "price",
+  "field": "output",
+  "from": 4.18,
+  "to": 4.4
+ },
+ {
+  "date": "2026-11-12",
+  "id": "z-ai/glm-5.1",
+  "name": "GLM 5.1",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.247,
+  "to": 0.26
+ },
+ {
+  "date": "2026-11-12",
+  "id": "qwen/qwen3-14b",
+  "name": "Qwen3 14B",
+  "type": "price",
+  "field": "input",
+  "from": 0.1,
+  "to": 0.12
+ },
+ {
+  "date": "2026-11-12",
+  "id": "qwen/qwen3-14b",
+  "name": "Qwen3 14B",
+  "type": "price",
+  "field": "output",
+  "from": 0.22,
+  "to": 0.24
+ },
+ {
+  "date": "2026-11-12",
+  "id": "google/gemma-3-27b-it",
+  "name": "Gemma 3 27B",
+  "type": "price",
+  "field": "output",
+  "from": 0.45,
+  "to": 0.35
+ },
+ {
   "date": "2026-11-11",
   "id": "google/gemini-4-carbon",
   "name": "Gemini 4 Carbon",

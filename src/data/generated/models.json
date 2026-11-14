@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-13T14:32:24.419Z",
- "checked": "2026-11-13T14:32:24.419Z",
+ "updated": "2026-11-14T13:28:47.391Z",
+ "checked": "2026-11-14T13:28:47.391Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -10,16 +10,15 @@
  "flagged": [
   "google/gemini-3.8-flash: OpenRouter 0.825/4.125 vs LiteLLM 0.75/3.75 per 1M",
   "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.44/1.32 vs LiteLLM 0.3/1.2 per 1M",
-  "openai/gpt-5.6-sol: OpenRouter 4.4/22 vs LiteLLM 4/20 per 1M",
   "deepseek/deepseek-v4-pro: OpenRouter 0.9/1.5 vs LiteLLM 1.32/3.96 per 1M",
   "deepseek/deepseek-v4-flash: OpenRouter 0.09/0.18 vs LiteLLM 0.3/1.2 per 1M",
-  "google/gemma-4-26b-a4b-it: OpenRouter 0.09/0.3 vs LiteLLM 0/0 per 1M",
+  "google/gemma-4-26b-a4b-it: OpenRouter 0.0675/0.225 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
   "mistralai/mistral-medium-3: OpenRouter 0.4/2 vs LiteLLM 1.5/7.5 per 1M",
   "google/gemma-3-27b-it: OpenRouter 0.08/0.35 vs LiteLLM 0/0 per 1M",
   "perplexity/sonar: OpenRouter 1/1 vs LiteLLM 0.25/2.5 per 1M",
-  "deepseek/deepseek-chat: OpenRouter 0.32/0.89 vs LiteLLM 0.28/0.42 per 1M",
+  "deepseek/deepseek-chat: OpenRouter 0.2574/1.0287 vs LiteLLM 0.28/0.42 per 1M",
   "embedding embed-multilingual-light-v3.0: implausible 100/1M, skipped"
  ],
  "embeddings": [
@@ -1380,10 +1379,10 @@
    "name": "DeepSeek V4.1 Flash",
    "created": "2026-09-10",
    "context": 1048576,
-   "maxOutput": 943718,
-   "input": 0.3,
-   "output": 1.2,
-   "cacheRead": 0.006,
+   "maxOutput": 393216,
+   "input": 0.0507,
+   "output": 0.2028,
+   "cacheRead": 0.001014,
    "batchInput": 0.112,
    "batchOutput": 0.336,
    "inputModalities": [
@@ -1755,7 +1754,7 @@
    "firstParty": false,
    "name": "Qwen3.8 27B",
    "created": "2026-08-14",
-   "context": 1048575,
+   "context": 1024000,
    "maxOutput": 235929,
    "input": 0.15,
    "output": 1.875,
@@ -2288,19 +2287,19 @@
    "created": "2026-07-09",
    "context": 1050000,
    "maxOutput": 128000,
-   "input": 4.4,
-   "output": 22,
-   "cacheRead": 0.44,
-   "cacheWrite": 5.5,
+   "input": 4,
+   "output": 20,
+   "cacheRead": 0.4,
+   "cacheWrite": 5,
    "batchInput": 2,
    "batchOutput": 10,
    "webSearch": 0.01,
    "tiers": [
     {
      "minPromptTokens": 272000,
-     "input": 8.8,
-     "output": 33,
-     "cacheRead": 0.88
+     "input": 8,
+     "output": 30,
+     "cacheRead": 0.8
     }
    ],
    "inputModalities": [
@@ -2314,7 +2313,7 @@
    "tools": true,
    "reasoning": true,
    "tokenizer": "GPT",
-   "verified": "mismatch",
+   "verified": "match",
    "listInput": 4,
    "listOutput": 20
   },
@@ -3563,9 +3562,9 @@
    "created": "2026-04-03",
    "context": 262144,
    "maxOutput": 235929,
-   "input": 0.09,
-   "output": 0.3,
-   "cacheRead": 0.05,
+   "input": 0.0675,
+   "output": 0.225,
+   "cacheRead": 0.0375,
    "inputModalities": [
     "image",
     "text",
@@ -3977,9 +3976,9 @@
    "created": "2026-03-10",
    "context": 262144,
    "maxOutput": 40960,
-   "input": 0.051,
-   "output": 0.074,
-   "cacheRead": 0.046,
+   "input": 0.17,
+   "output": 0.25,
+   "cacheRead": 0.153,
    "inputModalities": [
     "text",
     "image",
@@ -7901,9 +7900,9 @@
    "name": "DeepSeek V3",
    "created": "2024-12-26",
    "context": 163840,
-   "maxOutput": 16384,
-   "input": 0.32,
-   "output": 0.89,
+   "maxOutput": 16000,
+   "input": 0.2574,
+   "output": 1.0287,
    "inputModalities": [
     "text"
    ],
@@ -8178,9 +8177,9 @@
    "name": "Llama 3.2 3B Instruct",
    "created": "2024-09-25",
    "context": 131072,
-   "maxOutput": 117964,
-   "input": 0.05,
-   "output": 0.33,
+   "maxOutput": 72000,
+   "input": 0.0509,
+   "output": 0.335,
    "inputModalities": [
     "text"
    ],

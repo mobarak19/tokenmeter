@@ -1,5 +1,146 @@
 [
  {
+  "date": "2026-11-15",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "price",
+  "field": "input",
+  "from": 2,
+  "to": 0.2403
+ },
+ {
+  "date": "2026-11-15",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "price",
+  "field": "output",
+  "from": 10,
+  "to": 8.4023
+ },
+ {
+  "date": "2026-11-15",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "input",
+  "from": 0.038,
+  "to": 0.02
+ },
+ {
+  "date": "2026-11-15",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "output",
+  "from": 0.5,
+  "to": 0.108
+ },
+ {
+  "date": "2026-11-15",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.01,
+  "to": 0.007
+ },
+ {
+  "date": "2026-11-15",
+  "id": "nvidia/nemotron-3.5-super-vl",
+  "name": "Nemotron 3.5 Super VL",
+  "type": "price",
+  "field": "output",
+  "from": 0.47,
+  "to": 0.5
+ },
+ {
+  "date": "2026-11-15",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "input",
+  "from": 4,
+  "to": 4.4
+ },
+ {
+  "date": "2026-11-15",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "output",
+  "from": 20,
+  "to": 22
+ },
+ {
+  "date": "2026-11-15",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.4,
+  "to": 0.44
+ },
+ {
+  "date": "2026-11-15",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "input",
+  "from": 0.17,
+  "to": 0.021
+ },
+ {
+  "date": "2026-11-15",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "output",
+  "from": 0.25,
+  "to": 0.03
+ },
+ {
+  "date": "2026-11-15",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.153,
+  "to": 0.019
+ },
+ {
+  "date": "2026-11-15",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "input",
+  "from": 0.6,
+  "to": 0.4
+ },
+ {
+  "date": "2026-11-15",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "output",
+  "from": 2.2,
+  "to": 1.75
+ },
+ {
+  "date": "2026-11-15",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.11,
+  "to": 0.08
+ },
+ {
+  "date": "2026-11-15",
+  "id": "qwen/qwen3-vl-30b-a3b-thinking",
+  "name": "Qwen3 VL 30B A3B Thinking",
+  "type": "removed"
+ },
+ {
   "date": "2026-11-14",
   "id": "deepseek/deepseek-v4.1-flash",
   "name": "DeepSeek V4.1 Flash",

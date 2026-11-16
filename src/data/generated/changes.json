@@ -1,5 +1,337 @@
 [
  {
+  "date": "2026-11-16",
+  "id": "qwen/qwen4-max",
+  "name": "Qwen4 Max",
+  "type": "new",
+  "input": 1.5,
+  "output": 4.5
+ },
+ {
+  "date": "2026-11-16",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.075
+ },
+ {
+  "date": "2026-11-16",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.6,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-16",
+  "id": "minimax/minimax-m3.1-flash",
+  "name": "MiniMax M3.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.015,
+  "to": 0.0075
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "input",
+  "from": 0.02,
+  "to": 0.15
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "output",
+  "from": 0.108,
+  "to": 0.6
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.007,
+  "to": 0.003
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.0507,
+  "to": 0.14
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.2028,
+  "to": 0.42
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.001014,
+  "to": 0.0042
+ },
+ {
+  "date": "2026-11-16",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "input",
+  "from": 0.084,
+  "to": 0.0699
+ },
+ {
+  "date": "2026-11-16",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "output",
+  "from": 3.6,
+  "to": 1.4
+ },
+ {
+  "date": "2026-11-16",
+  "id": "z-ai/glm-5.3",
+  "name": "GLM 5.3",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.079,
+  "to": 0.0689
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "input",
+  "from": 0.0434,
+  "to": 0.06
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "output",
+  "from": 0.3,
+  "to": 0.18
+ },
+ {
+  "date": "2026-11-16",
+  "id": "deepseek/deepseek-v4-flash-0731",
+  "name": "DeepSeek V4 Flash 0731",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.035,
+  "to": 0.015
+ },
+ {
+  "date": "2026-11-16",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "input",
+  "from": 4.4,
+  "to": 4
+ },
+ {
+  "date": "2026-11-16",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "output",
+  "from": 22,
+  "to": 20
+ },
+ {
+  "date": "2026-11-16",
+  "id": "openai/gpt-5.6-sol",
+  "name": "GPT-5.6 Sol",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.44,
+  "to": 0.4
+ },
+ {
+  "date": "2026-11-16",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "input",
+  "from": 0.0675,
+  "to": 0.09
+ },
+ {
+  "date": "2026-11-16",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "output",
+  "from": 0.225,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-16",
+  "id": "google/gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0375,
+  "to": 0.05
+ },
+ {
+  "date": "2026-11-16",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "input",
+  "from": 0.021,
+  "to": 0.104
+ },
+ {
+  "date": "2026-11-16",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "output",
+  "from": 0.03,
+  "to": 0.153
+ },
+ {
+  "date": "2026-11-16",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.019,
+  "to": 0.094
+ },
+ {
+  "date": "2026-11-16",
+  "id": "qwen/qwen3.5-397b-a17b",
+  "name": "Qwen3.5 397B A17B",
+  "type": "price",
+  "field": "input",
+  "from": 0.6,
+  "to": 0.45
+ },
+ {
+  "date": "2026-11-16",
+  "id": "qwen/qwen3.5-397b-a17b",
+  "name": "Qwen3.5 397B A17B",
+  "type": "price",
+  "field": "output",
+  "from": 3.6,
+  "to": 3
+ },
+ {
+  "date": "2026-11-16",
+  "id": "qwen/qwen3.5-397b-a17b",
+  "name": "Qwen3.5 397B A17B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.12,
+  "to": 0.22
+ },
+ {
+  "date": "2026-11-16",
+  "id": "minimax/minimax-m2.5",
+  "name": "MiniMax M2.5",
+  "type": "price",
+  "field": "input",
+  "from": 0.27,
+  "to": 0.295
+ },
+ {
+  "date": "2026-11-16",
+  "id": "minimax/minimax-m2.5",
+  "name": "MiniMax M2.5",
+  "type": "price",
+  "field": "output",
+  "from": 0.95,
+  "to": 1.2
+ },
+ {
+  "date": "2026-11-16",
+  "id": "minimax/minimax-m2.5",
+  "name": "MiniMax M2.5",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.03,
+  "to": 0.06
+ },
+ {
+  "date": "2026-11-16",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "input",
+  "from": 0.03,
+  "to": 0.075
+ },
+ {
+  "date": "2026-11-16",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "output",
+  "from": 0.13,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-16",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.03,
+  "to": 0.0375
+ },
+ {
+  "date": "2026-11-16",
+  "id": "z-ai/glm-4.5-air",
+  "name": "GLM 4.5 Air",
+  "type": "price",
+  "field": "input",
+  "from": 0.2,
+  "to": 0.13
+ },
+ {
+  "date": "2026-11-16",
+  "id": "z-ai/glm-4.5-air",
+  "name": "GLM 4.5 Air",
+  "type": "price",
+  "field": "output",
+  "from": 1.1,
+  "to": 0.85
+ },
+ {
+  "date": "2026-11-16",
+  "id": "z-ai/glm-4.5-air",
+  "name": "GLM 4.5 Air",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.03,
+  "to": 0.025
+ },
+ {
   "date": "2026-11-15",
   "id": "moonshotai/kimi-k3.1-pro",
   "name": "Kimi K3.1 Pro",

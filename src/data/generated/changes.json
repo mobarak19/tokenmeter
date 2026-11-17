@@ -1,5 +1,230 @@
 [
  {
+  "date": "2026-11-17",
+  "id": "qwen/qwen4-max",
+  "name": "Qwen4 Max",
+  "type": "price",
+  "field": "input",
+  "from": 1.5,
+  "to": 1.425
+ },
+ {
+  "date": "2026-11-17",
+  "id": "qwen/qwen4-max",
+  "name": "Qwen4 Max",
+  "type": "price",
+  "field": "output",
+  "from": 4.5,
+  "to": 4.275
+ },
+ {
+  "date": "2026-11-17",
+  "id": "qwen/qwen4-max",
+  "name": "Qwen4 Max",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.075,
+  "to": 0.07125
+ },
+ {
+  "date": "2026-11-17",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.036
+ },
+ {
+  "date": "2026-11-17",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "output",
+  "from": 0.6,
+  "to": 0.5
+ },
+ {
+  "date": "2026-11-17",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.003,
+  "to": 0.01
+ },
+ {
+  "date": "2026-11-17",
+  "id": "z-ai/glm-5.3-prime",
+  "name": "GLM 5.3 Prime",
+  "type": "price",
+  "field": "input",
+  "from": 2.8,
+  "to": 1.68
+ },
+ {
+  "date": "2026-11-17",
+  "id": "z-ai/glm-5.3-prime",
+  "name": "GLM 5.3 Prime",
+  "type": "price",
+  "field": "output",
+  "from": 8.8,
+  "to": 5.28
+ },
+ {
+  "date": "2026-11-17",
+  "id": "z-ai/glm-5.3-prime",
+  "name": "GLM 5.3 Prime",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.56,
+  "to": 0.336
+ },
+ {
+  "date": "2026-11-17",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.14,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-17",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.42,
+  "to": 1.2
+ },
+ {
+  "date": "2026-11-17",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0042,
+  "to": 0.006
+ },
+ {
+  "date": "2026-11-17",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.0399,
+  "to": 0.15
+ },
+ {
+  "date": "2026-11-17",
+  "id": "z-ai/glm-5.3-flash",
+  "name": "GLM 5.3 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 0.0784,
+  "to": 0.5
+ },
+ {
+  "date": "2026-11-17",
+  "id": "moonshotai/kimi-k2.7-code",
+  "name": "Kimi K2.7 Code",
+  "type": "price",
+  "field": "input",
+  "from": 0.6,
+  "to": 0.7
+ },
+ {
+  "date": "2026-11-17",
+  "id": "moonshotai/kimi-k2.7-code",
+  "name": "Kimi K2.7 Code",
+  "type": "price",
+  "field": "output",
+  "from": 3.5,
+  "to": 3.75
+ },
+ {
+  "date": "2026-11-17",
+  "id": "nvidia/nemotron-3-ultra-550b-a55b",
+  "name": "Nemotron 3 Ultra",
+  "type": "price",
+  "field": "input",
+  "from": 0.6,
+  "to": 0.5
+ },
+ {
+  "date": "2026-11-17",
+  "id": "nvidia/nemotron-3-ultra-550b-a55b",
+  "name": "Nemotron 3 Ultra",
+  "type": "price",
+  "field": "output",
+  "from": 2.4,
+  "to": 2.2
+ },
+ {
+  "date": "2026-11-17",
+  "id": "nvidia/nemotron-3-ultra-550b-a55b",
+  "name": "Nemotron 3 Ultra",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.12,
+  "to": 0.1
+ },
+ {
+  "date": "2026-11-17",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "input",
+  "from": 0.104,
+  "to": 0.17
+ },
+ {
+  "date": "2026-11-17",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "output",
+  "from": 0.153,
+  "to": 0.25
+ },
+ {
+  "date": "2026-11-17",
+  "id": "qwen/qwen3.5-9b",
+  "name": "Qwen3.5-9B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.094,
+  "to": 0.153
+ },
+ {
+  "date": "2026-11-17",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "input",
+  "from": 0.075,
+  "to": 0.018
+ },
+ {
+  "date": "2026-11-17",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "output",
+  "from": 0.3,
+  "to": 0.09
+ },
+ {
+  "date": "2026-11-17",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0375,
+  "to": 0.009
+ },
+ {
   "date": "2026-11-16",
   "id": "qwen/qwen4-max",
   "name": "Qwen4 Max",

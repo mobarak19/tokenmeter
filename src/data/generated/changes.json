@@ -1,5 +1,235 @@
 [
  {
+  "date": "2026-11-18",
+  "id": "openai/gpt-6.2-astra",
+  "name": "GPT-6.2 Astra",
+  "type": "new",
+  "input": 8,
+  "output": 40
+ },
+ {
+  "date": "2026-11-18",
+  "id": "openai/gpt-6.2-astra-pro",
+  "name": "GPT-6.2 Astra Pro",
+  "type": "new",
+  "input": 8,
+  "output": 40
+ },
+ {
+  "date": "2026-11-18",
+  "id": "openai/gpt-6.2-sol",
+  "name": "GPT-6.2 Sol",
+  "type": "new",
+  "input": 2,
+  "output": 10
+ },
+ {
+  "date": "2026-11-18",
+  "id": "openai/gpt-6.2-sol-pro",
+  "name": "GPT-6.2 Sol Pro",
+  "type": "new",
+  "input": 2,
+  "output": 10
+ },
+ {
+  "date": "2026-11-18",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "input",
+  "from": 0.3,
+  "to": 0.0507
+ },
+ {
+  "date": "2026-11-18",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "output",
+  "from": 1.2,
+  "to": 0.2028
+ },
+ {
+  "date": "2026-11-18",
+  "id": "deepseek/deepseek-v4.1-flash",
+  "name": "DeepSeek V4.1 Flash",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.006,
+  "to": 0.001014
+ },
+ {
+  "date": "2026-11-18",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.15,
+  "to": 0.06
+ },
+ {
+  "date": "2026-11-18",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "output",
+  "from": 1.875,
+  "to": 2.2
+ },
+ {
+  "date": "2026-11-18",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0375,
+  "to": 0.059
+ },
+ {
+  "date": "2026-11-18",
+  "id": "moonshotai/kimi-k2.7-code",
+  "name": "Kimi K2.7 Code",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.16,
+  "to": 0.17
+ },
+ {
+  "date": "2026-11-18",
+  "id": "qwen/qwen3.5-27b",
+  "name": "Qwen3.5-27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.26,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-18",
+  "id": "qwen/qwen3.5-27b",
+  "name": "Qwen3.5-27B",
+  "type": "price",
+  "field": "output",
+  "from": 2.6,
+  "to": 2.4
+ },
+ {
+  "date": "2026-11-18",
+  "id": "z-ai/glm-4.6v",
+  "name": "GLM 4.6V",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.055,
+  "to": 0.05
+ },
+ {
+  "date": "2026-11-18",
+  "id": "qwen/qwen3-next-80b-a3b-instruct",
+  "name": "Qwen3 Next 80B A3B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.09,
+  "to": 0.1
+ },
+ {
+  "date": "2026-11-18",
+  "id": "mistralai/mistral-medium-3.1",
+  "name": "Mistral Medium 3.1",
+  "type": "price",
+  "field": "input",
+  "from": 0.4,
+  "to": 0.44
+ },
+ {
+  "date": "2026-11-18",
+  "id": "mistralai/mistral-medium-3.1",
+  "name": "Mistral Medium 3.1",
+  "type": "price",
+  "field": "output",
+  "from": 2,
+  "to": 2.2
+ },
+ {
+  "date": "2026-11-18",
+  "id": "mistralai/mistral-medium-3.1",
+  "name": "Mistral Medium 3.1",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.04,
+  "to": 0.044
+ },
+ {
+  "date": "2026-11-18",
+  "id": "mistralai/mistral-small-3.2-24b-instruct",
+  "name": "Mistral Small 3.2 24B",
+  "type": "price",
+  "field": "input",
+  "from": 0.1,
+  "to": 0.075
+ },
+ {
+  "date": "2026-11-18",
+  "id": "mistralai/mistral-small-3.2-24b-instruct",
+  "name": "Mistral Small 3.2 24B",
+  "type": "price",
+  "field": "output",
+  "from": 0.3,
+  "to": 0.2
+ },
+ {
+  "date": "2026-11-18",
+  "id": "deepseek/deepseek-r1-0528",
+  "name": "R1 0528",
+  "type": "price",
+  "field": "input",
+  "from": 0.5,
+  "to": 0.571
+ },
+ {
+  "date": "2026-11-18",
+  "id": "deepseek/deepseek-r1-0528",
+  "name": "R1 0528",
+  "type": "price",
+  "field": "output",
+  "from": 2.15,
+  "to": 2.286
+ },
+ {
+  "date": "2026-11-18",
+  "id": "mistralai/mistral-medium-3",
+  "name": "Mistral Medium 3",
+  "type": "price",
+  "field": "input",
+  "from": 0.4,
+  "to": 0.44
+ },
+ {
+  "date": "2026-11-18",
+  "id": "mistralai/mistral-medium-3",
+  "name": "Mistral Medium 3",
+  "type": "price",
+  "field": "output",
+  "from": 2,
+  "to": 2.2
+ },
+ {
+  "date": "2026-11-18",
+  "id": "mistralai/mistral-medium-3",
+  "name": "Mistral Medium 3",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.04,
+  "to": 0.044
+ },
+ {
+  "date": "2026-11-18",
+  "id": "google/gemma-3-27b-it",
+  "name": "Gemma 3 27B",
+  "type": "price",
+  "field": "output",
+  "from": 0.35,
+  "to": 0.45
+ },
+ {
   "date": "2026-11-17",
   "id": "qwen/qwen4-max",
   "name": "Qwen4 Max",

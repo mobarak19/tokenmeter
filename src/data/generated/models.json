@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-17T15:57:29.201Z",
- "checked": "2026-11-17T15:57:29.201Z",
+ "updated": "2026-11-18T15:37:04.630Z",
+ "checked": "2026-11-18T15:37:04.630Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -15,8 +15,8 @@
   "google/gemma-4-26b-a4b-it: OpenRouter 0.09/0.3 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
-  "mistralai/mistral-medium-3: OpenRouter 0.4/2 vs LiteLLM 1.5/7.5 per 1M",
-  "google/gemma-3-27b-it: OpenRouter 0.08/0.35 vs LiteLLM 0/0 per 1M",
+  "mistralai/mistral-medium-3: OpenRouter 0.44/2.2 vs LiteLLM 1.5/7.5 per 1M",
+  "google/gemma-3-27b-it: OpenRouter 0.08/0.45 vs LiteLLM 0/0 per 1M",
   "perplexity/sonar: OpenRouter 1/1 vs LiteLLM 0.25/2.5 per 1M",
   "deepseek/deepseek-chat: OpenRouter 0.2574/1.0287 vs LiteLLM 0.28/0.42 per 1M",
   "embedding embed-multilingual-light-v3.0: implausible 100/1M, skipped"
@@ -344,6 +344,162 @@
   }
  ],
  "models": [
+  {
+   "id": "openai/gpt-6.2-astra",
+   "slug": "openai-gpt-6-2-astra",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6.2 Astra",
+   "created": "2026-11-17",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 8,
+   "output": 40,
+   "cacheRead": 0.4,
+   "cacheWrite": 10,
+   "batchInput": 4,
+   "batchOutput": 20,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 16,
+     "output": 60,
+     "cacheRead": 0.8
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 8,
+   "listOutput": 40
+  },
+  {
+   "id": "openai/gpt-6.2-astra-pro",
+   "slug": "openai-gpt-6-2-astra-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6.2 Astra Pro",
+   "created": "2026-11-17",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 8,
+   "output": 40,
+   "cacheRead": 0.4,
+   "cacheWrite": 10,
+   "batchInput": 4,
+   "batchOutput": 20,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 16,
+     "output": 60,
+     "cacheRead": 0.8
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
+  {
+   "id": "openai/gpt-6.2-sol",
+   "slug": "openai-gpt-6-2-sol",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6.2 Sol",
+   "created": "2026-11-17",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.1,
+   "cacheWrite": 2.5,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 15,
+     "cacheRead": 0.2
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "match",
+   "listInput": 2,
+   "listOutput": 10
+  },
+  {
+   "id": "openai/gpt-6.2-sol-pro",
+   "slug": "openai-gpt-6-2-sol-pro",
+   "provider": "openai",
+   "providerName": "OpenAI",
+   "firstParty": true,
+   "name": "GPT-6.2 Sol Pro",
+   "created": "2026-11-17",
+   "context": 1050000,
+   "maxOutput": 128000,
+   "input": 2,
+   "output": 10,
+   "cacheRead": 0.1,
+   "cacheWrite": 2.5,
+   "batchInput": 1,
+   "batchOutput": 5,
+   "webSearch": 0.01,
+   "tiers": [
+    {
+     "minPromptTokens": 272000,
+     "input": 4,
+     "output": 15,
+     "cacheRead": 0.2
+    }
+   ],
+   "inputModalities": [
+    "file",
+    "image",
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": true,
+   "tokenizer": "GPT",
+   "verified": "unchecked"
+  },
   {
    "id": "qwen/qwen4-max",
    "slug": "qwen-qwen4-max",
@@ -1406,10 +1562,10 @@
    "name": "DeepSeek V4.1 Flash",
    "created": "2026-09-10",
    "context": 1048576,
-   "maxOutput": 943718,
-   "input": 0.3,
-   "output": 1.2,
-   "cacheRead": 0.006,
+   "maxOutput": 393216,
+   "input": 0.0507,
+   "output": 0.2028,
+   "cacheRead": 0.001014,
    "batchInput": 0.112,
    "batchOutput": 0.336,
    "inputModalities": [
@@ -1783,9 +1939,9 @@
    "created": "2026-08-14",
    "context": 1024000,
    "maxOutput": 235929,
-   "input": 0.15,
-   "output": 1.875,
-   "cacheRead": 0.0375,
+   "input": 0.06,
+   "output": 2.2,
+   "cacheRead": 0.059,
    "batchInput": 0.16,
    "batchOutput": 2,
    "inputModalities": [
@@ -2669,7 +2825,7 @@
    "maxOutput": 235929,
    "input": 0.7,
    "output": 3.75,
-   "cacheRead": 0.16,
+   "cacheRead": 0.17,
    "inputModalities": [
     "text",
     "image"
@@ -4257,9 +4413,9 @@
    "name": "Qwen3.5-27B",
    "created": "2026-02-25",
    "context": 262144,
-   "maxOutput": 81920,
-   "input": 0.26,
-   "output": 2.6,
+   "maxOutput": 65536,
+   "input": 0.3,
+   "output": 2.4,
    "inputModalities": [
     "text",
     "image",
@@ -5079,7 +5235,7 @@
    "maxOutput": 32768,
    "input": 0.3,
    "output": 0.9,
-   "cacheRead": 0.055,
+   "cacheRead": 0.05,
    "inputModalities": [
     "image",
     "text",
@@ -6133,9 +6289,10 @@
    "name": "Qwen3 Next 80B A3B Instruct",
    "created": "2025-09-11",
    "context": 262144,
-   "maxOutput": 16384,
-   "input": 0.09,
+   "maxOutput": 235929,
+   "input": 0.1,
    "output": 1.1,
+   "cacheRead": 0.07,
    "inputModalities": [
     "text"
    ],
@@ -6248,9 +6405,9 @@
    "created": "2025-08-13",
    "context": 131072,
    "maxOutput": 104857,
-   "input": 0.4,
-   "output": 2,
-   "cacheRead": 0.04,
+   "input": 0.44,
+   "output": 2.2,
+   "cacheRead": 0.044,
    "inputModalities": [
     "text",
     "image",
@@ -6875,10 +7032,9 @@
    "name": "Mistral Small 3.2 24B",
    "created": "2025-06-20",
    "context": 256000,
-   "maxOutput": 26214,
-   "input": 0.1,
-   "output": 0.3,
-   "cacheRead": 0.01,
+   "maxOutput": 16384,
+   "input": 0.075,
+   "output": 0.2,
    "inputModalities": [
     "image",
     "text"
@@ -7054,10 +7210,9 @@
    "name": "R1 0528",
    "created": "2025-05-28",
    "context": 163840,
-   "maxOutput": 32768,
-   "input": 0.5,
-   "output": 2.15,
-   "cacheRead": 0.35,
+   "maxOutput": 32000,
+   "input": 0.571,
+   "output": 2.286,
    "inputModalities": [
     "text"
    ],
@@ -7094,9 +7249,9 @@
    "created": "2025-05-07",
    "context": 131072,
    "maxOutput": 104857,
-   "input": 0.4,
-   "output": 2,
-   "cacheRead": 0.04,
+   "input": 0.44,
+   "output": 2.2,
+   "cacheRead": 0.044,
    "inputModalities": [
     "text",
     "image",
@@ -7585,7 +7740,7 @@
    "context": 131072,
    "maxOutput": 117964,
    "input": 0.08,
-   "output": 0.35,
+   "output": 0.45,
    "cacheRead": 0.04,
    "inputModalities": [
     "text",

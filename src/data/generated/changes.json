@@ -1,5 +1,149 @@
 [
  {
+  "date": "2026-11-22",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "price",
+  "field": "input",
+  "from": 0.253,
+  "to": 0.2403
+ },
+ {
+  "date": "2026-11-22",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "price",
+  "field": "output",
+  "from": 8.8,
+  "to": 8.4023
+ },
+ {
+  "date": "2026-11-22",
+  "id": "moonshotai/kimi-k3.1-pro",
+  "name": "Kimi K3.1 Pro",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.18,
+  "to": 0.2
+ },
+ {
+  "date": "2026-11-22",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.06,
+  "to": 0.035
+ },
+ {
+  "date": "2026-11-22",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "output",
+  "from": 1.96,
+  "to": 1.5
+ },
+ {
+  "date": "2026-11-22",
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.059,
+  "to": 0.0175
+ },
+ {
+  "date": "2026-11-22",
+  "id": "qwen/qwen3.5-27b",
+  "name": "Qwen3.5-27B",
+  "type": "price",
+  "field": "input",
+  "from": 0.195,
+  "to": 0.26
+ },
+ {
+  "date": "2026-11-22",
+  "id": "qwen/qwen3.5-27b",
+  "name": "Qwen3.5-27B",
+  "type": "price",
+  "field": "output",
+  "from": 1.56,
+  "to": 2.6
+ },
+ {
+  "date": "2026-11-22",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "input",
+  "from": 0.4,
+  "to": 0.6
+ },
+ {
+  "date": "2026-11-22",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "output",
+  "from": 1.75,
+  "to": 2.2
+ },
+ {
+  "date": "2026-11-22",
+  "id": "z-ai/glm-4.7",
+  "name": "GLM 4.7",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.08,
+  "to": 0.11
+ },
+ {
+  "date": "2026-11-22",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "input",
+  "from": 0.017,
+  "to": 0.075
+ },
+ {
+  "date": "2026-11-22",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "output",
+  "from": 0.085,
+  "to": 0.3
+ },
+ {
+  "date": "2026-11-22",
+  "id": "openai/gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0085,
+  "to": 0.0375
+ },
+ {
+  "date": "2026-11-22",
+  "id": "google/gemma-3-4b-it",
+  "name": "Gemma 3 4B",
+  "type": "price",
+  "field": "input",
+  "from": 0.05,
+  "to": 0.04
+ },
+ {
+  "date": "2026-11-22",
+  "id": "google/gemma-3-4b-it",
+  "name": "Gemma 3 4B",
+  "type": "price",
+  "field": "output",
+  "from": 0.1,
+  "to": 0.05
+ },
+ {
   "date": "2026-11-21",
   "id": "minimax/minimax-m3.1-flash",
   "name": "MiniMax M3.1 Flash",

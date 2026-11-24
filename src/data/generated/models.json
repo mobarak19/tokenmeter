@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-23T18:02:37.001Z",
- "checked": "2026-11-23T18:02:37.001Z",
+ "updated": "2026-11-24T17:39:38.524Z",
+ "checked": "2026-11-24T17:39:38.524Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -10,12 +10,11 @@
  "flagged": [
   "google/gemini-3.8-flash: OpenRouter 0.825/4.125 vs LiteLLM 0.75/3.75 per 1M",
   "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.2156/0.6468 vs LiteLLM 0.3/1.2 per 1M",
-  "deepseek/deepseek-v4-pro: OpenRouter 0.9/1.5 vs LiteLLM 1.32/3.96 per 1M",
+  "deepseek/deepseek-v4-pro: OpenRouter 1.28/2.56 vs LiteLLM 1.32/3.96 per 1M",
   "deepseek/deepseek-v4-flash: OpenRouter 0.09/0.18 vs LiteLLM 0.3/1.2 per 1M",
   "google/gemma-4-26b-a4b-it: OpenRouter 0.09/0.3 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
-  "mistralai/mistral-medium-3: OpenRouter 0.44/2.2 vs LiteLLM 1.5/7.5 per 1M",
   "google/gemma-3-27b-it: OpenRouter 0.08/0.16 vs LiteLLM 0/0 per 1M",
   "perplexity/sonar: OpenRouter 1/1 vs LiteLLM 0.25/2.5 per 1M",
   "deepseek/deepseek-chat: OpenRouter 0.2574/1.0287 vs LiteLLM 0.28/0.42 per 1M",
@@ -1625,9 +1624,9 @@
    "created": "2026-09-10",
    "context": 1048576,
    "maxOutput": 393216,
-   "input": 0.0498,
-   "output": 0.1992,
-   "cacheRead": 0.000996,
+   "input": 0.0507,
+   "output": 0.2028,
+   "cacheRead": 0.001014,
    "batchInput": 0.05,
    "batchOutput": 0.15,
    "inputModalities": [
@@ -1877,9 +1876,9 @@
    "name": "GLM 5.3 Flash",
    "created": "2026-08-26",
    "context": 1048576,
-   "maxOutput": 131072,
-   "input": 0.0399,
-   "output": 0.074,
+   "maxOutput": 943717,
+   "input": 0.15,
+   "output": 0.5,
    "cacheRead": 0.03,
    "batchInput": 0.023,
    "batchOutput": 0.068,
@@ -2000,10 +1999,10 @@
    "name": "Qwen3.8 27B",
    "created": "2026-08-14",
    "context": 1024000,
-   "maxOutput": 131072,
-   "input": 0.035,
-   "output": 1.5,
-   "cacheRead": 0.0175,
+   "maxOutput": 235929,
+   "input": 0.06,
+   "output": 1.96,
+   "cacheRead": 0.059,
    "batchInput": 0.16,
    "batchOutput": 2,
    "inputModalities": [
@@ -2077,9 +2076,9 @@
    "created": "2026-08-12",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 1.32,
-   "output": 3.96,
-   "cacheRead": 0.044,
+   "input": 0.111,
+   "output": 4.44,
+   "cacheRead": 0.097,
    "inputModalities": [
     "text"
    ],
@@ -2191,9 +2190,9 @@
    "created": "2026-08-11",
    "context": 1048576,
    "maxOutput": 235929,
-   "input": 0.07,
+   "input": 0.05,
    "output": 0.2,
-   "cacheRead": 0.04,
+   "cacheRead": 0.01,
    "inputModalities": [
     "text"
    ],
@@ -2228,7 +2227,7 @@
    "created": "2026-07-31",
    "context": 1048576,
    "maxOutput": 943718,
-   "input": 0.0434,
+   "input": 0.0456,
    "output": 0.3,
    "cacheRead": 0.035,
    "batchInput": 0.048,
@@ -3516,9 +3515,9 @@
    "created": "2026-04-24",
    "context": 1048576,
    "maxOutput": 393216,
-   "input": 0.9,
-   "output": 1.5,
-   "cacheRead": 0.2,
+   "input": 1.28,
+   "output": 2.56,
+   "cacheRead": 0.108,
    "inputModalities": [
     "text"
    ],
@@ -5681,45 +5680,6 @@
    "listOutput": 2
   },
   {
-   "id": "moonshotai/kimi-k2-thinking",
-   "slug": "moonshotai-kimi-k2-thinking",
-   "provider": "moonshotai",
-   "providerName": "Moonshot AI",
-   "firstParty": false,
-   "name": "Kimi K2 Thinking",
-   "created": "2025-11-06",
-   "context": 262144,
-   "maxOutput": 98304,
-   "input": 0.6,
-   "output": 2.5,
-   "cacheRead": 0.15,
-   "inputModalities": [
-    "text"
-   ],
-   "outputModalities": [
-    "text"
-   ],
-   "tools": true,
-   "reasoning": true,
-   "tokenizer": "Other",
-   "hfId": "moonshotai/Kimi-K2-Thinking",
-   "verified": "unchecked",
-   "arch": {
-    "params": 1026408240256,
-    "layers": 61,
-    "hidden": 7168,
-    "heads": 64,
-    "intermediate": 18432,
-    "vocab": 163840,
-    "kvHeads": 64,
-    "headDim": 112,
-    "maxContext": 262144,
-    "moe": true,
-    "dtype": "bfloat16",
-    "mlaDim": 576
-   }
-  },
-  {
    "id": "amazon/nova-premier-v1",
    "slug": "amazon-nova-premier-v1",
    "provider": "amazon",
@@ -6342,44 +6302,6 @@
    }
   },
   {
-   "id": "moonshotai/kimi-k2-0905",
-   "slug": "moonshotai-kimi-k2-0905",
-   "provider": "moonshotai",
-   "providerName": "Moonshot AI",
-   "firstParty": false,
-   "name": "Kimi K2 0905",
-   "created": "2025-09-04",
-   "context": 262144,
-   "maxOutput": 98304,
-   "input": 0.6,
-   "output": 2.5,
-   "inputModalities": [
-    "text"
-   ],
-   "outputModalities": [
-    "text"
-   ],
-   "tools": true,
-   "reasoning": false,
-   "tokenizer": "Other",
-   "hfId": "moonshotai/Kimi-K2-Instruct-0905",
-   "verified": "unchecked",
-   "arch": {
-    "params": 1026470735448,
-    "layers": 61,
-    "hidden": 7168,
-    "heads": 64,
-    "intermediate": 18432,
-    "vocab": 163840,
-    "kvHeads": 64,
-    "headDim": 112,
-    "maxContext": 262144,
-    "moe": true,
-    "dtype": "bfloat16",
-    "mlaDim": 576
-   }
-  },
-  {
    "id": "deepseek/deepseek-chat-v3.1",
    "slug": "deepseek-deepseek-chat-v3-1",
    "provider": "deepseek",
@@ -6417,32 +6339,6 @@
     "dtype": "bfloat16",
     "mlaDim": 576
    }
-  },
-  {
-   "id": "mistralai/mistral-medium-3.1",
-   "slug": "mistralai-mistral-medium-3-1",
-   "provider": "mistralai",
-   "providerName": "Mistral",
-   "firstParty": true,
-   "name": "Mistral Medium 3.1",
-   "created": "2025-08-13",
-   "context": 131072,
-   "maxOutput": 104857,
-   "input": 0.44,
-   "output": 2.2,
-   "cacheRead": 0.044,
-   "inputModalities": [
-    "text",
-    "image",
-    "file"
-   ],
-   "outputModalities": [
-    "text"
-   ],
-   "tools": true,
-   "reasoning": false,
-   "tokenizer": "Mistral",
-   "verified": "unchecked"
   },
   {
    "id": "z-ai/glm-4.5v",
@@ -7009,44 +6905,6 @@
    }
   },
   {
-   "id": "moonshotai/kimi-k2",
-   "slug": "moonshotai-kimi-k2",
-   "provider": "moonshotai",
-   "providerName": "Moonshot AI",
-   "firstParty": false,
-   "name": "Kimi K2 0711",
-   "created": "2025-07-11",
-   "context": 131072,
-   "maxOutput": 98304,
-   "input": 0.57,
-   "output": 2.3,
-   "inputModalities": [
-    "text"
-   ],
-   "outputModalities": [
-    "text"
-   ],
-   "tools": true,
-   "reasoning": false,
-   "tokenizer": "Other",
-   "hfId": "moonshotai/Kimi-K2-Instruct",
-   "verified": "unchecked",
-   "arch": {
-    "params": 1026408235864,
-    "layers": 61,
-    "hidden": 7168,
-    "heads": 64,
-    "intermediate": 18432,
-    "vocab": 163840,
-    "kvHeads": 64,
-    "headDim": 112,
-    "maxContext": 131072,
-    "moe": true,
-    "dtype": "bfloat16",
-    "mlaDim": 576
-   }
-  },
-  {
    "id": "mistralai/mistral-small-3.2-24b-instruct",
    "slug": "mistralai-mistral-small-3-2-24b-instruct",
    "provider": "mistralai",
@@ -7261,34 +7119,6 @@
     "dtype": "bfloat16",
     "mlaDim": 576
    }
-  },
-  {
-   "id": "mistralai/mistral-medium-3",
-   "slug": "mistralai-mistral-medium-3",
-   "provider": "mistralai",
-   "providerName": "Mistral",
-   "firstParty": true,
-   "name": "Mistral Medium 3",
-   "created": "2025-05-07",
-   "context": 131072,
-   "maxOutput": 104857,
-   "input": 0.44,
-   "output": 2.2,
-   "cacheRead": 0.044,
-   "inputModalities": [
-    "text",
-    "image",
-    "file"
-   ],
-   "outputModalities": [
-    "text"
-   ],
-   "tools": true,
-   "reasoning": false,
-   "tokenizer": "Mistral",
-   "verified": "mismatch",
-   "listInput": 1.5,
-   "listOutput": 7.5
   },
   {
    "id": "meta-llama/llama-guard-4-12b",
@@ -8485,9 +8315,10 @@
    "name": "Llama 3.1 8B Instruct",
    "created": "2024-07-23",
    "context": 131072,
-   "maxOutput": 16384,
-   "input": 0.02,
-   "output": 0.04,
+   "maxOutput": 117964,
+   "input": 0.05,
+   "output": 0.08,
+   "cacheRead": 0.025,
    "inputModalities": [
     "text"
    ],

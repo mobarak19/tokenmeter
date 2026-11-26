@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-25T17:10:38.895Z",
- "checked": "2026-11-25T17:10:38.895Z",
+ "updated": "2026-11-26T16:51:59.214Z",
+ "checked": "2026-11-26T16:51:59.214Z",
  "trackingSince": "2026-10-06",
  "sources": {
   "pricing": "OpenRouter models API",
@@ -10,12 +10,12 @@
  "flagged": [
   "google/gemini-3.8-flash: OpenRouter 0.825/4.125 vs LiteLLM 0.75/3.75 per 1M",
   "deepseek/deepseek-v4-flash-vision-exp: OpenRouter 0.44/1.32 vs LiteLLM 0.3/1.2 per 1M",
-  "deepseek/deepseek-v4-pro: OpenRouter 0.7674/1.5852 vs LiteLLM 1.32/3.96 per 1M",
+  "deepseek/deepseek-v4-pro: OpenRouter 0.8012/1.5593 vs LiteLLM 1.32/3.96 per 1M",
   "deepseek/deepseek-v4-flash: OpenRouter 0.09/0.18 vs LiteLLM 0.3/1.2 per 1M",
   "google/gemma-4-26b-a4b-it: OpenRouter 0.09/0.3 vs LiteLLM 0/0 per 1M",
   "google/gemma-4-31b-it: OpenRouter 0.2/0.4 vs LiteLLM 0/0 per 1M",
   "deepseek/deepseek-v3.2: OpenRouter 0.26/0.38 vs LiteLLM 0.28/0.4 per 1M",
-  "google/gemma-3-27b-it: OpenRouter 0.08/0.16 vs LiteLLM 0/0 per 1M",
+  "google/gemma-3-27b-it: OpenRouter 0.08/0.45 vs LiteLLM 0/0 per 1M",
   "perplexity/sonar: OpenRouter 1/1 vs LiteLLM 0.25/2.5 per 1M",
   "deepseek/deepseek-chat: OpenRouter 0.2574/1.0287 vs LiteLLM 0.28/0.42 per 1M",
   "embedding embed-multilingual-light-v3.0: implausible 100/1M, skipped"
@@ -944,10 +944,10 @@
    "name": "DeepSeek V4.1 Flash 1017",
    "created": "2026-10-17",
    "context": 1048576,
-   "maxOutput": 393216,
-   "input": 0.15,
-   "output": 0.6,
-   "cacheRead": 0.003,
+   "maxOutput": 943718,
+   "input": 0.025,
+   "output": 0.25,
+   "cacheRead": 0.0015,
    "batchInput": 0.035,
    "batchOutput": 0.149,
    "inputModalities": [
@@ -1876,10 +1876,10 @@
    "name": "GLM 5.3 Flash",
    "created": "2026-08-26",
    "context": 1048576,
-   "maxOutput": 943718,
-   "input": 0.12,
-   "output": 0.38,
-   "cacheRead": 0.02,
+   "maxOutput": 943717,
+   "input": 0.15,
+   "output": 0.5,
+   "cacheRead": 0.03,
    "batchInput": 0.023,
    "batchOutput": 0.068,
    "inputModalities": [
@@ -1999,10 +1999,10 @@
    "name": "Qwen3.8 27B",
    "created": "2026-08-14",
    "context": 1024000,
-   "maxOutput": 131072,
-   "input": 0.035,
-   "output": 1.5,
-   "cacheRead": 0.0175,
+   "maxOutput": 235929,
+   "input": 0.06,
+   "output": 1.96,
+   "cacheRead": 0.059,
    "batchInput": 0.16,
    "batchOutput": 2,
    "inputModalities": [
@@ -3515,9 +3515,9 @@
    "created": "2026-04-24",
    "context": 1048576,
    "maxOutput": 393216,
-   "input": 0.7674,
-   "output": 1.5852,
-   "cacheRead": 0.21,
+   "input": 0.8012,
+   "output": 1.5593,
+   "cacheRead": 0.2,
    "inputModalities": [
     "text"
    ],
@@ -4084,6 +4084,8 @@
    "input": 0.15,
    "output": 0.6,
    "cacheRead": 0.015,
+   "batchInput": 0.075,
+   "batchOutput": 0.3,
    "inputModalities": [
     "text",
     "image"
@@ -4182,7 +4184,7 @@
    "created": "2026-03-10",
    "context": 262144,
    "maxOutput": 235929,
-   "input": 0.17,
+   "input": 0.1,
    "output": 0.25,
    "inputModalities": [
     "text",
@@ -4642,10 +4644,10 @@
    "name": "Qwen3.5 397B A17B",
    "created": "2026-02-16",
    "context": 262144,
-   "maxOutput": 81920,
-   "input": 0.45,
-   "output": 3,
-   "cacheRead": 0.22,
+   "maxOutput": 235929,
+   "input": 0.5,
+   "output": 3.6,
+   "cacheRead": 0.3,
    "inputModalities": [
     "text",
     "image",
@@ -5431,6 +5433,8 @@
    "input": 0.15,
    "output": 0.15,
    "cacheRead": 0.015,
+   "batchInput": 0.075,
+   "batchOutput": 0.075,
    "inputModalities": [
     "text",
     "image"
@@ -5512,6 +5516,8 @@
    "input": 0.5,
    "output": 1.5,
    "cacheRead": 0.05,
+   "batchInput": 0.25,
+   "batchOutput": 0.75,
    "inputModalities": [
     "text",
     "image",
@@ -6593,6 +6599,8 @@
    "input": 0.3,
    "output": 0.9,
    "cacheRead": 0.03,
+   "batchInput": 0.15,
+   "batchOutput": 0.45,
    "inputModalities": [
     "text",
     "file"
@@ -6766,9 +6774,10 @@
    "name": "GLM 4.5 Air",
    "created": "2025-07-25",
    "context": 131072,
-   "maxOutput": 117964,
-   "input": 0.14,
-   "output": 0.86,
+   "maxOutput": 98304,
+   "input": 0.2,
+   "output": 1.1,
+   "cacheRead": 0.03,
    "inputModalities": [
     "text"
    ],
@@ -6901,6 +6910,44 @@
     "maxContext": 262144,
     "moe": true,
     "dtype": "bfloat16"
+   }
+  },
+  {
+   "id": "moonshotai/kimi-k2",
+   "slug": "moonshotai-kimi-k2",
+   "provider": "moonshotai",
+   "providerName": "Moonshot AI",
+   "firstParty": false,
+   "name": "Kimi K2 0711",
+   "created": "2025-07-11",
+   "context": 131072,
+   "maxOutput": 98304,
+   "input": 0.57,
+   "output": 2.3,
+   "inputModalities": [
+    "text"
+   ],
+   "outputModalities": [
+    "text"
+   ],
+   "tools": true,
+   "reasoning": false,
+   "tokenizer": "Other",
+   "hfId": "moonshotai/Kimi-K2-Instruct",
+   "verified": "unchecked",
+   "arch": {
+    "params": 1026408235864,
+    "layers": 61,
+    "hidden": 7168,
+    "heads": 64,
+    "intermediate": 18432,
+    "vocab": 163840,
+    "kvHeads": 64,
+    "headDim": 112,
+    "maxContext": 131072,
+    "moe": true,
+    "dtype": "bfloat16",
+    "mlaDim": 576
    }
   },
   {
@@ -7590,9 +7637,10 @@
    "name": "Gemma 3 27B",
    "created": "2025-03-12",
    "context": 131072,
-   "maxOutput": 16384,
+   "maxOutput": 117964,
    "input": 0.08,
-   "output": 0.16,
+   "output": 0.45,
+   "cacheRead": 0.04,
    "inputModalities": [
     "text",
     "image"

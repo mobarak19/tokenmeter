@@ -1,5 +1,193 @@
 [
  {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "input",
+  "from": 0.025,
+  "to": 0.15
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "output",
+  "from": 0.25,
+  "to": 0.6
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4.1-flash-1017",
+  "name": "DeepSeek V4.1 Flash 1017",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.0015,
+  "to": 0.003
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek V4 Flash Vision Exp",
+  "type": "price",
+  "field": "input",
+  "from": 0.44,
+  "to": 0.2156
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek V4 Flash Vision Exp",
+  "type": "price",
+  "field": "output",
+  "from": 1.32,
+  "to": 0.6468
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek V4 Flash Vision Exp",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.028,
+  "to": 0.00686
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "input",
+  "from": 0.111,
+  "to": 0.0999
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "output",
+  "from": 4.44,
+  "to": 5
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-pro-0813",
+  "name": "DeepSeek V4 Pro 0813",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.097,
+  "to": 0.0999
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "input",
+  "from": 0.8012,
+  "to": 0.75557
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "output",
+  "from": 1.5593,
+  "to": 1.5007
+ },
+ {
+  "date": "2026-11-27",
+  "id": "deepseek/deepseek-v4-pro",
+  "name": "DeepSeek V4 Pro 0423",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.2,
+  "to": 0.21
+ },
+ {
+  "date": "2026-11-27",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "input",
+  "from": 0.5,
+  "to": 0.6
+ },
+ {
+  "date": "2026-11-27",
+  "id": "moonshotai/kimi-k2.5",
+  "name": "Kimi K2.5",
+  "type": "price",
+  "field": "output",
+  "from": 2.5,
+  "to": 3
+ },
+ {
+  "date": "2026-11-27",
+  "id": "moonshotai/kimi-k2-0905",
+  "name": "Kimi K2 0905",
+  "type": "new",
+  "input": 0.6,
+  "output": 2.5
+ },
+ {
+  "date": "2026-11-27",
+  "id": "google/gemma-3-4b-it",
+  "name": "Gemma 3 4B",
+  "type": "price",
+  "field": "input",
+  "from": 0.04,
+  "to": 0.05
+ },
+ {
+  "date": "2026-11-27",
+  "id": "google/gemma-3-4b-it",
+  "name": "Gemma 3 4B",
+  "type": "price",
+  "field": "output",
+  "from": 0.05,
+  "to": 0.1
+ },
+ {
+  "date": "2026-11-27",
+  "id": "google/gemma-3-27b-it",
+  "name": "Gemma 3 27B",
+  "type": "price",
+  "field": "output",
+  "from": 0.45,
+  "to": 0.16
+ },
+ {
+  "date": "2026-11-27",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "input",
+  "from": 0.71,
+  "to": 0.59
+ },
+ {
+  "date": "2026-11-27",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "output",
+  "from": 0.71,
+  "to": 0.79
+ },
+ {
+  "date": "2026-11-27",
+  "id": "meta-llama/llama-3.3-70b-instruct",
+  "name": "Llama 3.3 70B Instruct",
+  "type": "price",
+  "field": "cacheRead",
+  "from": 0.71,
+  "to": 0.295
+ },
+ {
   "date": "2026-11-26",
   "id": "deepseek/deepseek-v4.1-flash-1017",
   "name": "DeepSeek V4.1 Flash 1017",
